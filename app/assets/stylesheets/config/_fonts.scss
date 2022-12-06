@@ -5,7 +5,6 @@
 $body-font: "Quicksand", "sans-serif";
 $headers-font: "Quicksand", "sans-serif";
 
-
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
@@ -15,3 +14,59 @@ $headers-font: "Quicksand", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+// only for Zero.Hunger on the home page
+h1 {
+  font-family: $headers-font;
+  font-size: 64px;
+  font-weight: bolder;
+  color: white;
+}
+
+// only for "vision and purpose" on the home page
+h2 {
+  font-family: $headers-font;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+}
+
+// for all main titles on the pages (ex: Item's Name, Basket, and so on)
+h3 {
+  font-family: $headers-font;
+  font-size: 48px;
+  font-weight: bold;
+  color: $titles-green;
+}
+
+// for all the titles on the forms
+h4 {
+  font-family: $headers-font;
+  font-size: 36px;
+  font-weight: bold;
+  color: $titles-green;
+}
+
+// for all the smaller titles on the cards for example
+h5 {
+  font-family: $headers-font;
+  font-size: 26px;
+  font-weight: medium;
+  color: $titles-green;
+}
+
+// for all the <p> text on light background
+p.dark {
+  font-family: $body-font;
+  font-size: 24px;
+  font-weight: light;
+  color: $dark-green;
+}
+
+// for all the <p> text on darker background
+p.light {
+  font-family: $body-font;
+  font-size: 24px;
+  font-weight: light;
+  color: white;
+}
