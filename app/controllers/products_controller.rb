@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  has_one_attached :photo
 
   # def index
   #   if params[:query].present?
@@ -25,4 +26,11 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :category, :description, :price, :deadline, :business_id, :photo)
+  end
+
 end
