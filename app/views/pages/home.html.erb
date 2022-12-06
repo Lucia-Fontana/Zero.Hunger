@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <h1>Zero.Hunger</h1>
+  <h2>We are building a better world by fighting food waste</h2>
+
+  <div class="searchbar-home">
+    <%= form_with url: products_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Where are you ?"
+      %>
+      <%= image_submit_tag("icons8-search-25.png", class: "btn")  %>
+    <% end %>
+  </div>
+
+</div>
