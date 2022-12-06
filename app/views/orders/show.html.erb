@@ -1,0 +1,35 @@
+<div class=basket-container>
+
+  <div class=basket-title>
+    <h1>Basket</h1>
+    <%# <%= link_to "Back to the shop", lists_path%>
+  </div>
+
+  <div class=basket-body>
+
+    <div class=row>
+      <div class="col-lg-8">
+
+          <div class="backet-card-product">
+            <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+              <div class="backet-card-product-infos">
+                <% @user.purchases.each do |purchase| %>
+                  <%= purchase.product.business.name %>
+                    <% @user.purchases.each do |purchase| %>
+                    <%= purchase.product.name %>
+                    <%= purchase.product.price %>
+                    <%= purchase.product.category %>
+                  <% end %>
+                <% end %>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4">
+        <%= link_to "Checkout" %>
+      </div>
+
+    </div>
+
+  </div>
+</div>
