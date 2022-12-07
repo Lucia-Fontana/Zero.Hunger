@@ -15,30 +15,54 @@
 
 <%# This is the filter by product type icons %>
   <div class= "type-icons">
-    <%= link_to(controller: 'products', action: 'index', query: 'fruit') do %>
-      <%= image_tag "3194766.png", class: "type-icon" %>
-      <p>Fruits</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'vegetable') do %>
-      <%= image_tag "2153788.png", class: "type-icon" %>
-      <p>Vegetables</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'carbohydrate') do %>
-      <%= image_tag "6764230.png", class: "type-icon" %>
-      <p>Carbs</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'dairy') do %>
-      <%= image_tag "3050158.png", class: "type-icon" %>
-      <p>Dairy</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'meat') do %>
-      <%= image_tag "2738733.png", class: "type-icon" %>
-      <p>Meat & Fish</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'drink') do %>
-      <%= image_tag "3050153.png", class: "type-icon" %>
-      <p>Drinks</p>
-    <% end %>
+
+      <%= link_to(controller: 'products', action: 'index', query: 'fruit') do %>
+        <div class="iconborder">
+          <%= image_tag "3194766.png", class: "type-icon" %>
+        </div>
+        <p>Fruits</p>
+      <% end %>
+
+
+      <%= link_to(controller: 'products', action: 'index', query: 'vegetable') do %>
+        <div class="iconborder">
+          <%= image_tag "2153788.png", class: "type-icon" %>
+        </div>
+        <p>Vegetables</p>
+      <% end %>
+
+
+      <%= link_to(controller: 'products', action: 'index', query: 'carbohydrate') do %>
+        <div class="iconborder">
+          <%= image_tag "6764230.png", class: "type-icon" %>
+        </div>
+        <p>Carbs</p>
+      <% end %>
+
+
+      <%= link_to(controller: 'products', action: 'index', query: 'dairy') do %>
+        <div class="iconborder">
+          <%= image_tag "3050158.png", class: "type-icon" %>
+        </div>
+        <p>Dairy</p>
+      <% end %>
+
+
+      <%= link_to(controller: 'products', action: 'index', query: 'meat') do %>
+        <div class="iconborder">
+          <%= image_tag "2738733.png", class: "type-icon" %>
+        </div>
+        <p>Meat & Fish</p>
+      <% end %>
+
+
+      <%= link_to(controller: 'products', action: 'index', query: 'drink') do %>
+        <div class="iconborder">
+          <%= image_tag "3050153.png", class: "type-icon" %>
+        </div>
+        <p>Drinks</p>
+      <% end %>
+
   </div>
 
 <%# This is the list of products to display %>
