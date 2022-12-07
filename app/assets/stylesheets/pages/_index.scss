@@ -1,3 +1,81 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+// @import "fonts";
+// @import "colors";
+
+.container {
+}
+
+.searchbar-container {
+  margin: 60px 0;
+}
+
+.product-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.card-image {
+  border-radius: 6px;
+}
+
+.product-card {
+  background-color: white;
+  height: 360px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 6px;
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  height: 100%;
+  h3 {
+    color: rgb(17, 138, 98);
+    font-weight: bold;
+    text-align: center;
+  }
+  h4 {
+    color: rgb(17, 138, 98);
+  }
+  p {
+    color: gray;
+    margin: 0;
+  }
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.type-icons {
+  display: flex;
+  gap: 24px;
+  margin: 0 120px;
+  p {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+}
+
+.type-icon {
+  width: 100%;
+}
