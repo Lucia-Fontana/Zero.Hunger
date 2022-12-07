@@ -141,22 +141,22 @@ o2.update!(total_price: p18.price + p7.price)
 
 u3 = User.new(email: "the_hunger_project@gmail.com", password: "the_hunger_project@gmail.com", username: "The Hunger Project", category: "Association")
 u3.save!
-o3 = Order.new(user_id: u7.id)
+o3 = Order.new(user_id: u3.id)
 o3.save!
-pc5 = Purchase.new(product_id: p6.id, order_id: o7.id)
+pc5 = Purchase.new(product_id: p6.id, order_id: o3.id)
 pc5.save!
-pc6 = Purchase.new(product_id: p9.id, order_id: o7.id)
+pc6 = Purchase.new(product_id: p9.id, order_id: o3.id)
 pc6.save!
 o3.update!(total_price: p6.price + p9.price)
 
 u4 = User.new(email: "unicef@gmail.com", password: "unicef@gmail.com", username: "Unicef", category: "Association")
 u4.save!
-o4 = Order.new(user_id: u8.id)
+o4 = Order.new(user_id: u4.id)
 o4.save!
-pc7 = Purchase.new(product_id: p24.id, order_id: o8.id)
+pc7 = Purchase.new(product_id: p24.id, order_id: o4.id)
 pc7.save!
-pc8 = Purchase.new(product_id: p23.id order_id: o8.id)
+pc8 = Purchase.new(product_id: p23.id order_id: o4.id)
 pc8.save!
-pc9 = Purchase.9ew(product_id: p25.id, order_id: o8.id)
+pc9 = Purchase.9ew(product_id: p25.id, order_id: o4.id)
 pc8.save!
 o4.update!(total_price: p24.price + p25.price + p23.id)
