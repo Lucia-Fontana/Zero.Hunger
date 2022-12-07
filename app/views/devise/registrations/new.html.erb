@@ -4,7 +4,7 @@
       <div class="card-body p-5">
 
         <%= image_tag "signup-icon.png", class: "signup" %>
-        <h2 class="header-signup">Sign up</h2>
+        <h2 class="header-signup">Sign in</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
@@ -13,35 +13,47 @@
 
             <%= f.input :email,
                         required: true,
-                        autofocus: true, label: false,
+                        autofocus: true,
+                        label: false,
                         placeholder: "Enter your email",
                         input_html: { autocomplete: "email" }%>
 
             <%= f.input :password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        label: false,
+                        placeholder: "Enter your password",
+                        # hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
 
             <%= f.input :password_confirmation,
                         required: true,
+                        label: false,
+                        placeholder: "Confirm your password",
                         input_html: { autocomplete: "new-password" } %>
 
             <%= f.input :username,
                         required: true,
                         autofocus: true,
+                        label: false,
+                        placeholder: "Choose your username",
                         input_html: { autocomplete: "username" }%>
 
             <%= f.input :category,
                         collection: [ "Private person", "Association" ],
                         required: true,
                         autofocus: true,
+                        label: false,
+                        placeholder: "Please select your category",
                         input_html: { autocomplete: "category" }%>
 
             <div class="form-actions">
               <%= f.button :submit, "Register now" %>
             </div>
 
-            <%= render "devise/shared/links" %>
+            <div class="div-login">
+              <p class="dark">Already have an account?</p>
+              <%= render "devise/shared/links" %>
+            </div>
 
           </div>
         <% end %>

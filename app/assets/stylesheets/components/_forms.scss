@@ -1,20 +1,44 @@
 // sign up icon design
-.signup {
-  align-items: center;
-}
+// .signup {
+
+// }
 
 .form-inputs {
   & > div {
-    & > label {
-      color: red;
+    & > ::placeholder {
+      color: white;
     }
     & > input {
       border-radius: 10px;
-      background-color: red;
+      background-color: $light-green;
+      padding: 10px;
     }
   }
 }
 
 .header-signup {
-  color: red;
+  color: $titles-green;
+  padding: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  background: #FFFFFF;
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input.btn {
+  color: white;
+  margin-bottom: 10px;
+  background-color: $button-gradient;
+}
+
+.div-login {
+  display: flex;
 }

@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $body-background;
   align-items: center;
+  margin-bottom: 30px;
+  border-bottom: rgb(229, 241, 234) 1px solid;
 }
 
 li {
