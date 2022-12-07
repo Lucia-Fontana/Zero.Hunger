@@ -1,6 +1,7 @@
 .footer {
   margin-top: 120px;
-  margin-bottom: 30px;
+  padding-top: 36px;
+  padding-bottom: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +11,14 @@
 
 .social-icons {
   display: flex;
-  i {
+  a {
     margin: 0 6px;
+    color: $light-green;
   }
+}
+
+.copyright {
+  text-align: center;
 }
 
 body {
