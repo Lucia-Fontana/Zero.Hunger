@@ -97,3 +97,20 @@
 .iconborder:hover {
   box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
 }
+
+//////////////////////////////////
+///
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+
+.show {
+  display: block;
+}
