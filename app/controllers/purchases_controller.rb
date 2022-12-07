@@ -8,9 +8,12 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    # if current_user.orders.last.open?
+    @order = Order.find(params[:order_id])
+    @product = Product.find(params[:product_id])
     @purchase = Purchase.new(purchase_params)
-    @purchase.user = @user
+    @purchase.order = @order
+    @purchase.product = @product
     if @purchase.save
       redirect_to user_path(@purchase.user_id)
     else

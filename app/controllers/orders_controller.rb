@@ -8,6 +8,12 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def new
+    @purchase = Purchase.find(params[:pruchase_id])
+
+  end
+
+  private
   def purchase_params
     params.require(:purchase).permit(:total_price, :user_id)
   end
