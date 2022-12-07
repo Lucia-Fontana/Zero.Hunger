@@ -109,7 +109,7 @@ p22.save!
 p23 = Product.new(name: "Potatoes", price: 3, category: "Vegetable", description: "5 kilos of potatoes", deadline: Date.tomorrow, business_id: business5.id)
 p23.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'potatoes.jpg')), filename: 'potatoes.jpg', content_type: 'potatoes.png')
 p23.save!
-p24 = Product.new(name: "Cheese", price: 15, category: "Meat", description: "TO eat as soon as possible!", deadline: Date.tomorrow, business_id: business5.id)
+p24 = Product.new(name: "Cheese", price: 15, category: "Dairy", description: "To eat as soon as possible!", deadline: Date.tomorrow, business_id: business5.id)
 p24.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'cheese.png')), filename: 'cheese.png', content_type: 'cheese.png')
 p24.save!
 p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetable", description: "5 kilos of tomatoes", deadline: Date.tomorrow, business_id: business5.id)
@@ -155,8 +155,8 @@ o4 = Order.new(user_id: u4.id)
 o4.save!
 pc7 = Purchase.new(product_id: p24.id, order_id: o4.id)
 pc7.save!
-pc8 = Purchase.new(product_id: p23.id order_id: o4.id)
+pc8 = Purchase.new(product_id: p23.id, order_id: o4.id)
 pc8.save!
-pc9 = Purchase.9ew(product_id: p25.id, order_id: o4.id)
-pc8.save!
-o4.update!(total_price: p24.price + p25.price + p23.id)
+pc9 = Purchase.new(product_id: p25.id, order_id: o4.id)
+pc9.save!
+o4.update!(total_price: p24.price + p23.price + p25.id)
