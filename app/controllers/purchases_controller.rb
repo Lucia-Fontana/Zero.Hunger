@@ -4,7 +4,8 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find(@purchases.orders.users == current_user)
+
   end
 
   def create
@@ -21,7 +22,7 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def purchase_params
-    params.require(:purchase).permit(:order_id, :product_id)
-  end
+  #def purchase_params
+    #params.require(:purchase).permit(:order_id, :product_id)
+  #end
 end

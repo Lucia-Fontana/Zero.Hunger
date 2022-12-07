@@ -1,13 +1,30 @@
 .main-container {
   margin: 40px 5%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+}
+
+h2 {
+  color: #39D0C6;
+}
+
+.previous {
+  background-color: #39D0C6;
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
 }
 
 .left-container {
-  width: 75%;
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -36,14 +53,23 @@
   background-color: white;
   border-radius: 10px;
   width: 100%;
+  height: 400px;
+  align-items: left;
+  gap: 20px;
+  padding: 20px;;
 }
 
 .product-description {
-  padding: 20px;
-  display:flex;
-  justify-content: space-between;
   background-color: white;
-  width: 100%;
+  width: 57%;
+  color: black;
+  font-size: 20px
+}
+
+.price {
+  font-size: 30px;
+  flex-grow: 1;
+  color: #39D0C6;
 }
 
 .product-image {
@@ -51,10 +77,15 @@
 }
 
 .right-container-basket {
-  width: 23%;
+  width: 30vw;
+  min-height: 30vh;
   position: sticky;
   top: 13vh;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 10px 10px lightgray;
+  border-radius: 10px;
+
+
 }
 
 .card-buttons {
@@ -97,12 +128,6 @@
   margin-right: 10px;
 }
 
-.user-pet-card {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
 .btn-gradient {
   color: white;
   padding: 8px 8px;
@@ -127,8 +152,8 @@
 
 
 #buy-button:hover {
-  background-color: #e77676;
-  color: green;
+  background-color: #39D0C6;
+  color: white;
   transition: 0.2s;
 }
 
@@ -183,4 +208,11 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.items {
+  background-color: #39D0C6;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
 }

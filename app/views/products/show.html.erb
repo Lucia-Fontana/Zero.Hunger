@@ -1,41 +1,34 @@
 <div class="main-container">
-  <div class="left-container">
-    <div class="product">
+  <div>
+    <h2><%= @product.name %></h2>
+    <a href="#" class="previous"><</a>
+    <div class="left-container">
       <div class="image-product">
-        <%= image_tag "banana.jpeg"%>
+        <%= cl_image_tag @product.photo.key, height: 400, width: 500, crop: :fill, class: "product-image" %>
       </div>
-      <div class="product-description">
-        <div>
-        <div class="">
-        <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <%= button_to "Add to cart", root_path, id: "buy-button", class: "btn btn-gradient show-button" %>
-        </div>
-      </div>
-          <ul>
-            15/12/2022
-            CO2 120gr
-          </ul>
+      <div class="product">
+        <div class="product-description">
+          <%= button_to "Add to cart", product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
+          <%= @product.deadline %>
+          <p></p>
           <%= @product.description %>
         </div>
-        <%= @product.price.round %> €
+        <div class="price">
+            <%= @product.price.round %> €
+        </div>
       </div>
     </div>
     <div class="location">
       <div class="address">
-        <p>Distribuited By:</p>
-        <ul>
-          <li>Sainsbury's
-          <li>15-17 Tottenham Ct Road, London W1T1B
-          <li>9.00 20.00
-        </ul>
+        <p>Distributed by:<%= @product.business.name %>/<%= @product.business.address %></p>
       </div>
       <div class="image-map">
-        <%= image_tag "map.jpeg"%>
       </div>
     </div>
   </div>
   <div class="right-container-basket">
     <div class="basket">
-
+      <%= render 'purchases/show'%>
+    </div>
   </div>
 </div>
