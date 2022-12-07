@@ -1,5 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+// @import "fonts";
+// @import "colors";
 
 .container {
 }
@@ -50,6 +53,7 @@
   }
   p {
     color: gray;
+    margin: 0;
   }
 }
 

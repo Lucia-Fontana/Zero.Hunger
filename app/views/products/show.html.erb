@@ -1,0 +1,41 @@
+<div class="main-container">
+  <div class="left-container">
+    <div class="product">
+      <div class="image-product">
+        <%= image_tag "banana.jpeg"%>
+      </div>
+      <div class="product-description">
+        <div>
+        <div class="">
+        <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <%= button_to "Add to cart", root_path, id: "buy-button", class: "btn btn-gradient show-button" %>
+        </div>
+      </div>
+          <ul>
+            15/12/2022
+            CO2 120gr
+          </ul>
+          <%= @product.description %>
+        </div>
+        <%= @product.price.round %> €
+      </div>
+    </div>
+    <div class="location">
+      <div class="address">
+        <p>Distribuited By:</p>
+        <ul>
+          <li>Sainsbury's
+          <li>15-17 Tottenham Ct Road, London W1T1B
+          <li>9.00 20.00
+        </ul>
+      </div>
+      <div class="image-map">
+        <%= image_tag "map.jpeg"%>
+      </div>
+    </div>
+  </div>
+  <div class="right-container-basket">
+    <div class="basket">
+
+  </div>
+</div>

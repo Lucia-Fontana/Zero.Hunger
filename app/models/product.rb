@@ -6,4 +6,5 @@ class Product < ApplicationRecord
   validates :category, presence: true
   validates :description, presence: true
   validates :deadline, presence: true
+  has_one_attached :photo
 end
