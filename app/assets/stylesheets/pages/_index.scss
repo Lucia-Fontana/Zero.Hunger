@@ -1,11 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
-// @import "fonts";
-// @import "colors";
-
-.container {
-}
+@import "config/fonts";
+@import "config/colors";
 
 .searchbar-container {
   margin: 60px 0;
@@ -23,8 +20,19 @@
   }
 }
 
+.card-image-wrapper {
+  min-height: 144px;
+  max-height: 144px;
+}
+
 .card-image {
-  border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.bold {
+  font-weight: bold;
+  color: $dark-green;
 }
 
 .product-card {
@@ -35,6 +43,12 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
+  // border: 1px solid $titles-green;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
 }
 
 .card-infos {
@@ -43,14 +57,6 @@
   justify-content: space-between;
   padding: 12px;
   height: 100%;
-  h3 {
-    color: rgb(17, 138, 98);
-    font-weight: bold;
-    text-align: center;
-  }
-  h4 {
-    color: rgb(17, 138, 98);
-  }
   p {
     color: gray;
     margin: 0;
@@ -77,5 +83,17 @@
 }
 
 .type-icon {
+  padding: 18px;
   width: 100%;
+  // border-radius: 50%;
+}
+
+.iconborder {
+  // padding: 24px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+}
+
+.iconborder:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
 }
