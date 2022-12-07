@@ -1,92 +1,14 @@
-<% case product.category %>
-<% when "fruit" %>
-  <div class="product-card filterDiv fruit">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
+<div class="product-card <%= product.category %>" data-filter-target="card">
+  <div class="card-image-wrapper">
+    <%= cl_image_tag(product.photo.key, class: "card-image", width: 200, height: 144, crop: :fill) %>
+  </div>
+  <div class="card-infos">
+    <h5><%= product.name %></h5>
+    <p class="bold"><%= product.business.name %></p>
+    <p><%= product.business.address %></p>
+    <div class="card-bottom">
+      <h5><%= product.price %>0€</h5>
+      <i class="fa-solid fa-cart-shopping"></i>
     </div>
   </div>
-<% when "vegetable" %>
-  <div class="product-card filterDiv vegetable">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </div>
-<% when "carbohydrate" %>
-  <div class="product-card filterDiv carbohydrate">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </div>
-<% when "dairy" %>
-  <div class="product-card filterDiv dairy">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </div>
-<% when "meat" %>
-  <div class="product-card filterDiv meat">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </div>
-<% when "drink" %>
-  <div class="product-card filterDiv drink">
-    <div class="card-image-wrapper">
-      <%= cl_image_tag(product.photo.key, class: "card-image", width: 198, height: 144, crop: :fill) %>
-    </div>
-    <div class="card-infos">
-      <h5><%= product.name %></h5>
-      <p class="bold"><%= product.business.name %></p>
-      <p><%= product.business.address %></p>
-      <div class="card-bottom">
-        <h5><%= product.price %>0€</h5>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>

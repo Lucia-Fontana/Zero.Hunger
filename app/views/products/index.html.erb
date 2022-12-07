@@ -14,33 +14,64 @@
 
 
 <%# This is the filter by product type icons %>
-  <div class= "type-icons">
+  <div data-controller="filter">
+    <div class= "type-icons">
 
-      <%#= link_to(controller: 'products', action: 'index', query: 'fruit') do %>
-        <%# <div class="iconborder"> %>
-          <%#= image_tag "3194766.png", class: "type-icon" %>
-        <%# </div>
-        <p>Fruits</p> %>
-      <%# end %>
-
-      <div class="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-          <button class="btn" onclick="filterSelection('fruit')"> Cars</button>
-          <button class="btn" onclick="filterSelection('vegetable')"> Animals</button>
-          <button class="btn" onclick="filterSelection('carbohydrate')"> Fruits</button>
-          <button class="btn" onclick="filterSelection('dairy')"> Colors</button>
-          <button class="btn" onclick="filterSelection('meat')"> Colors</button>
-          <button class="btn" onclick="filterSelection('drink')"> Colors</button>
+      <div data-action="click->filter#fruit">
+        <div class="iconborder">
+          <%= image_tag "3194766.png", class: "type-icon", data: {filter_target: "fruitFilter"} %>
+        </div>
+        <p>Fruits</p>
       </div>
 
-  </div>
+      <div data-action="click->filter#vegetable">
+        <div class="iconborder">
+          <%= image_tag "2153788.png", class: "type-icon", data: {filter_target: "vegetableFilter"} %>
+        </div>
+        <p>Vegetables</p>
+      </div>
 
-<%# This is the list of products to display %>
-  <div class="product-list">
-    <% @products.each do |product| %>
-      <%= link_to product_path(product) do %>
-        <%= render "card", product: product %>
+
+      <div data-action="click->filter#carbohydrate">
+        <div class="iconborder">
+          <%= image_tag "6764230.png", class: "type-icon", data: {filter_target: "carbohydrateFilter"} %>
+        </div>
+        <p>Carbs</p>
+      </div>
+
+
+      <div data-action="click->filter#dairy">
+        <div class="iconborder">
+          <%= image_tag "3050158.png", class: "type-icon", data: {filter_target: "dairyFilter"} %>
+        </div>
+        <p>Dairy</p>
+      </div>
+
+
+      <div data-action="click->filter#meat">
+        <div class="iconborder">
+          <%= image_tag "2738733.png", class: "type-icon", data: {filter_target: "meatFilter"} %>
+        </div>
+        <p>Meat & Fish</p>
+      </div>
+
+
+      <div data-action="click->filter#drink">
+        <div class="iconborder">
+          <%= image_tag "3050153.png", class: "type-icon", data: {filter_target: "drinkFilter"} %>
+        </div>
+        <p>Drinks</p>
+      </div>
+
+    </div>
+
+    <%# This is the list of products to display %>
+    <div class="product-list">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product) do %>
+          <%= render "card", product: product %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
