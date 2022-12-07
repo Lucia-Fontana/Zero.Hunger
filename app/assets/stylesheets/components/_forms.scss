@@ -1,0 +1,20 @@
+// sign up icon design
+.signup {
+  align-items: center;
+}
+
+.form-inputs {
+  & > div {
+    & > label {
+      color: red;
+    }
+    & > input {
+      border-radius: 10px;
+      background-color: red;
+    }
+  }
+}
+
+.header-signup {
+  color: red;
+}
