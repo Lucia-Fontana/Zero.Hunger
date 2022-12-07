@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.banner {
+  background: $button-gradient;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 60px;
+}
+
+.searchbar-home {
+  width: 33%;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.about-section {
+  margin-top: 60px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  h2 {
+    color: $titles-green;
+  }
+}
