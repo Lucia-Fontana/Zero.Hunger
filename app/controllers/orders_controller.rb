@@ -5,10 +5,32 @@ class OrdersController < ApplicationController
 
   def show
     @user = current_user
+    @order = current_user.orders.find(params[:id])
+  end
+
+  def new
+    @order = Order.new
+  end
+
+  def create
+    @order = Order.new(list_params)
+    @order.save
+    redirect_to order_path(@order)
+  end
+
+  def edit
     @order = Order.find(params[:id])
   end
 
+  def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    redirect_to order_path(@order)
+  end
+
+  private
+
   def purchase_params
-    params.require(:purchase).permit(:total_price, :user_id)
+    params.require(:purchase).permit(:user_id)
   end
 end

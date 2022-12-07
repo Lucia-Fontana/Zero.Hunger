@@ -46,6 +46,7 @@
     <% @products.each do |product| %>
       <%= link_to product_path(product) do %>
         <%= render "card", product: product %>
+        <p>Amount: <%= humanized_money_with_symbol(product.price) %></p>
       <% end %>
     <% end %>
   </div>
