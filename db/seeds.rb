@@ -116,19 +116,47 @@ p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetable", description
 p25.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'tomatoes.jpg')), filename: 'tomatoes.jpg', content_type: 'tomatoes.png')
 p25.save!
 
-# Order.create(user_id: 1)
-# Order.create(user_id: 2)
-# Order.create(user_id: 3)
 
-# Purchase.create(product_id: 1, order_id: 1)
-# Purchase.create(product_id: 2, order_id: 1)
-# Purchase.create(product_id: 8, order_id: 1)
-# Purchase.create(product_id: 10, order_id: 1)
+# seeds for Users // Orders // Purchases
 
-# Purchase.create(product_id: 3, order_id: 2)
-# Purchase.create(product_id: 4, order_id: 2)
-# Purchase.create(product_id: 5, order_id: 2)
+u1 = User.new(email: "aurelie@gmail.com", password: "aurelie@gmail.com", username: "Aurélie", category: "Private person")
+u1.save!
+o1 = Order.new(user_id: u1.id)
+o1.save!
+pc1 = Purchase.new(product_id: p21.id, order_id: o1.id)
+pc1.save!
+pc2 = Purchase.new(product_id: p20.id, order_id: o1.id)
+pc2.save!
+o1.update!(total_price: p20.price + p21.price)
 
-# Purchase.create(product_id: 6, order_id: 3)
-# Purchase.create(product_id: 7, order_id: 3)
-# Purchase.create(product_id: 9, order_id: 3)
+u2 = User.new(email: "guillaume@gmail.com", password: "guillaume@gmail.com", username: "Guillaume", category: "Private person")
+u2.save!
+o2 = Order.new(user_id: u2.id)
+o2.save!
+pc3 = Purchase.new(product_id: p18.id, order_id: o2.id)
+pc3.save!
+pc4 = Purchase.new(product_id: p7.id, order_id: o2.id)
+pc4.save!
+o2.update!(total_price: p18.price + p7.price)
+
+u3 = User.new(email: "the_hunger_project@gmail.com", password: "the_hunger_project@gmail.com", username: "The Hunger Project", category: "Association")
+u3.save!
+o3 = Order.new(user_id: u7.id)
+o3.save!
+pc5 = Purchase.new(product_id: p6.id, order_id: o7.id)
+pc5.save!
+pc6 = Purchase.new(product_id: p9.id, order_id: o7.id)
+pc6.save!
+o3.update!(total_price: p6.price + p9.price)
+
+u4 = User.new(email: "unicef@gmail.com", password: "unicef@gmail.com", username: "Unicef", category: "Association")
+u4.save!
+o4 = Order.new(user_id: u8.id)
+o4.save!
+pc7 = Purchase.new(product_id: p24.id, order_id: o8.id)
+pc7.save!
+pc8 = Purchase.new(product_id: p23.id order_id: o8.id)
+pc8.save!
+pc9 = Purchase.9ew(product_id: p25.id, order_id: o8.id)
+pc8.save!
+o4.update!(total_price: p24.price + p25.price + p23.id)
