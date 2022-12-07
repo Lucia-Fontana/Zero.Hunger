@@ -1,15 +1,10 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-  has_one_attached :photo
 
-  # def index
-  #   if params[:query].present?
-  #     @products = Product.where("name ILIKE ? OR description ILIKE ? OR category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
-  #     @products = Product.all if @products.length.zero?
-  #   else
-  #     @products = Product.all
-  #   end
-  # end
+  skip_before_action :authenticate_user!, only: :index
+
+  def show
+    @product = Product.find(params[:id])
+  end
 
   def index
     if params[:query].present?
@@ -32,5 +27,4 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :category, :description, :price, :deadline, :business_id, :photo)
   end
-
 end
