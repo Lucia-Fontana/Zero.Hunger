@@ -6,7 +6,20 @@
       <div class="image-product">
         <%= cl_image_tag @product.photo.key, height: 400, width: 500, crop: :fill, class: "product-image" %>
       </div>
-      <div class="product">
+
+      <div class="product-description">
+        <div>
+        <div class="">
+        <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <%# <%= button_to "Add to cart",  {controller: "purchases", action: "create", method: "post"}, product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
+          <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id] }, remote: true, id: "buy-button", class: "btn btn-gradient show-button %>
+        </div>
+      </div>
+          <%= @product.description %>
+        </div>
+        <p class="price">Amount: <%= humanized_money_with_symbol(@product.price) %></p>
+
+      <!--- <div class="product">
         <div class="product-description">
           <%= button_to "Add to cart", product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
           <%= @product.deadline %>
@@ -15,7 +28,8 @@
         </div>
         <div class="price">
             <%= @product.price.round %> €
-        </div>
+        </div> --->
+
       </div>
     </div>
     <div class="location">

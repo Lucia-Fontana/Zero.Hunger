@@ -7,4 +7,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :deadline, presence: true
   has_one_attached :photo
+  monetize :price_cents
 end
