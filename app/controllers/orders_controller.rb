@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @purchase = Purchase.find(params[:purchase_id])
   end
 
   def create
@@ -29,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
   private
-
+  
   def purchase_params
     params.require(:purchase).permit(:user_id)
   end

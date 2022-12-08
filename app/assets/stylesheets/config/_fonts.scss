@@ -3,8 +3,8 @@
 @import "colors";
 
 // Define fonts for body and headers
-$body-font: "Quicksand", "sans-serif";
-$headers-font: "Quicksand", "sans-serif";
+$body-font: "Quicksand", sans-serif;
+$headers-font: "Quicksand", sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -59,7 +59,7 @@ h5 {
 // for all the <p> text on light background
 p.dark {
   font-family: $body-font;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: light;
   color: $dark-green;
 }
@@ -67,7 +67,7 @@ p.dark {
 // for all the <p> text on darker background
 p.light {
   font-family: $body-font;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: light;
   color: white;
 }

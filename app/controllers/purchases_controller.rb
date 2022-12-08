@@ -4,7 +4,8 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find(@purchases.orders.users == current_user)
+
   end
 
   def create
@@ -36,8 +37,16 @@ class PurchasesController < ApplicationController
       )
       @purchase.order.update(checkout_session_id: session.id)
       redirect_to new_order_payment_path(@purchase.order)
+    
+    # @order = Order.find(params[:order_id])
+    # @product = Product.find(params[:product_id])
+    # @purchase = Purchase.new(purchase_params)
+    # @purchase.order = @order
+    # @purchase.product = @product
+    #if @purchase.save
+    #  redirect_to user_path(@purchase.user_id)
 
-    else
+     else
       # create an order, create the associated purchase and session stripe for the order
       # change order with checkout_id
       @product = Product.find(params[:product_id])
@@ -46,6 +55,8 @@ class PurchasesController < ApplicationController
     end
   end
 
+  private
+  
   def purchase_params
     params.require(:purchase).permit(:order_id, :product_id)
   end

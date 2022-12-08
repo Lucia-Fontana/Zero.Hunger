@@ -6,40 +6,32 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "What are you looking for ?"
+        placeholder: "Change location"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn-green" %>
     <% end %>
   </div>
 
 
 <%# This is the filter by product type icons %>
-  <div class= "type-icons">
-    <%= link_to(controller: 'products', action: 'index', query: 'fruit') do %>
-      <%= image_tag "3194766.png", class: "type-icon" %>
-      <p>Fruits</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'vegetable') do %>
-      <%= image_tag "2153788.png", class: "type-icon" %>
-      <p>Vegetables</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'carbohydrate') do %>
-      <%= image_tag "6764230.png", class: "type-icon" %>
-      <p>Carbs</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'dairy') do %>
-      <%= image_tag "3050158.png", class: "type-icon" %>
-      <p>Dairy</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'meat') do %>
-      <%= image_tag "2738733.png", class: "type-icon" %>
-      <p>Meat & Fish</p>
-    <% end %>
-    <%= link_to(controller: 'products', action: 'index', query: 'drink') do %>
-      <%= image_tag "3050153.png", class: "type-icon" %>
-      <p>Drinks</p>
-    <% end %>
-  </div>
+  <div data-controller="filter">
+    <div class= "type-icons">
+
+      <div data-action="click->filter#fruit">
+        <div class="iconborder">
+          <%= image_tag "3194766.png", class: "type-icon", data: {filter_target: "fruitFilter"} %>
+        </div>
+        <p>Fruits</p>
+      </div>
+
+      <div data-action="click->filter#vegetable">
+        <div class="iconborder">
+          <%= image_tag "2153788.png", class: "type-icon", data: {filter_target: "vegetableFilter"} %>
+        </div>
+        <p>Vegetables</p>
+      </div>
+
+
 
 <%# This is the list of products to display %>
   <div class="product-list">
@@ -47,7 +39,47 @@
       <%= link_to product_path(product) do %>
         <%= render "card", product: product %>
         <p>Amount: <%= humanized_money_with_symbol(product.price) %></p>
+
+      <div data-action="click->filter#carbohydrate">
+        <div class="iconborder">
+          <%= image_tag "6764230.png", class: "type-icon", data: {filter_target: "carbohydrateFilter"} %>
+        </div>
+        <p>Carbs</p>
+      </div>
+
+
+      <div data-action="click->filter#dairy">
+        <div class="iconborder">
+          <%= image_tag "3050158.png", class: "type-icon", data: {filter_target: "dairyFilter"} %>
+        </div>
+        <p>Dairy</p>
+      </div>
+
+
+      <div data-action="click->filter#meat">
+        <div class="iconborder">
+          <%= image_tag "2738733.png", class: "type-icon", data: {filter_target: "meatFilter"} %>
+        </div>
+        <p>Meat & Fish</p>
+      </div>
+
+
+      <div data-action="click->filter#drink">
+        <div class="iconborder">
+          <%= image_tag "3050153.png", class: "type-icon", data: {filter_target: "drinkFilter"} %>
+        </div>
+        <p>Drinks</p>
+      </div>
+
+    </div>
+
+    <%# This is the list of products to display %>
+    <div class="product-list">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product) do %>
+          <%= render "card", product: product %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
