@@ -2,7 +2,6 @@
   justify-content: space-between;
   background: $body-background;
   align-items: center;
-  margin-bottom: 30px;
   border-bottom: rgb(229, 241, 234) 1px solid;
   position: sticky;
   top: 0;
@@ -13,6 +12,10 @@ li {
   width: 60px;
   height: 60px;
   margin-left: 24px;
+}
+
+#input-searchbar {
+  margin-bottom: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
