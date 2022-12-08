@@ -12,7 +12,7 @@
         <div class="">
         <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <%# <%= button_to "Add to cart",  {controller: "purchases", action: "create", method: "post"}, product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
-          <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id] }, remote: true, id: "buy-button", class: "btn btn-gradient show-button %>
+          <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id] }, remote: true, id: "buy-button", class: "btn btn-gradient show-button" %>
         </div>
       </div>
           <%= @product.description %>
