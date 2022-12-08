@@ -3,6 +3,7 @@
   <h3>Your purchases are waiting for you !</h3>
   <div class="order-infos">
     <p>Order confirmation n°<%= @order.id %></p>
+    <p>Total price: <%= @order.amount.fractional %> <%= @order.amount.symbol %></p>
     <% @user.orders.last.purchases.each do |purchase| %>
       <div class="purchase">
         <div class="purchase-summary">
@@ -26,8 +27,8 @@
     <% end %>
     <div class="confirmation">
       <div class="purchase-summary">
-        <div class="purchase-img-container">
-          <%= image_tag "received-icon.png", class: "purchase-img" %>
+        <div class="confirmation-img-container">
+          <%= image_tag "received-icon.png", class: "confirmation-img" %>
         </div>
         <div class="purchase-location-text">
           <p>You will receive a confirmation email soon with your purchase details</p>
