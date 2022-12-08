@@ -12,6 +12,7 @@
   background-color: #39D0C6;
   color: white;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 a {
@@ -25,7 +26,7 @@ a {
   position: relative;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .location {
@@ -53,23 +54,32 @@ a {
   background-color: white;
   border-radius: 10px;
   width: 100%;
-  height: 400px;
+  height: 100%;
   align-items: left;
   gap: 20px;
-  padding: 20px;;
+  padding: 20px;
 }
 
 .product-description {
   background-color: white;
-  width: 57%;
+  width: 100%;
+  height: 400px;
   color: black;
-  font-size: 20px
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .price {
   font-size: 30px;
   flex-grow: 1;
   color: #39D0C6;
+  text-align: right;
 }
 
 .product-image {
@@ -77,15 +87,15 @@ a {
 }
 
 .right-container-basket {
-  width: 30vw;
+  width: 30%;
   min-height: 30vh;
-  position: sticky;
+  position: relative;
   top: 13vh;
   background-color: rgb(255, 255, 255);
   box-shadow: 10px 10px lightgray;
   border-radius: 10px;
   padding: 30px;
-  z-index: 100;
+  margin-bottom: 100px;
 }
 
 .card-buttons {
@@ -161,6 +171,7 @@ a {
   width: 100%;
   margin-bottom: 10px;
   background-color: #39D0C6;
+  display: inline-block;
 }
 
 .show-button-half {

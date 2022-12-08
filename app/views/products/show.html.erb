@@ -1,7 +1,7 @@
 <div class="main-container">
   <div>
     <h2><%= @product.name %></h2>
-    <%= link_to(controller: 'products', action: 'index') class="previous"><</a>
+    <%= link_to "<", products_path, class:"previous" %>
     <div class="left-container">
       <div class="image-product">
         <%= cl_image_tag @product.photo.key, height: 400, width: 500, crop: :fill, class: "product-image" %>
@@ -9,15 +9,16 @@
 
       <div class="product-description">
         <div>
-        <div class="">
-        <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <%# <%= button_to "Add to cart",  {controller: "purchases", action: "create", method: "post"}, product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
-          <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id] }, remote: true, id: "buy-button", class: "btn btn-gradient show-button" %>
+          <div class="">
+            <div class="product-container">
+              <%# <%= button_to "Add to cart",  {controller: "purchases", action: "create", method: "post"}, product_purchases_path(@product), id: "buy-button", class: "btn btn-gradient show-button" %>
+              <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id] }, remote: true, id: "buy-button", class: "btn btn-gradient show-button" %>
+              <p class="price">Price: <%= humanized_money_with_symbol(@product.price) %></p>
+            </div>
+          </div>
+          <p><%= @product.deadline %></p>
+          <p><%= @product.description %></p>
         </div>
-      </div>
-          <%= @product.description %>
-        </div>
-        <p class="price">Amount: <%= humanized_money_with_symbol(@product.price) %></p>
 
       <!--- <div class="product">
         <div class="product-description">
