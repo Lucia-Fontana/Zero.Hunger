@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_151651) do
     t.string "state"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
+    t.string "status"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
