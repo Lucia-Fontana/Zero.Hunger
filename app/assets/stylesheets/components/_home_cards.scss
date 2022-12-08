@@ -1,0 +1,28 @@
+.home-cards {
+  margin-left: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  padding: 0 230px;
+  margin-bottom: 30px;
+  align-content: center;
+}
+
+.home-card {
+  background-color: white;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 30px;
+  border: 1px solid rgb(230,230,230);
+}
+
+.home-card img {
+  height: 100px;
+  width: 100%;
+}
+
+.home-card {
+  text-align: center;
+}
