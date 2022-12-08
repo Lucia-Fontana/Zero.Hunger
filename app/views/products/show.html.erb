@@ -1,7 +1,7 @@
 <div class="main-container">
   <div>
     <h2><%= @product.name %></h2>
-    <a href="#" class="previous"><</a>
+    <%= link_to(controller: 'products', action: 'index') class="previous"><</a>
     <div class="left-container">
       <div class="image-product">
         <%= cl_image_tag @product.photo.key, height: 400, width: 500, crop: :fill, class: "product-image" %>
@@ -40,9 +40,8 @@
       </div>
     </div>
   </div>
-  <div class="right-container-basket">
-    <div class="basket">
-      <%= render 'purchases/show'%>
+    <div class="right-container-basket">
+      <div class="basket">
+      </div>
     </div>
-  </div>
 </div>
