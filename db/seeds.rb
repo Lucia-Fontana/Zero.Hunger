@@ -20,27 +20,42 @@ User.destroy_all
 business1 = Business.new(address: "129-133 Kingsway, London WC2B 6NH", name: "Sainsbury's")
 business1.save!
 
-p1 = Product.new(name: "Banana", price: 1, category: "Fruit", description: "This is the description of the Banana", deadline: Date.tomorrow, business_id: business1.id)
+p1 = Product.new(name: "Banana", price: 2, category: "Fruits", description: "3 kilos of Bananas", deadline: Date.tomorrow, business_id: business1.id)
 p1.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bananes.jpg')), filename: 'bananes.jpg', content_type: 'bananes.png')
 p1.save!
-p2 = Product.new(name: "Apple", price: 2, category: "Fruit", description: "This is the description of the Apple", deadline: Date.tomorrow, business_id: business1.id)
+p2 = Product.new(name: "Apple", price: 2, category: "Fruits", description: "Two kilos of apples", deadline: Date.tomorrow, business_id: business1.id)
 p2.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apples.jpg')), filename: 'apples.jpg', content_type: 'apples.png')
 p2.save!
-p3 = Product.new(name: "Bread", price: 3, category: "Carbohydrate", description: "This is the description of the Bread", deadline: Date.tomorrow, business_id: business1.id)
+p3 = Product.new(name: "Bread", price: 3, category: "Carbohydrates", description: "Five breads", deadline: Date.tomorrow, business_id: business1.id)
 p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bread.JPG')), filename: 'bread.JPG', content_type: 'bread.png')
 p3.save!
-p4 = Product.new(name: "Milk", price: 5, category: "Dairy", description: "This is the description of the Milk", deadline: Date.tomorrow, business_id: business1.id)
+p4 = Product.new(name: "Milk", price: 5, category: "Dairy", description: "Ten bottles of milk", deadline: Date.tomorrow, business_id: business1.id)
 p4.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'milk.jpg')), filename: 'milk.jpg', content_type: 'milk.png')
 p4.save!
-p5 = Product.new(name: "Butter", price: 5, category: "Dairy", description: "This is the description of the Butter", deadline: Date.tomorrow, business_id: business1.id)
+p5 = Product.new(name: "Butter", price: 5, category: "Dairy", description: "French butter, origin Normandy", deadline: Date.tomorrow, business_id: business1.id)
 p5.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'butter.png')), filename: 'butter.png', content_type: 'butter.png')
 p5.save!
+p26 = Product.new(name: "Artichokes", price: 10, category: "Vegetables", description: "10 artichokes", deadline: Date.tomorrow, business_id: business1.id)
+p26.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'artichokes.jpg')), filename: 'artichokes.jpg', content_type: 'artichokes.png')
+p26.save!
+p27 = Product.new(name: "Beetroots", price: 2, category: "Vegetables", description: "3 kilos of beetroots", deadline: Date.tomorrow, business_id: business1.id)
+p27.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'beetroots.jpg')), filename: 'beetroots.jpg', content_type: 'beetroots.png')
+p27.save!
+p28 = Product.new(name: "Lamb", price: 10, category: "Meat & Fish", description: "Two kilos of lamb meat", deadline: Date.tomorrow, business_id: business1.id)
+p28.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'lamb.jpg')), filename: 'lamb.jpg', content_type: 'lamb.png')
+p28.save!
+p29 = Product.new(name: "Orange Juice", price: 2, category: "Drinks", description: "Three bottles of Orange Juice", deadline: Date.tomorrow, business_id: business1.id)
+p29.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.png')), filename: 'orange-juice.png', content_type: 'orange-juice.png')
+p29.save!
+p29 = Product.new(name: "Grape Juice", price: 4, category: "Drinks", description: "Four liters of Grape Juice", deadline: Date.tomorrow, business_id: business1.id)
+p29.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'grape-juice.png')), filename: 'grape-juice.png', content_type: 'grape-juice.png')
+p29.save!
 
 # business 2 creation + products
 business2 = Business.new(address: "58-66 Market St, Manchester M1 1PW", name: "Tesco Express")
 business2.save!
 
-p6 = Product.new(name: "St Amour", price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business2.id)
+p6 = Product.new(name: "St Amour", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business2.id)
 p6.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'st-amour.jpg')), filename: 'st-amour.jpg', content_type: 'st-amour.png')
 p6.save!
 p7 = Product.new(name: "Mackerel", price: 9, category: "Fish", description: "This is the description of the Mackerel", deadline: Date.tomorrow, business_id: business2.id)
@@ -55,6 +70,15 @@ p9.save!
 p10 = Product.new(name: "Broccoli", price: 8, category: "Vegetable", description: "This is the description of the Broccoli", deadline: Date.tomorrow, business_id: business2.id)
 p10.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'broccoli.jpg')), filename: 'broccoli.jpg', content_type: 'broccoli.png')
 p10.save!
+p30 = Product.new(name: "Cherries", price: 8, category: "Fruits", description: "3 kilos of cherries", deadline: Date.tomorrow, business_id: business1.id)
+p30.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'cherries.jpg')), filename: 'cherries.jpg', content_type: 'cherries.png')
+p30.save!
+p31 = Product.new(name: "Coconuts", price: 3, category: "Fruits", description: "5 coconuts", deadline: Date.tomorrow, business_id: business1.id)
+p31.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'coconuts.png')), filename: 'coconuts.png', content_type: 'coconuts.png')
+p31.save!
+p32 = Product.new(name: "Apple Juice", price: 4, category: "Drinks", description: "Four liters of Apple Juice", deadline: Date.tomorrow, business_id: business1.id)
+p32.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.png')), filename: 'apple-juice.png', content_type: 'apple-juice.png')
+p32.save!
 
 # business 3 creation + products
 business3 = Business.new(address: "Corso Italia, 13, 20122 Milano MI", name: "Supermercato Carrefour Market")
