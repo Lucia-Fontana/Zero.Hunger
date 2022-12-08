@@ -5,8 +5,25 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find(@purchases.orders.users == current_user)
-
   end
+
+  def new
+    # just id because purchase is nested into products
+    @product = Product.find(params[:id])
+    # need order_id because orders are not nested into products, nor purchases
+    @order = Order.find(params[:order_id])
+  end
+
+  # def create
+    # if order_status == "open"
+      # @purchase = Purchase.new(purchase_params)
+      # if @purchase.save
+        # redirect_to user_path(@purchase.user_id)
+      # else
+        # render :new, status: :unprocessable_entity
+      # end
+    # else
+      # redirect_to products_path
 
   def create
     @user = current_user
@@ -37,7 +54,7 @@ class PurchasesController < ApplicationController
       )
       @purchase.order.update(checkout_session_id: session.id)
       redirect_to new_order_payment_path(@purchase.order)
-    
+
     # @order = Order.find(params[:order_id])
     # @product = Product.find(params[:product_id])
     # @purchase = Purchase.new(purchase_params)
@@ -56,8 +73,14 @@ class PurchasesController < ApplicationController
   end
 
   private
-  
+
   def purchase_params
     params.require(:purchase).permit(:order_id, :product_id)
   end
+
+  # def order_status
+    # @user = current_user
+    # we need to check if there is any opened order for the current user
+    # @user.orders.last.status
+  # end
 end
