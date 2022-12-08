@@ -64,7 +64,7 @@
 }
 
 .displayed {
-  display: flex;
+  display: flex !important;
 }
 
 .active-filter {

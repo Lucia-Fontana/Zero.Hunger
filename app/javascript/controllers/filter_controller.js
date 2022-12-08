@@ -14,8 +14,8 @@ export default class extends Controller {
     console.log(displayedCards)
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      console.log(card)
-      if (card.classList[1] == "Fruit" ) {
+      console.log(card.firstElementChild.classList[1])
+      if (card.firstElementChild.classList[1] == "Fruit" ) {
         card.classList.toggle("displayed")
       }
     })
@@ -26,7 +26,7 @@ export default class extends Controller {
     const filterIcon = this.vegetableFilterTarget
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      if (card.classList[1] == "Vegetable" ) {
+      if (card.firstElementChild.classList[1] == "Vegetable" ) {
         card.classList.toggle("displayed")
       }
     })
@@ -37,7 +37,7 @@ export default class extends Controller {
     const filterIcon = this.carbohydrateFilterTarget
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      if (card.classList[1] == "Carbohydrate" ) {
+      if (card.firstElementChild.classList[1] == "Carbohydrate" ) {
         card.classList.toggle("displayed")
       }
     })
@@ -48,7 +48,7 @@ export default class extends Controller {
     const filterIcon = this.dairyFilterTarget
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      if (card.classList[1] == "Dairy" ) {
+      if (card.firstElementChild.classList[1] == "Dairy" ) {
         card.classList.toggle("displayed")
       }
     })
@@ -59,7 +59,7 @@ export default class extends Controller {
     const filterIcon = this.meatFilterTarget
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      if ((card.classList[1] == "Meat") || (card.classList[1] == "Fish")) {
+      if ((card.firstElementChild.classList[1] == "Meat") || (card.firstElementChild.classList[1] == "Fish")) {
         card.classList.toggle("displayed")
       }
     })
@@ -70,7 +70,7 @@ export default class extends Controller {
     const filterIcon = this.drinkFilterTarget
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
-      if (card.classList[1] == "Drink" ) {
+      if (card.firstElementChild.classList[1] == "Drink" ) {
         card.classList.toggle("displayed")
       }
     })
