@@ -127,7 +127,7 @@ pc1 = Purchase.new(product_id: p21.id, order_id: o1.id)
 pc1.save!
 pc2 = Purchase.new(product_id: p20.id, order_id: o1.id)
 pc2.save!
-o1.update!(total_price: p20.price + p21.price)
+o1.update!(amount_cents: p20.price + p21.price)
 
 u2 = User.new(email: "guillaume@gmail.com", password: "guillaume@gmail.com", username: "Guillaume", category: "Private person")
 u2.save!
@@ -137,7 +137,7 @@ pc3 = Purchase.new(product_id: p18.id, order_id: o2.id)
 pc3.save!
 pc4 = Purchase.new(product_id: p7.id, order_id: o2.id)
 pc4.save!
-o2.update!(total_price: p18.price + p7.price)
+o2.update!(amount_cents: p18.price + p7.price)
 
 u3 = User.new(email: "the_hunger_project@gmail.com", password: "the_hunger_project@gmail.com", username: "The Hunger Project", category: "Association")
 u3.save!
@@ -147,7 +147,7 @@ pc5 = Purchase.new(product_id: p6.id, order_id: o3.id)
 pc5.save!
 pc6 = Purchase.new(product_id: p9.id, order_id: o3.id)
 pc6.save!
-o3.update!(total_price: p6.price + p9.price)
+o3.update!(amount_cents: p6.price + p9.price)
 
 u4 = User.new(email: "unicef@gmail.com", password: "unicef@gmail.com", username: "Unicef", category: "Association")
 u4.save!
@@ -159,4 +159,4 @@ pc8 = Purchase.new(product_id: p23.id, order_id: o4.id)
 pc8.save!
 pc9 = Purchase.new(product_id: p25.id, order_id: o4.id)
 pc9.save!
-o4.update!(total_price: p24.price + p23.price + p25.id)
+o4.update!(amount_cents: p24.price + p23.price + p25.price)
