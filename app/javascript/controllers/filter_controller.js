@@ -12,9 +12,9 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.fruitFilterTarget
     console.log(displayedCards)
-    console.log(filterIcon)
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
+      console.log(card)
       if (card.classList[1] == "Fruit" ) {
         card.classList.toggle("displayed")
       }
@@ -24,7 +24,6 @@ export default class extends Controller {
   vegetable() {
     const displayedCards = this.cardTargets
     const filterIcon = this.vegetableFilterTarget
-    console.log(filterIcon)
     filterIcon.classList.toggle("active-filter")
     displayedCards.forEach((card) => {
       if (card.classList[1] == "Vegetable" ) {
