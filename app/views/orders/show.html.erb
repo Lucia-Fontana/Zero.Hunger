@@ -1,36 +1,38 @@
-<%# Review style from lecture - Edit order page %>
-<div class=basket-container>
-
-  <div class=basket-title>
-    <h1>Basket</h1>
-    <%# <%= link_to "Back to the shop", lists_path%>
-  </div>
-
-  <div class=basket-body>
-
-    <div class=row>
-      <div class="col-lg-8">
-
-          <div class="backet-card-product">
-            <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-              <div class="backet-card-product-infos">
-                <% @user.purchases.each do |purchase| %>
-                  <%= purchase.product.business.name %>
-                    <% @user.purchases.each do |purchase| %>
-                    <%= purchase.product.name %>
-                    <%= purchase.product.price %>
-                    <%= purchase.product.category %>
-                  <% end %>
-                <% end %>
-              </div>
+<div class="container">
+  <h2>Thank you <%= @user.username %> !</h2>
+  <h3>Your purchases are waiting for you !</h3>
+  <div class="order-infos">
+    <p>Order confirmation n°<%= @order.id %></p>
+    <% @user.orders.last.purchases.each do |purchase| %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
           </div>
+          <div class="purchase-location-text">
+            <p>Pick-up location:</p>
+            <p><%= purchase.product.business.name %>, <%= purchase.product.business.address %></p>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <p>Total amount <%= purchase.product.price.fractional/100 %> <%= purchase.product.price.currency.symbol %></p>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-4">
-        <%= link_to "Checkout" %>
+    <% end %>
+    <div class="confirmation">
+      <div class="purchase-summary">
+        <div class="purchase-img-container">
+          <%= image_tag "received-icon.png", class: "purchase-img" %>
+        </div>
+        <div class="purchase-location-text">
+          <p>You will receive a confirmation email soon with your purchase details</p>
+        </div>
       </div>
-
     </div>
-
   </div>
 </div>
