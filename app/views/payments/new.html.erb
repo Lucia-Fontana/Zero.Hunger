@@ -1,12 +1,141 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <% @order.products.each do |product| %>
-      <strong><%= product.name %></strong>
-      <% end %>
-      for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+
+  <div class="checkout">
+    <%= link_to products_path, class: "navbar-brand" do %>
+      <a href="#" class="previous"><</a>
+    <% end %>
+    <h3>Checkout summary</h3>
+  </div>
+
+<%# retailer 1 %>
+      <div class="card-business">
+        <h5>Sainsbury's</h5>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Sainsbury's" %>
+
+            <div class="card-item_image">
+                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            </div>
+
+            <div class="card-item-information">
+              <p><%= product.name %></p>
+
+              <%= link_to products_path, class: "navbar-brand" do %>
+                <a href="#" class="card-link">Details</a>
+              <% end %>
+            </div>
+
+            <div class="card-item-actions">
+              <p><%= product.price %></p>
+            </div>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 2 %>
+      <div class="card-business">
+        <h5>Supermercato Carrefour Market</h5>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Supermercato Carrefour Market" %>
+
+            <div class="card-item_image">
+                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            </div>
+
+            <div class="card-item-information">
+              <p><%= product.name %></p>
+              <button>
+            </div>
+
+            <div class="card-item-actions">
+              <p><%= product.price %></p>
+            </div>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 3 %>
+      <div class="card-business">
+        <h5>Carrefour City</h5>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Carrefour City" %>
+
+            <div class="card-item_image">
+                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            </div>
+
+            <div class="card-item-information">
+              <p><%= product.name %></p>
+              <button>
+            </div>
+
+            <div class="card-item-actions">
+              <p><%= product.price %></p>
+            </div>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 4 %>
+      <div class="card-business">
+        <h5>Tesco Express</h5>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Tesco Express" %>
+
+            <div class="card-item_image">
+                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            </div>
+
+            <div class="card-item-information">
+              <p><%= product.name %></p>
+              <button>
+            </div>
+
+            <div class="card-item-actions">
+              <p><%= product.price %></p>
+            </div>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 5 %>
+      <div class="card-business">
+        <h5>Auchan</h5>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Auchan" %>
+
+            <div class="card-item_image">
+                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            </div>
+
+            <div class="card-item-information">
+              <p><%= product.name %></p>
+              <button>
+            </div>
+
+            <div class="card-item-actions">
+              <p><%= product.price %></p>
+            </div>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
 
       <script src="https://js.stripe.com/v3/"></script>
