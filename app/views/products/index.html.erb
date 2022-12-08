@@ -31,15 +31,6 @@
         <p>Vegetables</p>
       </div>
 
-
-
-<%# This is the list of products to display %>
-  <div class="product-list">
-    <% @products.each do |product| %>
-      <%= link_to product_path(product) do %>
-        <%= render "card", product: product %>
-        <p>Amount: <%= humanized_money_with_symbol(product.price) %></p>
-
       <div data-action="click->filter#carbohydrate">
         <div class="iconborder">
           <%= image_tag "6764230.png", class: "type-icon", data: {filter_target: "carbohydrateFilter"} %>

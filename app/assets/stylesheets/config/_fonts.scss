@@ -21,7 +21,7 @@ h1 {
   font-family: $headers-font;
   font-size: 64px;
   font-weight: bolder;
-  color: white;
+  color: $body-background;
 }
 
 // only for "vision and purpose" on the home page
@@ -29,7 +29,7 @@ h2 {
   font-family: $headers-font;
   font-size: 48px;
   font-weight: bold;
-  color: white;
+  color: $body-background;
 }
 
 // for all main titles on the pages (ex: Item's Name, Basket, and so on)
