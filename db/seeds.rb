@@ -146,34 +146,34 @@ p16.save!
 p17 = Product.new(name: "Whiting", price: 9, category: "Meat & Fish", description: "Ready to cook for dinner!", deadline: Date.tomorrow, business_id: business4.id)
 p17.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'merlan.jpg')), filename: 'merlan.jpg', content_type: 'merlan.png')
 p17.save!
-p18 = Product.new(name: "Zucchini", price: 3, category: "Vegetables", description: "5 kilos of zucchinis", deadline: Date.tomorrow, business_id: business4.id)
+p18 = Product.new(name: "Zucchini", price: 3, category: "Vegetables", description: "5 kilos of zucchinis, Grown in Jersey, Morocco, Spain, United Kingdom", deadline: Date.tomorrow, business_id: business4.id)
 p18.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'courgettes.jpg')), filename: 'courgettes.jpg', content_type: 'courgettes.png')
 p18.save!
-p19 = Product.new(name: "Pork", price: 15, category: "Meat & Fish", description: "2 kilos of porc, Origin: France", deadline: Date.tomorrow, business_id: business4.id)
+p19 = Product.new(name: "Pork", price: 15, category: "Meat & Fish", description: "2 kilos of porc, Reared by our trusted farmers.", deadline: Date.tomorrow, business_id: business4.id)
 p19.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'porc.jpg')), filename: 'porc.jpg', content_type: 'porc.png')
 p19.save!
-p20 = Product.new(name: "Green beans", price: 8, category: "Vegetables", description: "10kilos of green beans", deadline: Date.tomorrow, business_id: business4.id)
+p20 = Product.new(name: "Green beans", price: 8, category: "Vegetables", description: "10kilos of green beans. Grown in Egypt, Guatemala, Kenya", deadline: Date.tomorrow, business_id: business4.id)
 p20.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'greenbeans.jpg')), filename: 'greenbeans.jpg', content_type: 'greenbeans.png')
 p20.save!
-p20 = Product.new(name: "Raspberries", price: 8, category: "Fruits", description: "One kilo of delightful raspberries", deadline: Date.tomorrow, business_id: business4.id)
+p20 = Product.new(name: "Raspberries", price: 8, category: "Fruits", description: "One kilo of delightful raspberries. Grown in Kenya, Morocco, Portugal, South Africa, Spain, United Kingdom", deadline: Date.tomorrow, business_id: business4.id)
 p20.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'raspberries.jpg')), filename: 'raspberries.jpg', content_type: 'raspberries.png')
 p20.save!
-p43 = Product.new(name: "Watermelons", price: 8, category: "Fruits", description: "Five watermelons", deadline: Date.tomorrow, business_id: business4.id)
+p43 = Product.new(name: "Watermelons", price: 8, category: "Fruits", description: "Five watermelons. 1 of your 5 a day: 80g of Watermelon counts as 1 of your 5 a-day. Aim for at least 5 different portions of fruit and veg a day. Fresh, frozen, dried, canned and juice all count.", deadline: Date.tomorrow, business_id: business4.id)
 p43.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'watermelons.png')), filename: 'watermelons.png', content_type: 'watermelons.png')
 p43.save!
-p44 = Product.new(name: "Camembert", price: 8, category: "Dairy", description: "Five watermelons", deadline: Date.tomorrow, business_id: business4.id)
+p44 = Product.new(name: "Camembert", price: 8, category: "Dairy", description: "10 Camemberts. Full fat soft cheese made from pasteurised cow's milk. Take the Camembert out of the fridge about 30min before eating to allow the cheese to come to room temperature and be at its best.", deadline: Date.tomorrow, business_id: business4.id)
 p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'camembert.png')), filename: 'camembert.png', content_type: 'camembert.png')
 p44.save!
-p45 = Product.new(name: "Fruit Compote", price: 8, category: "Dairy", description: "Five watermelons", deadline: Date.tomorrow, business_id: business4.id)
+p45 = Product.new(name: "Fruit Compote", price: 8, category: "Dairy", description: "Suitable for Vegetarians. Free From Artificial Sweeteners. Free from Colours.", deadline: Date.tomorrow, business_id: business4.id)
 p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'compotes.png')), filename: 'compotes.png', content_type: 'compotes.png')
 p45.save!
-p46 = Product.new(name: "Brioche", price: 3, category: "Carbohydrates", description: "Five packets of Brioche", deadline: Date.tomorrow, business_id: business1.id)
+p46 = Product.new(name: "Brioche", price: 3, category: "Carbohydrates", description: "Five packets of Brioche. Great with your favourite sweet or savoury fillings. Made with our authentic 'levain' to give its unique taste.", deadline: Date.tomorrow, business_id: business1.id)
 p46.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'brioche.png')), filename: 'brioche.png', content_type: 'brioche.png')
 p46.save!
-p47 = Product.new(name: "Sandwich loaf bread", price: 2, category: "Carbohydrates", description: "Four packets of sandwich loaf bread", deadline: Date.tomorrow, business_id: business1.id)
+p47 = Product.new(name: "Sandwich loaf bread", price: 2, category: "Carbohydrates", description: "Four packets of sandwich loaf bread. Our love of baking runs through generations of our family bakery. Our dedication to taste is a labour of love where we have spent time baking the finest gluten free white loaf which is carefully crafted using a slow and unique bread making technique.", deadline: Date.tomorrow, business_id: business1.id)
 p47.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bread2.png')), filename: 'bread2.png', content_type: 'bread2.png')
 p47.save!
-p48 = Product.new(name: "Pineapple Juice", price: 5, category: "Drinks", description: "Four liters of Pineapple Juice", deadline: Date.tomorrow, business_id: business1.id)
+p48 = Product.new(name: "Pineapple Juice", price: 5, category: "Drinks", description: "Four liters of Pineapple Juice. Made with 100% fruit juice. The secret of our fruity taste… We only select the tastiest fruits to make sure they are bursting with flavour. We squeeze them in the country they are grown and concentrate the juice by removing the water, keeping all the flavour.", deadline: Date.tomorrow, business_id: business1.id)
 p48.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'pineapple-juice.jpg')), filename: 'pineapple-juice.jpg', content_type: 'pineapple-juice.jpg')
 p48.save!
 
@@ -181,37 +181,37 @@ p48.save!
 business5 = Business.new(address: "64 Rue du Chevaleret, 75013 Paris", name: "Auchan")
 business5.save!
 
-p21 = Product.new(name: "Yoghurts", price: 15, category: "Dairy", description: "10 yoghurts to eat before today !", deadline: Date.tomorrow, business_id: business5.id)
+p21 = Product.new(name: "Yoghurts", price: 15, category: "Dairy", description: "10 yoghurts to eat before tomorrow! Contains: milk.", deadline: Date.tomorrow, business_id: business5.id)
 p21.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'yaourts.jpg')), filename: 'yaourts.jpg', content_type: 'yaourts.png')
 p21.save!
-p22 = Product.new(name: "Strawberries", price: 9, category: "Fruits", description: "5 kilos of strawberries", deadline: Date.tomorrow, business_id: business5.id)
+p22 = Product.new(name: "Strawberries", price: 9, category: "Fruits", description: "5 kilos of strawberries. Wash before use. For best flavour, serve at room temperature.", deadline: Date.tomorrow, business_id: business5.id)
 p22.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'fraises.jpg')), filename: 'fraises.jpg', content_type: 'fraises.png')
 p22.save!
-p23 = Product.new(name: "Potatoes", price: 3, category: "Vegetables", description: "5 kilos of potatoes", deadline: Date.tomorrow, business_id: business5.id)
+p23 = Product.new(name: "Potatoes", price: 3, category: "Vegetables", description: "5 kilos of potatoes. Great for boiling. Grown in Cyprus, Egypt, Israel, Jersey, Spain, United Kingdom.", deadline: Date.tomorrow, business_id: business5.id)
 p23.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'potatoes.jpg')), filename: 'potatoes.jpg', content_type: 'potatoes.png')
 p23.save!
-p24 = Product.new(name: "Cheese", price: 15, category: "Dairy", description: "To eat as soon as possible!", deadline: Date.tomorrow, business_id: business5.id)
+p24 = Product.new(name: "Cheese", price: 15, category: "Dairy", description: "To eat as soon as possible! Suitable for Vegetarians.", deadline: Date.tomorrow, business_id: business5.id)
 p24.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'cheese.png')), filename: 'cheese.png', content_type: 'cheese.png')
 p24.save!
-p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetables", description: "5 kilos of tomatoes", deadline: Date.tomorrow, business_id: business5.id)
+p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetables", description: "5 kilos of tomatoes. Full of flavour. Grown in France, Italy, Netherlands, United Kingdom.", deadline: Date.tomorrow, business_id: business5.id)
 p25.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'tomatoes.jpg')), filename: 'tomatoes.jpg', content_type: 'tomatoes.png')
 p25.save!
-p49 = Product.new(name: "Orange Juice", price: 5, category: "Drinks", description: "Four liters of Orange Juice", deadline: Date.tomorrow, business_id: business1.id)
+p49 = Product.new(name: "Orange Juice", price: 5, category: "Drinks", description: "Four liters of Orange Juice. Our exclusive blend of oranges gives a refreshing and balanced orange juice with just the right amount of natural sweetness and acidity with a subtle tang, giving a fresher fruity flavour.", deadline: Date.tomorrow, business_id: business1.id)
 p49.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.jpg')), filename: 'orange-juice.jpg', content_type: 'orange-juice.jpg')
 p49.save!
-p50 = Product.new(name: "Apple Juice", price: 5, category: "Drinks", description: "Four liters of Orange Juice", deadline: Date.tomorrow, business_id: business1.id)
+p50 = Product.new(name: "Apple Juice", price: 5, category: "Drinks", description: "Four liters of Apple Juice. 100% pressed juice.", deadline: Date.tomorrow, business_id: business1.id)
 p50.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.jpg')), filename: 'apple-juice.jpg', content_type: 'apple-juice.jpg')
 p50.save!
-p51 = Product.new(name: "Brioche", price: 3, category: "Carbohydrates", description: "Five packets of Brioche", deadline: Date.tomorrow, business_id: business1.id)
+p51 = Product.new(name: "Brioche", price: 3, category: "Carbohydrates", description: "Five packets of Brioche. Great with your favourite sweet or savoury fillings. Made with our authentic 'levain' to give its unique taste.", deadline: Date.tomorrow, business_id: business1.id)
 p51.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'brioche.png')), filename: 'brioche.png', content_type: 'brioche.png')
 p51.save!
-p52 = Product.new(name: "Mangos", price: 9, category: "Fruits", description: "10 mangos", deadline: Date.tomorrow, business_id: business5.id)
+p52 = Product.new(name: "Mangos", price: 9, category: "Fruits", description: "10 mangos. An 80g of mango counts as 1 of your 5 a-day. Aim for at least 5 different portions of fruit or veg a day. Fresh, frozen, dried, canned and juice all count.", deadline: Date.tomorrow, business_id: business5.id)
 p52.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'mangos.png')), filename: 'mangos.png', content_type: 'mangos.png')
 p52.save!
-p53 = Product.new(name: "Oranges", price: 5, category: "Fruits", description: "Ten kilos of oranges", deadline: Date.tomorrow, business_id: business5.id)
+p53 = Product.new(name: "Oranges", price: 5, category: "Fruits", description: "Ten kilos of oranges. Juicy and refreshing. Grown in Peru, South Africa, Spain, Turkey.", deadline: Date.tomorrow, business_id: business5.id)
 p53.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'oranges.png')), filename: 'oranges.png', content_type: 'oranges.png')
 p53.save!
-p54 = Product.new(name: "Roquefort", price: 3, category: "Dairy", description: "3 packets of Roquefort cheese", deadline: Date.tomorrow, business_id: business5.id)
+p54 = Product.new(name: "Roquefort", price: 3, category: "Dairy", description: "3 packets of Roquefort cheese. Unpasteurised blue cheese made from raw sheep's milk AOP. We are passionate about great tasting food, which is why this Taste the Difference product has been taste tested by a panel of customers, to ensure that we continue to offer you the very best in quality and flavour.", deadline: Date.tomorrow, business_id: business5.id)
 p54.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'roquefort.jpg')), filename: 'roquefort.jpg', content_type: 'roquefort.png')
 p54.save!
 
