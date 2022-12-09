@@ -251,6 +251,7 @@ a {
   flex-direction: column;
   border-bottom: solid 1px rgb(230, 229, 215);
   padding-bottom: 48px;
+  padding-top: 24px;
 }
 
 .purchase-summary {
@@ -275,6 +276,12 @@ a {
   width: 100%;
 }
 
-.confirmation {
-  // TO DO
+.confirmation-img-container {
+  width: 100px;
+  text-align: center;
+  margin-right: 12px;
+}
+
+.confirmation-img {
+  width: 76px;
 }
