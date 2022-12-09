@@ -1,8 +1,13 @@
 <!-- Banner section -->
-  <div class="home-banner" style="background-image: url('<%= asset_path 'background1.jpg' %>');">
+  <div class="home-banner" style="background-image: url('<%= asset_path 'background2.jpg' %>');">
     <div class="home-banner-container">
-      <h1>Zero.Hunger</h1>
-      <h5>Let's build a better world by fighting food waste!</h5>
+      <div class="home-text">
+        <h1>Zero.Hunger</h1>
+      </div>
+      <div class="home-text">
+        <h5>Let's build a better world by fighting food waste!</h5>
+      </div>
+      <div class="home-text">
         <div class="searchbar-home">
           <%= form_with url: products_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
@@ -13,6 +18,7 @@
           <%= image_submit_tag("icons8-search-25.png", class: "btn", id: "input-searchbar")  %>
           <% end %>
         </div>
+      </div>
     </div>
   </div>
 
