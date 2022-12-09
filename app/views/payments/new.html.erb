@@ -1,136 +1,174 @@
 <div class="container">
 
   <div class="checkout">
-    <%= link_to products_path, class: "navbar-brand" do %>
-      <a href="#" class="previous"><</a>
+    <%= link_to products_path, class: "previous" do %>
+      <p><</p>
     <% end %>
     <h3>Checkout summary</h3>
   </div>
 
+
 <%# retailer 1 %>
       <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
         <h5>Sainsbury's</h5>
+      <% end %>
         <div class="card-item">
           <% @order.products.each do |product| %>
             <% if product.business.name == "Sainsbury's" %>
 
-            <div class="card-item_image">
-                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
             </div>
-
-            <div class="card-item-information">
-              <p><%= product.name %></p>
-
-              <%= link_to products_path, class: "navbar-brand" do %>
-                <a href="#" class="card-link">Details</a>
-              <% end %>
-            </div>
-
-            <div class="card-item-actions">
-              <p><%= product.price %></p>
-            </div>
-
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>
 
 <%# retailer 2 %>
       <div class="card-business">
-        <h5>Supermercato Carrefour Market</h5>
+      <% if @order.products.map {|product| product.business.name}.include?("Waitrose & Partners Bloomsbury")%>
+        <h5>Waitrose & Partners Bloomsbury</h5>
+      <% end %>
         <div class="card-item">
           <% @order.products.each do |product| %>
-            <% if product.business.name == "Supermercato Carrefour Market" %>
+            <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
 
-            <div class="card-item_image">
-                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
             </div>
-
-            <div class="card-item-information">
-              <p><%= product.name %></p>
-              <button>
-            </div>
-
-            <div class="card-item-actions">
-              <p><%= product.price %></p>
-            </div>
-
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>
 
 <%# retailer 3 %>
       <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Carrefour City")%>
         <h5>Carrefour City</h5>
+      <% end %>
         <div class="card-item">
           <% @order.products.each do |product| %>
             <% if product.business.name == "Carrefour City" %>
 
-            <div class="card-item_image">
-                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
-            </div>
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
 
-            <div class="card-item-information">
-              <p><%= product.name %></p>
-              <button>
-            </div>
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
 
-            <div class="card-item-actions">
-              <p><%= product.price %></p>
-            </div>
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
 
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>
 
 <%# retailer 4 %>
       <div class="card-business">
-        <h5>Tesco Express</h5>
+      <% if @order.products.map {|product| product.business.name}.include?("Rupert Supermarket")%>
+        <h5>Rupert Supermarket</h5>
+      <% end %>
         <div class="card-item">
           <% @order.products.each do |product| %>
-            <% if product.business.name == "Tesco Express" %>
+            <% if product.business.name == "Rupert Supermarket" %>
 
-            <div class="card-item_image">
-                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
             </div>
-
-            <div class="card-item-information">
-              <p><%= product.name %></p>
-              <button>
-            </div>
-
-            <div class="card-item-actions">
-              <p><%= product.price %></p>
-            </div>
-
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>
 
 <%# retailer 5 %>
       <div class="card-business">
-        <h5>Auchan</h5>
+      <% if @order.products.map {|product| product.business.name}.include?("Superway Supermarket")%>
+        <h5>Superway Supermarket</h5>
+      <% end %>
         <div class="card-item">
           <% @order.products.each do |product| %>
-            <% if product.business.name == "Auchan" %>
+            <% if product.business.name == "Superway Supermarket" %>
 
-            <div class="card-item_image">
-                <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
             </div>
-
-            <div class="card-item-information">
-              <p><%= product.name %></p>
-              <button>
-            </div>
-
-            <div class="card-item-actions">
-              <p><%= product.price %></p>
-            </div>
-
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>

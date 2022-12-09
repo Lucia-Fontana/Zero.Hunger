@@ -50,6 +50,11 @@ class PurchasesController < ApplicationController
         }
       end
 
+      total = 0
+      @purchase.order.purchases.each do |purchase|
+        total += purchase.product.price_cents
+      end
+
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
 
@@ -59,7 +64,7 @@ class PurchasesController < ApplicationController
             product_data: {
               name: @purchase.product.name,
             },
-            unit_amount: @purchase.product.price_cents,
+            unit_amount: total,
           },
           quantity: 1,
         }],
@@ -68,7 +73,7 @@ class PurchasesController < ApplicationController
         cancel_url: order_url(@purchase.order)
       )
 
-      @purchase.order.update(checkout_session_id: session.id)
+      @purchase.order.update(checkout_session_id: session.id, amount_cents: total)
       redirect_to new_order_payment_path(@purchase.order)
 
     # @order = Order.find(params[:order_id])
