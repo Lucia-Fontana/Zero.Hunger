@@ -28,12 +28,32 @@ class PurchasesController < ApplicationController
   def create
     @user = current_user
     # for every purchase, check if the user has a pending order
-    if current_user.orders.last.state == "pending"
+    if current_user&.orders&.last&.state == "pending"
       # create a purchase, new session Stripe, update order with a new session
 
       @purchase = Purchase.new
-      @purchase.order = current_user.orders.last
+      @purchase.order = current_user.orders.where(state: "pending").last
       @purchase.product = Product.find(params[:product_id])
+      @purchase.save!
+
+      line_items = []
+      current_user.orders.where(state: "pending").last.products.each do |product|
+        line_items << {
+          price_data: {
+            currency: 'eur',
+            product_data: {
+              name: product.name,
+            },
+            unit_amount: product.price_cents,
+          },
+          quantity: 1,
+        }
+      end
+
+      total = 0
+      @purchase.order.purchases.each do |purchase|
+        total += purchase.product.price_cents
+      end
 
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
@@ -44,7 +64,7 @@ class PurchasesController < ApplicationController
             product_data: {
               name: @purchase.product.name,
             },
-            unit_amount: @purchase.product.price_cents,
+            unit_amount: total,
           },
           quantity: 1,
         }],
@@ -52,7 +72,8 @@ class PurchasesController < ApplicationController
         success_url: order_url(@purchase.order),
         cancel_url: order_url(@purchase.order)
       )
-      @purchase.order.update(checkout_session_id: session.id)
+
+      @purchase.order.update(checkout_session_id: session.id, amount_cents: total)
       redirect_to new_order_payment_path(@purchase.order)
 
     # @order = Order.find(params[:order_id])
@@ -67,8 +88,9 @@ class PurchasesController < ApplicationController
       # create an order, create the associated purchase and session stripe for the order
       # change order with checkout_id
       @product = Product.find(params[:product_id])
-      @purchase = Purchase.new(purchase_params)
       order  = Order.create!(amount_cents: @product.price, state: 'pending', user: current_user)
+      @purchase = Purchase.create!(product: @product, order: order)
+      redirect_to new_order_payment_path(@purchase.order)
     end
   end
 

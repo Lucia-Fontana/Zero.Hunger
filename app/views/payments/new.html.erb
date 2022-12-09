@@ -1,12 +1,179 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <% @order.products.each do |product| %>
-      <strong><%= product.name %></strong>
+
+  <div class="checkout">
+    <%= link_to products_path, class: "previous" do %>
+      <p><</p>
+    <% end %>
+    <h3>Checkout summary</h3>
+  </div>
+
+
+<%# retailer 1 %>
+      <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
+        <h5>Sainsbury's</h5>
       <% end %>
-      for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Sainsbury's" %>
+
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 2 %>
+      <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Waitrose & Partners Bloomsbury")%>
+        <h5>Waitrose & Partners Bloomsbury</h5>
+      <% end %>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
+
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 3 %>
+      <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Carrefour City")%>
+        <h5>Carrefour City</h5>
+      <% end %>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Carrefour City" %>
+
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 4 %>
+      <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Rupert Supermarket")%>
+        <h5>Rupert Supermarket</h5>
+      <% end %>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Rupert Supermarket" %>
+
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+<%# retailer 5 %>
+      <div class="card-business">
+      <% if @order.products.map {|product| product.business.name}.include?("Superway Supermarket")%>
+        <h5>Superway Supermarket</h5>
+      <% end %>
+        <div class="card-item">
+          <% @order.products.each do |product| %>
+            <% if product.business.name == "Superway Supermarket" %>
+
+            <div class="card-product">
+              <div class="card-item_image">
+                  <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+              </div>
+
+            <div class="card-product-infos">
+              <div class="card-item-information">
+                <p class="dark bold"><%= product.name %></p>
+
+                <%= link_to products_path, class: "navbar-brand" do %>
+                  <a href="#" class="card-link">Details</a>
+                <% end %>
+              </div>
+
+              <div class="card-item-actions">
+                <p><%= product.price %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
 
       <script src="https://js.stripe.com/v3/"></script>

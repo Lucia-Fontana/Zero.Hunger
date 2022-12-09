@@ -1,7 +1,9 @@
 
 <div class="product-card <%= product.category %>">
   <div class="card-image-wrapper">
+  <% if product.photo.attached?%>
     <%= cl_image_tag(product.photo.key, class: "card-image", width: 200, height: 144, crop: :fill) %>
+  <% end %>
   </div>
   <div class="card-infos">
     <h5><%= product.name %></h5>

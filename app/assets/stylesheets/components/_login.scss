@@ -1,0 +1,19 @@
+.contform {
+  max-width: 1600px;
+  height: 75vh;
+}
+
+.img-back{
+  background-image: asset-url("signup-back-4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-position: center center;
+}
+
+.form {
+  //background-color: white;
+  padding: 10px;
+  margin: 80px;
+  border-radius: 10px;
+}
