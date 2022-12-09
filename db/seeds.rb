@@ -96,7 +96,7 @@ p35.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p35.save!
 
 # business 3 creation + products
-business3 = Business.new(address: "Corso Italia, 13, 20122 Milano MI", name: "Supermercato Carrefour Market")
+business3 = Business.new(address: "The Brunswick Centre, 23-39 Handel St, London WC1N 1JX", name: "Waitrose & Partners Bloomsbury")
 business3.save!
 
 p11 = Product.new(name: "St Emilion", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business3.id)
@@ -137,7 +137,7 @@ p42.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p42.save!
 
 # business 4 creation + products
-business4 = Business.new(address: "152 Rue La Fayette, 75010 Paris", name: "Carrefour City")
+business4 = Business.new(address: "55 Rupert St, London W1D 7PJ,", name: "Rupert Supermarket")
 business4.save!
 
 p16 = Product.new(name: "St Amour", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business4.id)
@@ -178,7 +178,7 @@ p48.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p48.save!
 
 # business 5 creation + products
-business5 = Business.new(address: "64 Rue du Chevaleret, 75013 Paris", name: "Auchan")
+business5 = Business.new(address: "16 London Rd, Elephant and Castle, London SE1 6JZ,", name: "Superway Supermarket")
 business5.save!
 
 p21 = Product.new(name: "Yoghurts", price: 15, category: "Dairy", description: "10 yoghurts to eat before tomorrow! Contains: milk.", deadline: Date.tomorrow, business_id: business5.id)
