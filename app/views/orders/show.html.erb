@@ -6,6 +6,7 @@
     <p>Total price: <%= @order.amount.fractional %> <%= @order.amount.symbol %></p>
     <% @user.orders.last.purchases.each do |purchase| %>
       <div class="purchase">
+        <h5><%= purchase.product.name %></h5>
         <div class="purchase-summary">
           <div class="purchase-img-container">
             <%= image_tag "map-icon.png", class: "purchase-img" %>
