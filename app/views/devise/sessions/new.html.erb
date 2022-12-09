@@ -4,7 +4,7 @@
       <div class="card-body p-5">
 
         <%= image_tag "signup-icon.png", class: "signup" %>
-        <h2 class="header-login">Log in</h2>
+        <h2 class="header-signup">Log in</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
 
@@ -22,10 +22,13 @@
             <div class="form-actions">
               <%= f.button :submit, "Log in" %>
             </div>
+
+            <div>
+            <%= render "devise/shared/links" %>
+            </div>
+
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-<%= render "devise/shared/links" %>
