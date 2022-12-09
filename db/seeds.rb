@@ -44,10 +44,10 @@ p27.save!
 p28 = Product.new(name: "Lamb Steaks", price: 10, category: "Meat & Fish", description: "Two kilos of lamb steaks. Reared by our trusted farmers", deadline: Date.tomorrow, business_id: business1.id)
 p28.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'lamb.jpg')), filename: 'lamb.jpg', content_type: 'lamb.png')
 p28.save!
-p29 = Product.new(name: "Orange Juice", price: 2, category: "Drinks", description: "Three bottles of Orange Juice. 100% squeezed juice.", deadline: Date.tomorrow, business_id: business1.id)
+p29 = Product.new(name: "Orange Juice", price: 2, category: "Drink", description: "Three bottles of Orange Juice. 100% squeezed juice.", deadline: Date.tomorrow, business_id: business1.id)
 p29.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.png')), filename: 'orange-juice.png', content_type: 'orange-juice.png')
 p29.save!
-p29 = Product.new(name: "Grape Juice", price: 4, category: "Drinks", description: "Four liters of Grape Juice. Typical Values 100g contains : Energy 271 kJ/64 kcal.", deadline: Date.tomorrow, business_id: business1.id)
+p29 = Product.new(name: "Grape Juice", price: 4, category: "Drink", description: "Four liters of Grape Juice. Typical Values 100g contains : Energy 271 kJ/64 kcal.", deadline: Date.tomorrow, business_id: business1.id)
 p29.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'grape-juice.png')), filename: 'grape-juice.png', content_type: 'grape-juice.png')
 p29.save!
 p55 = Product.new(name: "Leeks", price: 4, category: "Vegetable", description: "Five kilos of leeks. Eating plenty of fruit and Vegetable is one of the most important dietary changes needed to improve your diet and health. Aim for at least 5 different portions of fruit or veg a day, they contain nutrients vital for health. fresh, frozen, dried, canned and juice all count.", deadline: Date.tomorrow, business_id: business1.id)
@@ -61,7 +61,7 @@ p56.save!
 business2 = Business.new(address: "17-25 Regent St., St. James's, London SW1Y 4LR", name: "Tesco Express")
 business2.save!
 
-p6 = Product.new(name: "St Amour", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business2.id)
+p6 = Product.new(name: "St Amour", price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business2.id)
 p6.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'st-amour.jpg')), filename: 'st-amour.jpg', content_type: 'st-amour.png')
 p6.save!
 p7 = Product.new(name: "Mackerel", price: 9, category: "Meat & Fish", description: "100% of our mackerel is British, wild-caught British and High in Omega 3 ", deadline: Date.tomorrow, business_id: business2.id)
@@ -82,7 +82,7 @@ p30.save!
 p31 = Product.new(name: "Coconuts", price: 3, category: "Fruit", description: "5 coconuts, origin Spain.", deadline: Date.tomorrow, business_id: business1.id)
 p31.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'coconuts.png')), filename: 'coconuts.png', content_type: 'coconuts.png')
 p31.save!
-p32 = Product.new(name: "Apple Juice", price: 4, category: "Drinks", description: "Four liters of Apple Juice. Made with 100% fruit.", deadline: Date.tomorrow, business_id: business1.id)
+p32 = Product.new(name: "Apple Juice", price: 4, category: "Drink", description: "Four liters of Apple Juice. Made with 100% fruit.", deadline: Date.tomorrow, business_id: business1.id)
 p32.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.png')), filename: 'apple-juice.png', content_type: 'apple-juice.png')
 p32.save!
 p33 = Product.new(name: "Pastas", price: 3, category: "Carbohydrate", description: "Ten kilos of pastas. Traditional production methods that stay true to our over 125 years old family recipe", deadline: Date.tomorrow, business_id: business1.id)
@@ -99,7 +99,7 @@ p35.save!
 business3 = Business.new(address: "The Brunswick Centre, 23-39 Handel St, London WC1N 1JX", name: "Waitrose & Partners Bloomsbury")
 business3.save!
 
-p11 = Product.new(name: "St Emilion", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business3.id)
+p11 = Product.new(name: "St Emilion", price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business3.id)
 p11.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'st-emilion.jpg')), filename: 'st-emilion.jpg', content_type: 'st-emilion.png')
 p11.save!
 p12 = Product.new(name: "Salmon", price: 9, category: "Meat & Fish", description: "Ready to cook for dinner!", deadline: Date.tomorrow, business_id: business3.id)
@@ -114,7 +114,7 @@ p14.save!
 p15 = Product.new(name: "Tomatoes", price: 8, category: "Vegetable", description: "10kilos of tomatoes", deadline: Date.tomorrow, business_id: business3.id)
 p15.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'tomatoes.jpg')), filename: 'tomatoes.jpg', content_type: 'tomatoes.png')
 p15.save!
-p36 = Product.new(name: "Apple Juice", price: 5, category: "Drinks", description: "Seven liters of Apple Juice", deadline: Date.tomorrow, business_id: business1.id)
+p36 = Product.new(name: "Apple Juice", price: 5, category: "Drink", description: "Seven liters of Apple Juice", deadline: Date.tomorrow, business_id: business1.id)
 p36.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.png')), filename: 'apple-juice.png', content_type: 'apple-juice.png')
 p36.save!
 p37 = Product.new(name: "Grapes", price: 3, category: "Fruit", description: "3 kilos of grapes", deadline: Date.tomorrow, business_id: business1.id)
@@ -140,7 +140,7 @@ p42.save!
 business4 = Business.new(address: "55 Rupert St, London W1D 7PJ,", name: "Rupert Supermarket")
 business4.save!
 
-p16 = Product.new(name: "St Amour", price: 15, category: "Drinks", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business4.id)
+p16 = Product.new(name: "St Amour", price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business4.id)
 p16.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'st-amour.jpg')), filename: 'st-amour.jpg', content_type: 'st-amour.png')
 p16.save!
 p17 = Product.new(name: "Whiting", price: 9, category: "Meat & Fish", description: "Ready to cook for dinner!", deadline: Date.tomorrow, business_id: business4.id)
@@ -173,7 +173,7 @@ p46.save!
 p47 = Product.new(name: "Sandwich loaf bread", price: 2, category: "Carbohydrate", description: "Four packets of sandwich loaf bread. Our love of baking runs through generations of our family bakery. Our dedication to taste is a labour of love where we have spent time baking the finest gluten free white loaf which is carefully crafted using a slow and unique bread making technique.", deadline: Date.tomorrow, business_id: business1.id)
 p47.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bread2.png')), filename: 'bread2.png', content_type: 'bread2.png')
 p47.save!
-p48 = Product.new(name: "Pineapple Juice", price: 5, category: "Drinks", description: "Four liters of Pineapple Juice. Made with 100% fruit juice. The secret of our fruity taste… We only select the tastiest Fruit to make sure they are bursting with flavour. We squeeze them in the country they are grown and concentrate the juice by removing the water, keeping all the flavour.", deadline: Date.tomorrow, business_id: business1.id)
+p48 = Product.new(name: "Pineapple Juice", price: 5, category: "Drink", description: "Four liters of Pineapple Juice. Made with 100% fruit juice. The secret of our fruity taste… We only select the tastiest Fruit to make sure they are bursting with flavour. We squeeze them in the country they are grown and concentrate the juice by removing the water, keeping all the flavour.", deadline: Date.tomorrow, business_id: business1.id)
 p48.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'pineapple-juice.jpg')), filename: 'pineapple-juice.jpg', content_type: 'pineapple-juice.jpg')
 p48.save!
 
@@ -196,10 +196,10 @@ p24.save!
 p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetable", description: "5 kilos of tomatoes. Full of flavour. Grown in France, Italy, Netherlands, United Kingdom.", deadline: Date.tomorrow, business_id: business5.id)
 p25.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'tomatoes.jpg')), filename: 'tomatoes.jpg', content_type: 'tomatoes.png')
 p25.save!
-p49 = Product.new(name: "Orange Juice", price: 5, category: "Drinks", description: "Four liters of Orange Juice. Our exclusive blend of oranges gives a refreshing and balanced orange juice with just the right amount of natural sweetness and acidity with a subtle tang, giving a fresher fruity flavour.", deadline: Date.tomorrow, business_id: business1.id)
+p49 = Product.new(name: "Orange Juice", price: 5, category: "Drink", description: "Four liters of Orange Juice. Our exclusive blend of oranges gives a refreshing and balanced orange juice with just the right amount of natural sweetness and acidity with a subtle tang, giving a fresher fruity flavour.", deadline: Date.tomorrow, business_id: business1.id)
 p49.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.png')), filename: 'orange-juice.png', content_type: 'orange-juice.png')
 p49.save!
-p50 = Product.new(name: "Apple Juice", price: 5, category: "Drinks", description: "Four liters of Apple Juice. 100% pressed juice.", deadline: Date.tomorrow, business_id: business1.id)
+p50 = Product.new(name: "Apple Juice", price: 5, category: "Drink", description: "Four liters of Apple Juice. 100% pressed juice.", deadline: Date.tomorrow, business_id: business1.id)
 p50.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.png')), filename: 'apple-juice.png', content_type: 'apple-juice.png')
 p50.save!
 p51 = Product.new(name: "Brioche", price: 3, category: "Carbohydrate", description: "Five packets of Brioche. Great with your favourite sweet or savoury fillings. Made with our authentic 'levain' to give its unique taste.", deadline: Date.tomorrow, business_id: business1.id)
