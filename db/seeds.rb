@@ -197,10 +197,10 @@ p25 = Product.new(name: "Tomatoes", price: 5, category: "Vegetables", descriptio
 p25.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'tomatoes.jpg')), filename: 'tomatoes.jpg', content_type: 'tomatoes.png')
 p25.save!
 p49 = Product.new(name: "Orange Juice", price: 5, category: "Drinks", description: "Four liters of Orange Juice. Our exclusive blend of oranges gives a refreshing and balanced orange juice with just the right amount of natural sweetness and acidity with a subtle tang, giving a fresher fruity flavour.", deadline: Date.tomorrow, business_id: business1.id)
-p49.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.jpg')), filename: 'orange-juice.jpg', content_type: 'orange-juice.jpg')
+p49.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'orange-juice.png')), filename: 'orange-juice.png', content_type: 'orange-juice.png')
 p49.save!
 p50 = Product.new(name: "Apple Juice", price: 5, category: "Drinks", description: "Four liters of Apple Juice. 100% pressed juice.", deadline: Date.tomorrow, business_id: business1.id)
-p50.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.jpg')), filename: 'apple-juice.jpg', content_type: 'apple-juice.jpg')
+p50.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'apple-juice.png')), filename: 'apple-juice.png', content_type: 'apple-juice.png')
 p50.save!
 p51 = Product.new(name: "Brioche", price: 3, category: "Carbohydrates", description: "Five packets of Brioche. Great with your favourite sweet or savoury fillings. Made with our authentic 'levain' to give its unique taste.", deadline: Date.tomorrow, business_id: business1.id)
 p51.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'brioche.png')), filename: 'brioche.png', content_type: 'brioche.png')
