@@ -85,6 +85,7 @@ class PurchasesController < ApplicationController
       @product = Product.find(params[:product_id])
       order  = Order.create!(amount_cents: @product.price, state: 'pending', user: current_user)
       @purchase = Purchase.create!(product: @product, order: order)
+      redirect_to new_order_payment_path(@purchase.order)
     end
   end
 
