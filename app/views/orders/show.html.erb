@@ -3,7 +3,7 @@
   <h3>Your purchases are waiting for you !</h3>
   <div class="order-infos">
     <p>Order confirmation n°<%= @order.id %></p>
-    <p>Total price: <%= @order.amount.fractional %> <%= @order.amount.symbol %></p>
+    <p>Total price: <%= @order.amount_cent.fractional %> <%= @order.amount.symbol %></p>
     <% @user.orders.last.purchases.each do |purchase| %>
       <div class="purchase">
         <h5><%= purchase.product.name %></h5>
