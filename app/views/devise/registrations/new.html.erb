@@ -1,15 +1,22 @@
-<div class="container d-flex justify-content-center align-items-center">
-  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-    <div class="card" style="border-radius: 15px;">
+<div class="container d-flex justify-content-center align-items-center img-back">
+  <div class="col-12 col-lg-5">
+    <div class="card-form">
       <div class="card-body p-5">
 
-        <%= image_tag "signup-icon.png", class: "signup" %>
-        <h2 class="header-signup">Sign in</h2>
+        <%# <%= image_tag "signup-icon.png", class: "signup" %>
+        <h4 class="header-signup">Sign up</h4>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
 
           <div class="form-inputs">
+
+          <%= f.input :username,
+                        required: true,
+                        autofocus: true,
+                        label: false,
+                        placeholder: "Choose your username",
+                        input_html: { autocomplete: "username" }%>
 
             <%= f.input :email,
                         required: true,
@@ -31,13 +38,6 @@
                         placeholder: "Confirm your password",
                         input_html: { autocomplete: "new-password" } %>
 
-            <%= f.input :username,
-                        required: true,
-                        autofocus: true,
-                        label: false,
-                        placeholder: "Choose your username",
-                        input_html: { autocomplete: "username" }%>
-
             <%= f.input :category,
                         collection: [ "Private person", "Association" ],
                         required: true,
@@ -47,11 +47,11 @@
                         input_html: { autocomplete: "category" }%>
 
             <div class="form-actions">
-              <%= f.button :submit, "Register now" %>
+              <%= f.button :submit, "Register now", id: "buy-button", class: "btn btn-gradient show-button" %>
             </div>
 
             <div class="div-login">
-              <p class="dark">Already have an account?</p>
+              <p class="dark header-signup">Already have an account?</p>
               <%= render "devise/shared/links" %>
             </div>
 
