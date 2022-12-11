@@ -1,3 +1,17 @@
+.home_video {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+ }
+
+ .home-video-wrapper {
+ height: 65vh;
+ display: flex;
+ }
+
 .home-banner {
   background-size: cover;
   background-position: center center;
@@ -9,15 +23,15 @@
   margin: auto;
 }
 
-.home-banner h1 {
+.home-banner-container h1 {
   color: white;
 }
 
-.home-banner h5 {
+.home-banner-container h5 {
   color: white;
 }
 
-.home-banner p {
+.home-banner-container p {
   color: white;
   opacity: .7;
   font-size: 20px;
