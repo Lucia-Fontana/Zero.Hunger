@@ -17,7 +17,7 @@ User.destroy_all
 # User.create(email: "user3@gmail.com", password: "user3@gmail.com")
 
 # business 1 creation + products
-business1 = Business.new(address: "129-133 Kingsway, London WC2B 6NH", name: "Sainsbury's")
+business1 = Business.new(address: "16 Villa Gaudelet, Paris", name: "Sainsbury's")
 business1.save!
 
 p1 = Product.new(name: "Bananas", price: 2, category: "Fruit", description: "3 kilos of Bananas. Bananas are Fairtrade certified, traded, audited and sourced from Fairtrade producers, total 100%. For more visit info.fairtrade.net/sourcing.", deadline: Date.tomorrow, business_id: business1.id)
