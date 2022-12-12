@@ -1,4 +1,4 @@
-.main-container {
+.show-container {
   margin: 40px 5%;
   display: flex;
   gap: 20px;
@@ -27,6 +27,7 @@ a {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  height: 300px;
 }
 
 .location {
@@ -37,16 +38,12 @@ a {
   display: flex;
 }
 
-.address {
-  padding: 20px;
-}
+// .address {
+//   padding: 20px;
+// }
 
-.image-product img {
-  height: 400px;
-}
-.image-map {
+.product-image {
   width: 100%;
-  //height: 20px;
 }
 
 .product {
@@ -62,47 +59,43 @@ a {
 
 .product-description {
   background-color: white;
-  width: 100%;
-  height: 400px;
-  color: black;
-  font-size: 20px;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  //border-radius: 10px;
 }
 
-.product-container {
-  display: flex;
-  justify-content: space-between;
-}
+// .product-container {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .price {
-  font-size: 30px;
-  flex-grow: 1;
-  color: #39D0C6;
+  //font-size: 30px;
+  //flex-grow: 1;
+  //color: #39D0C6;
   text-align: right;
 }
 
-.product-image {
-  border-radius: 10px;
-}
+// .product-image {
+//   border-radius: 10px;
+// }
 
-.right-container-basket {
-  width: 30%;
-  min-height: 30vh;
-  position: relative;
-  top: 13vh;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 10px 10px lightgray;
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 100px;
-}
+// .right-container-basket {
+//   width: 30%;
+//   min-height: 30vh;
+//   position: relative;
+//   top: 13vh;
+//   background-color: rgb(255, 255, 255);
+//   box-shadow: 10px 10px lightgray;
+//   border-radius: 10px;
+//   padding: 30px;
+//   margin-bottom: 100px;
+// }
 
-.basket {
+.recipe {
   background-color: #39D0C6;
   border-radius: 10px;
   color: white;
-  box-shadow: 10px 10px lightgray;
+  //box-shadow: 10px 10px lightgray;
   padding: 10px;
 }
 
