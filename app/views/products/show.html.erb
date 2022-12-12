@@ -20,7 +20,10 @@
             </div>
           </div>
           <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id]}, remote: true, id: "buy-button", class: "btn btn-gradient show-button" %>
-          <i class="fa-light fa-calendar-check"></i><p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
+          <div class="d-flex">
+            <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
+            <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
+          </div>
           <p><%= @product.description %></p>
         </div>
       </div>

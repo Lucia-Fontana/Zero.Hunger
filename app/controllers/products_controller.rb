@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @markers = [{
+        lat: @product.business.latitude,
+        lng: @product.business.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {business: @product.business})
+      }]
   end
 
   def index
