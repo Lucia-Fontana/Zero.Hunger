@@ -11,9 +11,21 @@ export default class extends Controller {
   all() {
     const displayedCards = this.cardTargets
     const filterIcon = this.allFilterTarget
+    const filterIcons = [this.fruitFilterTarget, this.vegetableFilterTarget, this.carbohydrateFilterTarget, this.dairyFilterTarget, this.meatFilterTarget, this.drinkFilterTarget]
     filterIcon.classList.toggle("active-filter")
+    filterIcons.forEach((icon) => {
+      if (icon.classList[1] == "active-filter") {
+        icon.classList.toggle("active-filter");
+        displayedCards.forEach((card) => {
+          console.log(card.classList[2])
+          if (card.classList[2] == "displayed") {
+            card.classList.toggle("displayed")
+          }
+        })
+      }
+    })
     displayedCards.forEach((card) => {
-    card.classList.toggle("displayed")
+      card.classList.toggle("displayed")
     })
   }
 
@@ -21,20 +33,34 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.fruitFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
       if (card.classList[1] == "Fruit" ) {
         card.classList.toggle("displayed")
       }
     })
   }
 
-    vegetable() {
+  vegetable() {
     const displayedCards = this.cardTargets
     const filterIcon = this.vegetableFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
       if (card.classList[1] == "Vegetable" ) {
         card.classList.toggle("displayed")
       }
@@ -45,8 +71,15 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.carbohydrateFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
       if (card.classList[1] == "Carbohydrate" ) {
         card.classList.toggle("displayed")
       }
@@ -57,8 +90,15 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.dairyFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
       if (card.classList[1] == "Dairy" ) {
         card.classList.toggle("displayed")
       }
@@ -69,9 +109,16 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.meatFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
-      if ((card.classList[1] == "Meat") || (card.classList[1] == "Fish")) {
+      if (card.classList[1] == "Meat" ) {
         card.classList.toggle("displayed")
       }
     })
@@ -81,8 +128,15 @@ export default class extends Controller {
     const displayedCards = this.cardTargets
     const filterIcon = this.drinkFilterTarget
     filterIcon.classList.toggle("active-filter")
+    if (this.allFilterTarget.classList[1] == "active-filter") {
+      this.allFilterTarget.classList.toggle("active-filter")
+      displayedCards.forEach((card) => {
+        if (card.classList[2] == "displayed") {
+          card.classList.toggle("displayed")
+        }
+      })
+    }
     displayedCards.forEach((card) => {
-      console.log(card.classList[1])
       if (card.classList[1] == "Drink" ) {
         card.classList.toggle("displayed")
       }
