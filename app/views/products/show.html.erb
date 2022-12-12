@@ -24,6 +24,11 @@
             <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
             <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
           </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-leaf" style="margin-right: 5px;"></i>
+            <p style="margin-right: 5px;"><%= @product.CO2e %></p>
+            <p> CO2e / kg </p>
+          </div>
           <p><%= @product.description %></p>
         </div>
       </div>
