@@ -67,9 +67,7 @@
     <%# This is the list of products to display %>
     <div class="product-list">
       <% @products.each do |product| %>
-        <%= link_to product_path(product, query: params[:query]), data: { filter_target: "card" } do %>
           <%= render "card", product: product %>
-        <% end %>
       <% end %>
     </div>
   </div>

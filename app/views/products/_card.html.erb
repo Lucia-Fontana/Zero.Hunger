@@ -1,17 +1,22 @@
 
 <div class="product-card <%= product.category %>">
   <div class="card-image-wrapper">
-  <% if product.photo.attached?%>
-    <%= cl_image_tag(product.photo.key, class: "card-image", width: 200, height: 144, crop: :fill) %>
-  <% end %>
+    <%= link_to product_path(product, query: params[:query]), data: { filter_target: "card" } do %>
+      <% if product.photo.attached?%>
+        <%= cl_image_tag(product.photo.key, class: "card-image", width: 200, height: 144, crop: :fill) %>
+      <% end %>
   </div>
   <div class="card-infos">
     <h5><%= product.name %></h5>
     <p class="bold"><%= product.business.name %></p>
     <p><%= product.business.address %></p>
-    <div class="card-bottom">
-      <h5><%= humanized_money_with_symbol(product.price) %></h5>
+  </div>
+    <% end %>
+  <div class="card-bottom">
+    <h5><%= humanized_money_with_symbol(product.price) %></h5>
+    <%= button_to product_purchases_path(product), method: :create, id: "buy-button" do %>
       <i class="fa-solid fa-cart-shopping"></i>
-    </div>
+    <% end %>
+  </div>
   </div>
 </div>
