@@ -2,10 +2,19 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="filter"
 export default class extends Controller {
-  static targets = ["fruitFilter", "vegetableFilter", "carbohydrateFilter", "dairyFilter", "meatFilter", "drinkFilter", "card"]
+  static targets = ["allFilter", "fruitFilter", "vegetableFilter", "carbohydrateFilter", "dairyFilter", "meatFilter", "drinkFilter", "card"]
 
   connect() {
     console.log("Hello")
+  }
+
+  all() {
+    const displayedCards = this.cardTargets
+    const filterIcon = this.allFilterTarget
+    filterIcon.classList.toggle("active-filter")
+    displayedCards.forEach((card) => {
+    card.classList.toggle("displayed")
+    })
   }
 
   fruit() {

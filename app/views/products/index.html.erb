@@ -17,6 +17,13 @@
   <div data-controller="filter">
     <div class= "type-icons">
 
+      <div data-action="click->filter#all">
+        <div class="iconborder">
+          <%= image_tag "all-png.png", class: "type-icon", id: "all-icon", data: {filter_target: "allFilter"} %>
+        </div>
+        <p>All</p>
+      </div>
+
       <div data-action="click->filter#fruit">
         <div class="iconborder">
           <%= image_tag "3194766.png", class: "type-icon", data: {filter_target: "fruitFilter"} %>

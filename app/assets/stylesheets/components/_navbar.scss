@@ -8,6 +8,16 @@
   box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
 }
 
+.navbar-lewagon-home {
+  justify-content: space-between;
+  //background: $body-background;
+  align-items: center;
+  border-bottom: rgb(229, 241, 234) 1px solid;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+}
+
 .nav-item {
   display: flex;
   align-items: center;
