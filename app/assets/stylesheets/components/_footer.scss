@@ -9,8 +9,9 @@
   background-color: $dark-green;
   color: $body-background;
   width:100%;
-  position: fixed;
-  bottom: 0;
+  height: 10vh;
+  // position: fixed;
+  // bottom: 0;
   h2 {
     color: $body-background;
   }
@@ -28,9 +29,9 @@
   text-align: center;
 }
 
-body {
+.body-content {
   // display: flex;
   // flex-direction: column;
   // justify-content: space-between;
-  // min-height: 100vh;
+  min-height: 90vh;
 }
