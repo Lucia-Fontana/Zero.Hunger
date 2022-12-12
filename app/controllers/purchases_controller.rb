@@ -12,6 +12,8 @@ class PurchasesController < ApplicationController
     @product = Product.find(params[:id])
     # need order_id because orders are not nested into products, nor purchases
     @order = Order.find(params[:order_id])
+    @product.availability = false
+    @product.save!
   end
 
   # def create
@@ -91,6 +93,20 @@ class PurchasesController < ApplicationController
       order  = Order.create!(amount_cents: @product.price, state: 'pending', user: current_user)
       @purchase = Purchase.create!(product: @product, order: order)
       redirect_to new_order_payment_path(@purchase.order)
+    end
+  end
+
+  def destroy
+    @purchase = Purchase.find(params[:id])
+    # need to update and cancel from the payment/new page (just the view, not the product itself)
+    @product = @purchase.product
+    @product.availability = true
+    @product.save!
+    @purchase.destroy
+        # need to refresh the page
+    respond_to do |format|
+      format.html { redirect_to new_order_payment_path(Order.find(params[:order_id])), notice: 'Product was successfully removed from your Shopping Cart.' }
+      format.json { head :no_content }
     end
   end
 

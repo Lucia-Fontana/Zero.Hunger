@@ -20,12 +20,13 @@ class ProductsController < ApplicationController
         OR businesses.address ILIKE :query
         OR businesses.name ILIKE :query
       SQL
-      @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%")
-      @products = Product.all if @products.length.zero?
+      @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true)
+      @products = Product.where(availability: true) if @products.length.zero?
     else
-      @products = Product.all
+      @products = Product.where(availability: true)
     end
   end
+
 
   def new
     if current_user.category == "Retailer"

@@ -2,4 +2,4 @@
 //= link_tree ../videos
 //= link_directory ../stylesheets .css
 //= link_tree ../builds
-//= link application.css
+//= link application.scss

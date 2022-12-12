@@ -27,7 +27,7 @@ a {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  height: 300px;
+  //height: 300px;
 }
 
 .location {
@@ -92,11 +92,12 @@ a {
 // }
 
 .recipe {
-  background-color: #39D0C6;
+  background-color: white;
   border-radius: 10px;
-  color: white;
+  color: #39D0C6;
+  border-radius: 10px;
   //box-shadow: 10px 10px lightgray;
-  padding: 10px;
+  //padding: 10px;
 }
 
 .card-buttons {
