@@ -1,4 +1,4 @@
-<div class="show-container">
+<div class="show-container" data-controller="recipe" data-recipe-ingredient-value="<%= @product.name %>">
 
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
@@ -6,7 +6,9 @@
       <div class="row product-description">
         <div class="col-12 col-lg-6">
           <%= link_to "Back", products_path, class:"previous" %>
-          <%= cl_image_tag @product.photo.key, crop: :fill, class: "product-image" %>
+          <div data-action="click->recipe#addRecipe">
+            <%= cl_image_tag @product.photo.key, crop: :fill, class: "product-image" %>
+          </div>
         </div>
 
         <div class="col-12 col-lg-6">
@@ -37,17 +39,8 @@
 
     <div class="col-12 col-lg-4">
       <div class="recipe">
-      <p>RECIPE: Apple Pie <i class="fa-solid fa-apple-whole"></i>
-          <p></p>
-          Peel and core apples, then thinly slice. Preheat the oven to 220 degrees C.
-          Melt butter in a saucepan over medium heat. Add flour and stir to form a paste. Add both sugars and water; bring to a boil.
-          <p></p>
-          Press one pastry into the bottom and up the sides. Roll out remaining pastry. Cut pastry into eight strips.
-          Place sliced apples into the bottom crust. Fold the first and third strips all the way back.
-          <p></p>
-          Repeat Steps 6 and 7.
-          Pour sugar-butter mixture over lattice crust, making sure it seeps over sliced apples. Brush some onto lattice, but make sure it doesn't run off the sides.
-          Bake in the preheated oven for 35 to 45 minutes.</p>
+        <h3 data-recipe-target="title" ></h3>
+        <p data-recipe-target="description"></p>
       </div>
     </div>
 
