@@ -1,6 +1,15 @@
 <div class="container">
-  <h3>Thank you <%= @user.username %> !</h3>
-  <h3>Your purchases are waiting for you ! &#127881;</h3>
+  <div class="confirmation-top">
+    <div class="confirmation-top-titles">
+      <h3>Thank you <%= @user.username %> !</h3>
+      <h3>Your purchases are waiting for you ! &#127881;</h3>
+    </div>
+    <div class="confirmation-top-back">
+      <%= link_to products_path do %>
+        <h3><i class="fa-solid fa-check"></i></h3>
+      <% end %>
+    </div>
+  </div>
   <div class="order-infos">
     <p>Order confirmation n°<%= @order.id %></p>
     <p>Total price: <%= @order.amount.fractional / 100 %> <%= @order.amount.symbol %></p>

@@ -47,3 +47,31 @@
 .confirmation-img {
   width: 76px;
 }
+
+.confirmation-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirmation-top-back {
+  width: 48px;
+  height: 48px;
+  a {
+    padding: 0 12px;
+    padding-top: 9px;
+    border: 1px dotted $dark-green;
+    border-radius: 50%;
+  }
+  a:hover {
+    background-color: $dark-green;
+    transition: 0.3s;
+  }
+}
+
+a {
+  h3:hover {
+    color: $body-background;
+    transition: 0.3s;
+  }
+}
