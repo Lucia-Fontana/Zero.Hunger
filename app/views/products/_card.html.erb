@@ -1,5 +1,5 @@
 
-<div class="product-card <%= product.category %>">
+<div class="product-card <%= product.category %>" data-filter-target="card">
   <div class="card-image-wrapper">
     <%= link_to product_path(product, query: params[:query]), data: { filter_target: "card" } do %>
       <% if product.photo.attached?%>
