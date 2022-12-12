@@ -45,10 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_103142) do
   create_table "businesses", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_103142) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "businesses", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "businesses"
   add_foreign_key "purchases", "orders"

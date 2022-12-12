@@ -12,12 +12,13 @@ Product.destroy_all
 Business.destroy_all
 User.destroy_all
 
-# User.create(email: "user1@gmail.com", password: "user1@gmail.com")
-# User.create(email: "user2@gmail.com", password: "user2@gmail.com")
-# User.create(email: "user3@gmail.com", password: "user3@gmail.com")
-
+User.create(email: "user1@gmail.com", password: "user1@gmail.com", category: "Retailer")
+User.create(email: "user2@gmail.com", password: "user2@gmail.com")
+User.create(email: "user3@gmail.com", password: "user3@gmail.com")
+User.create(email: "user4@gmail.com", password: "user4@gmail.com")
+User.create(email: "user5@gmail.com", password: "user5@gmail.com")
 # business 1 creation + products
-business1 = Business.new(address: "16 Villa Gaudelet, Paris", name: "Sainsbury's")
+business1 = Business.new(address: "16 Villa Gaudelet, Paris", name: "Sainsbury's", user: User.first)
 business1.save!
 
 p1 = Product.new(name: "Bananas", quantity: 1, CO2e: 0.99, price: 2, category: "Fruit", description: "3 kilos of Bananas. Bananas are Fairtrade certified, traded, audited and sourced from Fairtrade producers, total 100%. For more visit info.fairtrade.net/sourcing.", deadline: Date.tomorrow, business_id: business1.id)
@@ -58,7 +59,7 @@ p56.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p56.save!
 
 # business 2 creation + products
-business2 = Business.new(address: "17-25 Regent St., St. James's, London SW1Y 4LR", name: "Tesco Express")
+business2 = Business.new(address: "17-25 Regent St., St. James's, London SW1Y 4LR", name: "Tesco Express", user: User.second)
 business2.save!
 
 p6 = Product.new(name: "St Amour", quantity: 1, CO2e: 1.93, price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business2.id)
@@ -96,7 +97,7 @@ p35.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p35.save!
 
 # business 3 creation + products
-business3 = Business.new(address: "The Brunswick Centre, 23-39 Handel St, London WC1N 1JX", name: "Waitrose & Partners Bloomsbury")
+business3 = Business.new(address: "The Brunswick Centre, 23-39 Handel St, London WC1N 1JX", name: "Waitrose & Partners Bloomsbury", user: User.third)
 business3.save!
 
 p11 = Product.new(name: "St Emilion", quantity: 1, CO2e: 1.94, price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business3.id)
@@ -137,7 +138,7 @@ p42.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p42.save!
 
 # business 4 creation + products
-business4 = Business.new(address: "55 Rupert St, London W1D 7PJ,", name: "Rupert Supermarket")
+business4 = Business.new(address: "55 Rupert St, London W1D 7PJ,", name: "Rupert Supermarket", user: User.fourth)
 business4.save!
 
 p16 = Product.new(name: "St Amour", quantity: 1, CO2e: 1.94, price: 15, category: "Drink", description: "One of a best French Wine", deadline: Date.tomorrow, business_id: business4.id)
@@ -178,7 +179,7 @@ p48.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'produ
 p48.save!
 
 # business 5 creation + products
-business5 = Business.new(address: "16 London Rd, Elephant and Castle, London SE1 6JZ,", name: "Superway Supermarket")
+business5 = Business.new(address: "16 London Rd, Elephant and Castle, London SE1 6JZ,", name: "Superway Supermarket", user: User.fifth)
 business5.save!
 
 p21 = Product.new(name: "Yoghurts", quantity: 1, CO2e: 1.65, price: 15, category: "Dairy", description: "10 yoghurts to eat before tomorrow! Contains: milk.", deadline: Date.tomorrow, business_id: business5.id)
