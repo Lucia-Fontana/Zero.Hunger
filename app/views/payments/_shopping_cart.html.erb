@@ -1,0 +1,19 @@
+<% if !@purchase_product.nil? && @purchase_product.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @purchase_product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @purchase_products.size == 0 %>
+  <p class="text-center">
+    There are no items in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
+  </p>
+<% else %>
+  <% @purchase_products.each do |purchase_product| %>
+    <%= render 'carts/cart_row', product: purchase_product.product, order_item: purchase_product, show_total: true %>
+  <% end %>
+  <%= button_to 'Checkout', checkout_path, method: :get %>
+<% end %>
