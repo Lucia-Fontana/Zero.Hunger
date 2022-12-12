@@ -1,9 +1,10 @@
 <div class="cart-container">
 
+  <%= link_to products_path, class: "previous mt-5" do %>
+    <p><</p>
+  <% end %>
+
   <div class="Header">
-    <%= link_to products_path, class: "previous" do %>
-      <p><</p>
-    <% end %>
     <h3>Shopping Cart</h3>
     <%# <p class="link">Remove all</p> %>
     <%# <%= button_to "Remove", {controller: "purchases", method: :destroy, product_id: params[:id]}, remote: true, id: "delete-button", class: "btn btn-gradient show-button" %>
@@ -11,7 +12,8 @@
 
   <% if @order.products.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
+    There are no items in your shopping cart. <br>
+    Please <%= link_to "check available products", products_path %> and add some items to your cart.
   </p>
   <% else %>
 

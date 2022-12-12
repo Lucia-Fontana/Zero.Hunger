@@ -3,14 +3,16 @@
   height: 85%;
   background-color: #ffffff;
   border-radius: 20px;
+  margin: auto;
 }
 
 .Header{
-  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 15px;
   width: 90%;
   height: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
  }
 
