@@ -28,9 +28,28 @@ class ProductsController < ApplicationController
   end
 
 
+  def new
+    if current_user.category == "Retailer"
+      @product = Product.new
+    else
+      flash.alert = "Not allowed." #quick fix as we don't have pundit
+      redirect_to root_path
+    end
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.business_id = current_user.id
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:name, :category, :description, :price, :business_id, :photo)
+    params.require(:product).permit(:name, :category, :quantity, :deadline, :CO2e, :description, :price, :business_id, :photo)
   end
 end
