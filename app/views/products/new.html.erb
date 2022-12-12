@@ -1,0 +1,24 @@
+<div class="containe img-back5">
+  <div class="row justify-content-center" >
+    <div class="col-lg-3">
+      <div class="form">
+        <h2>Offer</h2>
+        <%= simple_form_for [@product] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :category, collection: [ "Fruits", "Vegetables", "Carbs", "Dairy", "Meat & Fish", "Drink"] %>
+          <%= f.input :description %>
+          <%= f.input :deadline, as: :date, html5: true %>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form">
+        <h2 class="transparent">Product</h2>
+          <%= f.input :quantity %>
+          <%= f.input :price %>
+          <%= f.input :CO2e %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Insert", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+  </div>
+</div>

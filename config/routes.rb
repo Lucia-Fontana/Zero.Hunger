@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :products, only: [ :index, :show ] do
+  resources :products, only: [ :index, :show, :new, :create ] do
     resources :purchases, only: [ :create ]
   end
   resources :purchases, only: [ :destroy ]
   resources :orders, only: [ :index, :show, :create ] do
     resources :payments, only: :new
   end
+
+  get "dashboard", to: "pages#dashboard"
 end
