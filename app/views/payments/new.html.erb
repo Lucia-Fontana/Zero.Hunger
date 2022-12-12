@@ -16,7 +16,6 @@
   <% else %>
 
 
-
   <%# retailer 1 %>
   <div class="card-business">
       <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
@@ -28,23 +27,30 @@
 
             <div class="card-product">
               <div class="card-items-left">
-                <div class="card-item_image">
+                <div class="card-item_image d-flex flex-row">
                     <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
                 </div>
 
                 <div class="card-product-infos">
                   <div class="card-item-information">
                   <p class="dark bold"><%= product.name %></p>
-                  <p>Quantity</p>
+
                   <%= link_to products_path(product.id), class: "navbar-brand" do %>
                     <p class="link">Details</p>
                   <% end %>
                   </div>
                 </div>
               </div>
+
+              <div class="cart-quantity">
+                <div><p class="dark bold">Quantity: </p></div>
+                <div><%= product.quantity %></div>
+              </div>
+
                 <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %></p>
+                  <p class="dark bold"><%= product.price %>€</p>
                   <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
+                    <%# <i class="fa fa-trash-o ml-3 text-black-50"></i> %>
                 </div>
               </div>
             <% end %>
@@ -71,7 +77,7 @@
                 <div class="card-product-infos">
                   <div class="card-item-information">
                   <p class="dark bold"><%= product.name %></p>
-                  <p>Quantity</p>
+                  <p>Quantity: <%= product.quantity %></p>
                   <%= link_to products_path(product.id), class: "navbar-brand" do %>
                     <p class="link">Details</p>
                   <% end %>
@@ -106,7 +112,7 @@
                 <div class="card-product-infos">
                   <div class="card-item-information">
                   <p class="dark bold"><%= product.name %></p>
-                  <p>Quantity</p>
+                  <p>Quantity: <%= product.quantity %></p>
                   <%= link_to products_path(product.id), class: "navbar-brand" do %>
                     <p class="link">Details</p>
                   <% end %>
@@ -141,7 +147,7 @@
                 <div class="card-product-infos">
                   <div class="card-item-information">
                   <p class="dark bold"><%= product.name %></p>
-                  <p>Quantity</p>
+                  <p>Quantity: <%= product.quantity %></p>
                   <%= link_to products_path(product.id), class: "navbar-brand" do %>
                     <p class="link">Details</p>
                   <% end %>
@@ -176,7 +182,7 @@
                 <div class="card-product-infos">
                   <div class="card-item-information">
                   <p class="dark bold"><%= product.name %></p>
-                  <p>Quantity</p>
+                  <p>Quantity: <%= product.quantity %></p>
                   <%= link_to products_path(product.id), class: "navbar-brand" do %>
                     <p class="link">Details</p>
                   <% end %>
@@ -194,7 +200,7 @@
   </div>
 
       <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <button id="pay" class="btn btn-primary">Confirm Order</button>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
