@@ -8,7 +8,7 @@
         class: "form-control",
         placeholder: "Change location"
       %>
-      <%= submit_tag "Search", class: "btn-green" %>
+      <%= image_submit_tag("icons8-search-25.png", class: "btn", id: "input-searchbar")  %>
     <% end %>
   </div>
 
@@ -48,7 +48,7 @@
 
       <div data-action="click->filter#dairy">
         <div class="iconborder">
-          <%= image_tag "3050158.png", class: "type-icon", data: {filter_target: "dairyFilter"} %>
+          <%= image_tag "dairy.png", class: "type-icon", data: {filter_target: "dairyFilter"} %>
         </div>
         <p>Dairy</p>
       </div>
@@ -64,7 +64,7 @@
 
       <div data-action="click->filter#drink">
         <div class="iconborder">
-          <%= image_tag "3050153.png", class: "type-icon", data: {filter_target: "drinkFilter"} %>
+          <%= image_tag "drink.png", class: "type-icon", data: {filter_target: "drinkFilter"} %>
         </div>
         <p>Drinks</p>
       </div>
