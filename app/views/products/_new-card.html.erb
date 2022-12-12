@@ -1,0 +1,22 @@
+<div class="product-card <%= product.category %>" data-filter-target="card">
+  <div class="card-top">
+    <%= link_to product_path(product, query: params[:query]), data: { filter_target: "card" } do %>
+      <div class="card-image-wrapper">
+        <% if product.photo.attached?%>
+          <%= cl_image_tag(product.photo.key, class: "card-image", width: 200, height: 144, crop: :fill) %>
+        <% end %>
+      </div>
+      <div class="card-infos">
+        <h5><%= product.name %></h5>
+        <p class="bold"><%= product.business.name %></p>
+        <p><%= product.business.address %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="card-bottom">
+    <h5><%= humanized_money_with_symbol(product.price) %></h5>
+    <%= button_to product_purchases_path(product), method: :create, remote: true, id: "buy-button" do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+    <% end %>
+  </div>
+</div>
