@@ -1,34 +1,34 @@
-<div class="container d-flex justify-content-center align-items-center">
-  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-    <div class="card" style="border-radius: 15px;">
-      <div class="card-body p-5">
+<div class="container contform img-back2">
 
-        <%= image_tag "signup-icon.png", class: "signup" %>
-        <h2 class="header-signup">Log in</h2>
+  <div class="row form">
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
-
-            <div class="form-actions">
-              <%= f.button :submit, "Log in" %>
-            </div>
-
-            <div>
-            <%= render "devise/shared/links" %>
-            </div>
-
-        <% end %>
-      </div>
+    <div class="col-lg-6">
     </div>
+
+    <div class="col-lg-4">
+      <h4 class="header-signup">Log in</h4>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", id: "buy-button", class: "btn btn-gradient show-button" %>
+        </div>
+
+        <div>
+        <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
+
 </div>

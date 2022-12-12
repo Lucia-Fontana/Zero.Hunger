@@ -1,19 +1,45 @@
 .contform {
+  //margin-top: -40px;
   max-width: 1600px;
-  height: 75vh;
+  height: 73vh;
 }
 
 .img-back{
   background-image: asset-url("signup-back-4.jpg");
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 80vh;
   //background-position: center center;
 }
 
-.form {
-  //background-color: white;
-  padding: 10px;
-  margin: 80px;
+.img-back2{
+  background-image: asset-url("login.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.img-left{
+  background-image: asset-url("signup-back.png");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+}
+
+.img-fit {
+  height: 73vh;
+  width: 68vw;
+  border-radius: 10px;
+}
+
+.transparent{
+  visibility: hidden;
+}
+
+.show-photo {
+  width: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
