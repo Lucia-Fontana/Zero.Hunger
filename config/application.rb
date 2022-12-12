@@ -15,6 +15,7 @@ module ZeroHunger
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
 
     # Configuration for the application, engines, and railties goes here.
     #
