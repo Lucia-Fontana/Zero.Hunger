@@ -47,6 +47,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def delete
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to dashboard_path, notice: "The item has been successfully removed"
+  end
+
   private
 
   def product_params

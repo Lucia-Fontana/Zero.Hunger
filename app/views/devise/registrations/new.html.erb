@@ -1,9 +1,8 @@
-<div class="container d-flex justify-content-center align-items-center img-back">
+<div class="container contform img-back-signup">
   <div class="col-12 col-lg-5">
     <div class="card-form">
       <div class="card-body p-5">
 
-        <%# <%= image_tag "signup-icon.png", class: "signup" %>
         <h4 class="header-signup">Sign up</h4>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -59,5 +58,7 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="col-12 col-lg-5">
   </div>
 </div>
