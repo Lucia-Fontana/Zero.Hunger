@@ -5,5 +5,6 @@ import { Tooltip } from "bootstrap/dist/js/bootstrap.bundle.js";
 export default class extends Controller {
   connect() {
     new Tooltip(this.element)
+    // console.log(this.element)
   }
 }

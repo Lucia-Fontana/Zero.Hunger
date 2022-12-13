@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="orders-list">
+    <div class="order-card" id="orders-header">
+      <h6 class="view-details"></h6>
+      <p>Invoice #</p>
+      <p>Date</p>
+      <p>Number of article(s)</p>
+      <p>Total price</p>
+    </div>
+  <% @orders.each do |order| %>
+    <div class="order-card">
+      <h6 class="view-details" ><%= link_to "View details", order_path(order) %></h6>
+      <p>#<%= order.id %></p>
+      <p><%= order.created_at.strftime("%B %d, %Y") %></p>
+      <p><%= order.purchases.count %> </p>
+      <p><%= order.amount_cents / 100 %> <%= order.amount.currency.symbol %></p>
+    </div>
+  <% end %>
+  </div>
+</div>

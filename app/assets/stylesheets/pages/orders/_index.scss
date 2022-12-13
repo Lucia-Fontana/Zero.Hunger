@@ -1,0 +1,40 @@
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.order-card {
+  display: flex;
+  background-color: $dark-green;
+  height: 84px;
+  width: 100%;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px 0px $dark-green;
+  p {
+    margin: 0;
+    width: 23%;
+    text-align: center;
+    color: $body-background;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-left: 1px dotted $body-background;
+  }
+  h6 {
+    margin: 0;
+    text-align: center;
+  }
+  .view-details {
+    width: 8%;
+  }
+}
+
+
+
+#orders-header {
+  position: sticky;
+  top: 9vh;
+  border-radius: 0;
+  font-weight: bold;
+}
