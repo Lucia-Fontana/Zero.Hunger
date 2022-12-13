@@ -4,37 +4,45 @@
   height: 73vh;
 }
 
-.img-back{
+.img-back-login{
+  background-image: asset-url("login-back.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.img-back-signup{
+  background-image: asset-url("signup-back-5.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.img-back-product-new{
   background-image: asset-url("signup-back-4.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
-  //background-position: center center;
 }
 
-.img-back2{
-  background-image: asset-url("login.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80vh;
-}
+// .img-left{
+//   background-image: asset-url("signup-back.png");
+//   background-size: cover;
+//   background-position: center center;
+//   border-radius: 10px;
+// }
 
-.img-back5{
-  background-image: asset-url("signup-back-3.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80vh;
-}
-
-.img-left{
-  background-image: asset-url("signup-back.png");
-  background-size: cover;
-  background-position: center center;
-  border-radius: 10px;
-}
+// .img-back{
+//   background-image: asset-url("signup-back-4.jpg");
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   height: 80vh;
+//   //background-position: center center;
+// }
 
 .img-fit {
   height: 73vh;

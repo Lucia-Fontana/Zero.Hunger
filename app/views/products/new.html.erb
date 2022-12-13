@@ -1,8 +1,8 @@
-<div class="containe img-back5">
+<div class="container contform img-back-product-new">
   <div class="row justify-content-center" >
     <div class="col-lg-3">
       <div class="form">
-        <h2>Offer</h2>
+        <h1 class="transparent">Offer</h1>
         <%= simple_form_for [@product] do |f| %>
           <%= f.input :name %>
           <%= f.input :category, collection: [ "Fruits", "Vegetables", "Carbs", "Dairy", "Meat & Fish", "Drink"] %>
@@ -12,12 +12,12 @@
     </div>
     <div class="col-lg-3">
       <div class="form">
-        <h2 class="transparent">Product</h2>
+        <h1 class="transparent">Product</h1>
           <%= f.input :quantity %>
           <%= f.input :price %>
           <%= f.input :CO2e %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit "Insert", class: "btn btn-primary" %>
+          <%= f.submit "Insert", class: "btn btn-gradient show-button" %>
         <% end %>
       </div>
   </div>
