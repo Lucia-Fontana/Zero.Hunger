@@ -5,7 +5,7 @@
         <h1 class="transparent">Offer</h1>
         <%= simple_form_for [@product] do |f| %>
           <%= f.input :name %>
-          <%= f.input :category, collection: [ "Fruits", "Vegetables", "Carbs", "Dairy", "Meat & Fish", "Drink"] %>
+          <%= f.input :category, collection: [ "Fruit", "Vegetable", "Carbohydrate", "Dairy", "Meat", "Drink"] %>
           <%= f.input :description %>
           <%= f.input :deadline, as: :date, html5: true %>
       </div>
