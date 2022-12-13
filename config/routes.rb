@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :orders, only: [ :index, :show, :create ] do
     resources :payments, only: :new
   end
-
+  resources :products, only: :destroy
   get "dashboard", to: "pages#dashboard"
 end

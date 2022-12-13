@@ -43,14 +43,14 @@
 
 .product-card {
   background-color: white;
-  height: 360px;
+  height: 350px;
   width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
   box-shadow: 0px 0px 3px 0px $dark-green;
-  display: none;
+  //display: none;
 }
 
 .product-card:hover {
@@ -95,7 +95,7 @@
   flex-direction: column;
   align-items: center;
   padding: 12px;
-  height: 150px;
+  height: 100px;
   p {
     font-size: 12px;
     color: gray;
