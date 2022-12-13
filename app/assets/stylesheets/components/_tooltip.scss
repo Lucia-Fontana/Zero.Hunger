@@ -1,0 +1,7 @@
+.tooltip-inner {
+  background-color: $light-green;
+}
+
+.tooltip-arrow::before {
+  border-top-color: $light-green !important;
+}
