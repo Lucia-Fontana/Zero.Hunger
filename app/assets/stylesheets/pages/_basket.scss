@@ -38,6 +38,7 @@
   width: 100%;
   background-color: none;
   display: flex-grow;
+  padding-top: 20px;
   // flex-direction: column;
   // justify-content: center;
 }
@@ -120,10 +121,10 @@
   background-color: none;
   border-radius: 20px;
   padding-top: 100px;
+  padding-bottom: 80px;
 }
 
 .Header2{
-  margin-top: 50px;
   margin-bottom: 15px;
   width: 90%;
   height: 15%;
