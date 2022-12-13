@@ -282,8 +282,8 @@
 
       <!-- If the current user is an association, the goods are for free -->
     <%if current_user.category == "Association"%>
-      <h5>Please confirm your order, the goods are for free</h5>
-    <%= link_to "Confirm", order_path(@order), class: "btn btn-primary" %>
+      <h5 class="mt-4">Please confirm your order, the goods are for free</h5>
+    <%= link_to "Confirm Order", order_path(@order), class: "btn btn-primary" %>
 
     <% else %>
 
