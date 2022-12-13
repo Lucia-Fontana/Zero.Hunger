@@ -261,24 +261,22 @@
 </div>
 <div class="col-lg-4">
   <div class="order-summary">
-
-
-
-    <div class="Header2">
+  
+     <div class="Header2">
       <h4 class="mb-4">Order Summary</h4>
     </div>
 
-    <div>
-      <p class="dark"><i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i><strong>Items: </strong><%= @order.products.size %></p>
-    </div>
+      <div>
+        <p class="dark"><i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i><strong>Items: </strong><%= @order.products.size %></p>
+      </div>
 
-    <div>
-      <p class="dark mb-4"><i class="fa-solid fa-leaf" style="margin-right: 5px"></i><strong>Carbon Footprint saved: </strong><%= @order.products.map {|product| product.CO2e}.sum %> CO2e / kg</p>
-      <p class="dark"><i class="fa-solid fa-circle-info" style="margin-right: 5px"></i><strong>For more information, visit: </strong></p>
-      <%= link_to ("https://tinyurl.com/2kjcjw9y") do %>
-        <%= image_tag "Nature.png", height: 50, width: 150, class: "mb-2" %>
-      <% end %>
-    </div>
+      <div>
+        <p class="dark mb-4"><i class="fa-solid fa-leaf" style="margin-right: 5px"></i><strong>Carbon Footprint saved: </strong><%= @order.products.map {|product| product.CO2e}.sum %> CO2e / kg</p>
+        <p class="dark"><i class="fa-solid fa-circle-info" style="margin-right: 5px"></i><strong>For more information, visit: </strong></p>
+        <%= link_to ("https://tinyurl.com/2kjcjw9y") do %>
+          <%= image_tag "Nature.png", height: 50, width: 150, class: "mb-2" %>
+        <% end %>
+      </div>
 
       <!-- If the current user is an association, the goods are for free -->
     <%if current_user.category == "Association"%>
@@ -299,9 +297,13 @@
               sessionId: '<%= @order.checkout_session_id %>'
             });
           });
-      </script>
+        </script>
+      <% end %>
+
     <% end %>
+
     <% end %>
+
   </div>
 </div>
 </div>

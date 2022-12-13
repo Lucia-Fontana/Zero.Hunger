@@ -1,4 +1,6 @@
 class PurchasesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     @purchases = Purchase.all
   end
@@ -76,8 +78,12 @@ class PurchasesController < ApplicationController
       )
 
       @purchase.order.update(checkout_session_id: session.id, amount_cents: total)
-      redirect_to new_order_payment_path(@purchase.order)
-
+      # redirect_to new_order_payment_path(@purchase.order)
+      respond_to do |format|
+        format.html { redirect_to new_order_payment_path(@purchase.order) }
+        format.json { head :no_content }
+      end
+      flash[:notice] = "Product succesfully added"
     # @order = Order.find(params[:order_id])
     # @product = Product.find(params[:product_id])
     # @purchase = Purchase.new(purchase_params)
@@ -92,7 +98,12 @@ class PurchasesController < ApplicationController
       @product = Product.find(params[:product_id])
       order  = Order.create!(amount_cents: @product.price, state: 'pending', user: current_user)
       @purchase = Purchase.create!(product: @product, order: order)
-      redirect_to new_order_payment_path(@purchase.order)
+
+      # redirect_to new_order_payment_path(@purchase.order)
+      respond_to do |format|
+        format.html { redirect_to new_order_payment_path(@purchase.order) }
+        format.json { head :no_content }
+      end
     end
   end
 
