@@ -74,13 +74,7 @@ a {
   padding: 20px;
 }
 
-.row-product-description {
-  background-color: white;
-  padding: 10px;
-  position: relative;
-  margin-bottom: 20px;
-  //border-radius: 10px;
-}
+
 
 // .product-container {
 //   display: flex;
@@ -119,7 +113,7 @@ a {
   overflow: scroll;
   box-shadow: 5px 5px lightgray;
   padding: 10px;
-  max-height: 590px;
+  max-height: 600px;
 }
 
 .pay {
@@ -127,13 +121,16 @@ a {
   margin-bottom: 20px;
 }
 
-.row-product-description {
-  height: 100%;
-  position: sticky;
+.product-description {
+  max-height: 400px;
   display: flex;
   position: relative;
   width: 100%;
   align-items: flex-start;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .card-buttons {
