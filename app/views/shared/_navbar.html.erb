@@ -24,7 +24,7 @@
             <% end %>
           <% end %>
 
-          <% unless current_user.orders.last.nil?%>
+          <% unless current_user.orders.last.nil? %>
             <%= link_to new_order_payment_path(current_user.orders.last) do %>
               <li class="nav-item active">
                 <%= image_tag "shopping-cart.png", class: "nav-link" %>
