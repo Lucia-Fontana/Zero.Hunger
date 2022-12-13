@@ -6,6 +6,21 @@
   text-align: center;
 }
 
+.product-list-dash {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 240px;
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    //display: none;
+  }
+}
+
 .product-card-dash {
   background-color: white;
   height: 250px;
@@ -34,6 +49,20 @@
     font-weight: bold;
     font-size: 16px;
   }
+}
+
+.card-top-dash {
+  height: 300px;
+}
+
+.card-image-wrapper-dash {
+  min-height: 144px;
+  max-height: 144px;
+}
+
+.card-image-dash {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .card-bottom-dash {
