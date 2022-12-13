@@ -13,10 +13,10 @@ Business.destroy_all
 User.destroy_all
 
 User.create(email: "user1@gmail.com", password: "user1@gmail.com", category: "Retailer")
-User.create(email: "user2@gmail.com", password: "user2@gmail.com")
-User.create(email: "user3@gmail.com", password: "user3@gmail.com")
-User.create(email: "user4@gmail.com", password: "user4@gmail.com")
-User.create(email: "user5@gmail.com", password: "user5@gmail.com")
+User.create(email: "user2@gmail.com", password: "user2@gmail.com", category: "Retailer")
+User.create(email: "user3@gmail.com", password: "user3@gmail.com", category: "Private person")
+User.create(email: "user4@gmail.com", password: "user4@gmail.com", category: "Private person")
+User.create(email: "user5@gmail.com", password: "user5@gmail.com", category: "Association")
 # business 1 creation + products
 business1 = Business.new(address: "16 Villa Gaudelet, Paris", name: "Sainsbury's", user: User.first)
 business1.save!
