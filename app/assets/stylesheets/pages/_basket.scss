@@ -1,7 +1,7 @@
 .cart-container {
-  width: 70%;
+  width: 50%;
   height: 85%;
-  background-color: #ffffff;
+  background-color: $body-background;
   border-radius: 20px;
   margin: auto;
 }
@@ -20,6 +20,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $body-background;
+  padding-bottom: 15px;
+  margin-left: 15px;
  }
 
 .card-items-left {
@@ -39,4 +42,28 @@
   color: rgb(24, 109, 131);
   cursor: pointer;
   border-bottom: 1px solid rgb(24, 109, 131);
+}
+
+.cart-amount {
+  display: block;
+  text-align: end;
+  font-family: $body-font;
+  color: rgb(23, 150, 129);
+}
+
+#pay {
+  display: block;
+  align-items: flex-end;
+}
+
+.cart-quantity {
+  text-align: center;
+}
+
+.card-item-actions {
+  text-align: center;
+}
+
+.card-product-infos {
+  text-align: left;
 }
