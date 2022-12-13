@@ -76,7 +76,6 @@ class PurchasesController < ApplicationController
       )
 
       @purchase.order.update(checkout_session_id: session.id, amount_cents: total)
-      raise
       redirect_to new_order_payment_path(@purchase.order)
 
     # @order = Order.find(params[:order_id])
