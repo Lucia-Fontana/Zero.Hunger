@@ -34,21 +34,23 @@
                 <% if product.business.name == "Sainsbury's" %>
 
                 <div class="card-product">
-                  <div class="card-items-left">
+                  <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
                           <%= cl_image_tag product.photo.key %>
                         <% end %>
                     </div>
 
-                      <div class="card-product-infos">
-                        <span class="product-title"><%= product.name %></span>
-                        <%= link_to product_path(product) do %>
-                          <i class="fa-solid fa-eye"></i>
-                        <% end %>
-                      </div>
+                    <div class="card-product-infos">
+                      <span class="product-title1"><%= product.name %></span>
+                    </div>
 
-                  </div>
+                    <div class="details">
+                      <%= link_to product_path(product) do %>
+                        <i class="fa-solid fa-eye"></i>
+                      <% end %>
+                    </div>
+                  <%# </div> %>
 
                   <div class="cart-quantity">
                     <span class="product-title">Quantity: <%= product.quantity %></span>
@@ -78,7 +80,7 @@
                 <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
 
                 <div class="card-product">
-                  <div class="card-items-left">
+                  <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
                           <%= cl_image_tag product.photo.key %>
@@ -86,19 +88,18 @@
                     </div>
 
                     <div class="card-product-infos">
-                      <div class="card-item-information">
-                        <div><span class="product-title"><%= product.name %></span></div>
-                      </div>
+                      <span class="product-title1"><%= product.name %></span>
                     </div>
+
                     <div class="details">
                       <%= link_to product_path(product) do %>
                         <i class="fa-solid fa-eye"></i>
                       <% end %>
                     </div>
-                  </div>
+                  <%# </div> %>
 
                   <div class="cart-quantity">
-                    <div><span class="product-title">Quantity: <%= product.quantity %></span></div>
+                    <span class="product-title">Quantity: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
@@ -107,7 +108,8 @@
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
-                  </div>
+
+                </div>
                 <% end %>
               <% end %>
             </div>
@@ -123,7 +125,7 @@
                 <% if product.business.name == "Tesco Express" %>
 
                 <div class="card-product">
-                  <div class="card-items-left">
+                  <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
                           <%= cl_image_tag product.photo.key %>
@@ -131,19 +133,18 @@
                     </div>
 
                     <div class="card-product-infos">
-                      <div class="card-item-information">
-                        <div><span class="product-title"><%= product.name %></span></div>
-                      </div>
+                      <span class="product-title1"><%= product.name %></span>
                     </div>
+
                     <div class="details">
                       <%= link_to product_path(product) do %>
                         <i class="fa-solid fa-eye"></i>
                       <% end %>
                     </div>
-                  </div>
+                  <%# </div> %>
 
                   <div class="cart-quantity">
-                    <div><span class="product-title">Quantity: <%= product.quantity %></span></div>
+                    <span class="product-title">Quantity: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
@@ -152,7 +153,8 @@
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
-                  </div>
+
+                </div>
                 <% end %>
               <% end %>
             </div>
@@ -168,7 +170,7 @@
                 <% if product.business.name == "Rupert Supermarket" %>
 
                 <div class="card-product">
-                  <div class="card-items-left">
+                  <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
                           <%= cl_image_tag product.photo.key %>
@@ -176,19 +178,18 @@
                     </div>
 
                     <div class="card-product-infos">
-                      <div class="card-item-information">
-                        <div><span class="product-title"><%= product.name %></span></div>
-                      </div>
+                      <span class="product-title1"><%= product.name %></span>
                     </div>
+
                     <div class="details">
                       <%= link_to product_path(product) do %>
                         <i class="fa-solid fa-eye"></i>
                       <% end %>
                     </div>
-                  </div>
+                  <%# </div> %>
 
                   <div class="cart-quantity">
-                    <div><span class="product-title">Quantity: <%= product.quantity %></span></div>
+                    <span class="product-title">Quantity: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
@@ -197,7 +198,8 @@
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
-                  </div>
+
+                </div>
                 <% end %>
               <% end %>
             </div>
@@ -213,7 +215,7 @@
                 <% if product.business.name == "Superway Supermarket" %>
 
                 <div class="card-product">
-                  <div class="card-items-left">
+                  <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
                           <%= cl_image_tag product.photo.key %>
@@ -221,19 +223,18 @@
                     </div>
 
                     <div class="card-product-infos">
-                      <div class="card-item-information">
-                        <div><span class="product-title"><%= product.name %></span></div>
-                      </div>
+                      <span class="product-title1"><%= product.name %></span>
                     </div>
+
                     <div class="details">
                       <%= link_to product_path(product) do %>
                         <i class="fa-solid fa-eye"></i>
                       <% end %>
                     </div>
-                  </div>
+                  <%# </div> %>
 
                   <div class="cart-quantity">
-                    <div><span class="product-title">Quantity: <%= product.quantity %></span></div>
+                    <span class="product-title">Quantity: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
@@ -242,7 +243,8 @@
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
-                  </div>
+
+                </div>
                 <% end %>
               <% end %>
             </div>
