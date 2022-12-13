@@ -61,11 +61,19 @@ li {
   border-radius: 50%;
 }
 
-.navbar-brand {
-  padding: 15px;
+.navbar-lewagon-home .navbar-brand img {
   width: 60px;
-  height: 60px;
+  border-radius: 50%;
 }
+
+// .navbar-brand {
+//   // padding: 15px;
+//   width: 60px;
+//   height: 60px;
+//   img {
+//     width: 100%;
+//   }
+// }
 
 .avatar {
   width: 48px;

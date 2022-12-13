@@ -41,13 +41,13 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.business_id = current_user.id
     if @product.save
-      redirect_to product_path(@product)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def delete
+  def destroy
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to dashboard_path, notice: "The item has been successfully removed"
