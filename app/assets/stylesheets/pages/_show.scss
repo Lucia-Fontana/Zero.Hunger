@@ -12,7 +12,14 @@
   background-color: #39D0C6;
   color: white;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 a {
@@ -38,9 +45,12 @@ a {
   display: flex;
 }
 
+.card-show {
+  margin-top: 6rem;
+}
 .row {
-  margin-left: 60px;
-  margin-right: 60px;
+  //margin-left: 20px;
+  //margin-right: 60px;
 }
 
 // .address {
@@ -49,6 +59,8 @@ a {
 
 .product-image {
   width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .product {
@@ -66,6 +78,7 @@ a {
   background-color: white;
   padding: 10px;
   position: relative;
+  margin-bottom: 20px;
   //border-radius: 10px;
 }
 
@@ -77,8 +90,8 @@ a {
 .price {
   //font-size: 30px;
   //flex-grow: 1;
-  //color: #39D0C6;
-  text-align: right;
+  color: black;
+  //text-align: left;
 }
 
 // .product-image {
@@ -100,12 +113,18 @@ a {
 .recipe {
   background-color: white;
   border-radius: 10px;
-  color: #39D0C6;
+  color: black;
   border-radius: 10px;
-  max-height: 200px;
+  height: 100%;
   overflow: scroll;
-  //box-shadow: 10px 10px lightgray;
-  //padding: 10px;
+  box-shadow: 5px 5px lightgray;
+  padding: 10px;
+  max-height: 590px;
+}
+
+.pay {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .row-product-description {

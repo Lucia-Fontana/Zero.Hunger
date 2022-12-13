@@ -13,10 +13,13 @@
       </div>
     <% end %>
   </div>
-  <div class="card-bottom">
+  <div class="card-bottom" data-controller="add-to-cart">
     <h5><%= humanized_money_with_symbol(product.price) %></h5>
-    <%= button_to product_purchases_path(product), method: :create, remote: true, id: "buy-button" do %>
-      <i class="fa-solid fa-cart-shopping"></i>
+    <%= button_to product_purchases_path(product), method: :create, remote: true, id: "buy-button", data: {
+                            add_to_cart_target: "button",
+                            action: "click->add-to-cart#create"
+                            } do %>
+      <i class="fa-solid fa-cart-shopping" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-placement="top" title="Added !"></i>
     <% end %>
   </div>
 </div>

@@ -1,28 +1,20 @@
 <div class="show-container" data-controller="recipe" data-recipe-ingredient-value="<%= @product.name %>">
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-8">
 
       <div class="row product-description">
         <div class="col-12 col-lg-6">
-          <%= link_to "Back", products_path(query: params[:query]), class:"previous" %>
-          <div data-action="click->recipe#addRecipe">
+          <%= link_to "Back", products_path, class:"previous" %>
+          <div>
+              <h5><%= @product.name %></h5>
             <%= cl_image_tag @product.photo.key, crop: :fill, class: "product-image" %>
           </div>
         </div>
 
         <div class="col-12 col-lg-6">
-          <div class="row justify-content-between">
-            <div class="col-12 col-lg-6">
-              <h5><%= @product.name %></h5>
-            </div>
 
-            <div class="col-12 col-lg-6">
-              <h5 class=price><%= humanized_money_with_symbol(@product.price) %></h5>
-            </div>
-          </div>
-          <%= button_to "Add to cart", {controller: "purchases", action: "create", product_id: params[:id]}, remote: true, id: "buy-button", class: "btn btn-gradient show-button" %>
-          <div class="d-flex">
+          <div class="d-flex card-show">
             <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
             <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
           </div>
@@ -32,9 +24,24 @@
             <p> CO2e / kg </p>
           </div>
           <p><%= @product.description %></p>
+          <div class="row">
+            <div class="d-flex justify-content-between">
+              <h5 class="price"><%= humanized_money_with_symbol(@product.price) %></h5>
+            <%= button_to product_purchases_path(@product), method: :create, remote: true, id: "buy-button", class: "pay" do %>
+              <i class="fa-solid fa-cart-shopping"></i>
+            <% end %>
+            </div>
+          </div>
         </div>
       </div>
 
+      <div class="">
+        <div style="width: 750px; height: 200px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
 
     </div>
 
@@ -42,18 +49,12 @@
       <div class="recipe">
         <h3 data-recipe-target="title" ></h3>
         <p data-recipe-target="description"></p>
+          <a href="">
       </div>
     </div>
 
   </div>
 </div>
-      <div class="row">
-        <div style="width: 100%; height: 200px;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
 
 
 <!--- <div class="product">

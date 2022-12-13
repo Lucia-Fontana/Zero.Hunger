@@ -52,7 +52,7 @@ h4 {
 h5 {
   font-family: $headers-font;
   font-size: 24px;
-  font-weight: medium;
+  font-weight: bold;
   color: $titles-green;
 }
 
@@ -70,13 +70,4 @@ p.light {
   font-size: 16px;
   font-weight: light;
   color: white;
-}
-
-.link {
-  font-size: 14px;
-  font-family: $body-font;
-  font-weight: 600;
-  color: rgb(24, 109, 131);
-  cursor: pointer;
-  border-bottom: 1px solid rgb(24, 109, 131);
 }

@@ -3,7 +3,7 @@
   <div class="container-fluid">
 
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo-leaf.jpg" %>
+      <%= image_tag "new-logo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
               </li>
             <% end %>
             <% else %>
-            <%= link_to root_path do %>
+            <%= link_to new_order_payment_path(Order.create(user: current_user)) do %>
               <li class="nav-item active">
                 <%= image_tag "icons8-shopping-cart-48 (1).png", class: "nav-link" %>
               </li>
