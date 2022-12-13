@@ -12,8 +12,6 @@ class PurchasesController < ApplicationController
     @product = Product.find(params[:id])
     # need order_id because orders are not nested into products, nor purchases
     @order = Order.find(params[:order_id])
-    @product.availability = false
-    @product.save!
   end
 
   # def create
@@ -37,7 +35,9 @@ class PurchasesController < ApplicationController
       @purchase.order = current_user.orders.where(state: "pending").last
       @purchase.product = Product.find(params[:product_id])
       @purchase.save!
-
+      @product = Product.find(params[:product_id])
+      @product.availability = false
+      @product.save!
       line_items = []
       current_user.orders.where(state: "pending").last.products.each do |product|
         line_items << {

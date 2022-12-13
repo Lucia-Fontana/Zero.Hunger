@@ -1,239 +1,286 @@
-<div class="cart-container">
+<div class="back-image">
 
-  <%= link_to products_path, class: "previous mt-5" do %>
-    <p><</p>
-  <% end %>
+<div class="shopping-grid">
+  <div class="cart-container">
 
-  <div class="Header">
-    <h3>Shopping Cart</h3>
-    <%# <p class="link">Remove all</p> %>
-    <%# <%= button_to "Remove", {controller: "purchases", method: :destroy, product_id: params[:id]}, remote: true, id: "delete-button", class: "btn btn-gradient show-button" %>
-  </div>
+    <%= link_to products_path, class: "previous mt-5" do %>
+      <p><</p>
+    <% end %>
 
-  <% if @order.products.size == 0 %>
-  <p class="dark bold text-center">
-    There are no items in your shopping cart. <br>
-    Please <%= link_to "check available products", products_path %> and add some items to your cart.
-  </p>
-  <% else %>
+    <div class="Header">
+      <h3>Shopping Cart</h3>
+    </div>
+
+    <% if @order.products.size == 0 %>
+    <p class="dark bold text-center">
+      There are no items in your shopping cart. <br>
+      Please <%= link_to "check available products", products_path %> and add some items to your cart.
+    </p>
+      <%= link_to products_path, class: "navbar-brand" do %>
+      <%= image_tag "customer.png", height: 200, width: 220 %>
+    <% end %>
+    <% else %>
 
 
-  <%# retailer 1 %>
-  <div class="card-business">
-      <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
-        <h5>Sainsbury's</h5>
-      <% end %>
-        <div class="card-item">
-          <% @order.products.each do |product| %>
-            <% if product.business.name == "Sainsbury's" %>
+    <%# retailer 1 %>
+    <div class="card-business">
+        <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
+          <h5 class="mt-4">Sainsbury's</h5>
+        <% end %>
+          <div class="card-item">
+            <% @order.products.each do |product| %>
+              <% if product.business.name == "Sainsbury's" %>
 
-            <div class="card-product">
-              <div class="card-items-left">
-                <div class="card-item_image d-flex flex-row">
-                    <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
-                </div>
+              <div class="card-product">
+                <div class="card-items-left">
+                  <div class="card-item_image d-flex flex-row mt-3">
+                      <%= link_to product_path(product) do %>
+                        <%= cl_image_tag product.photo.key %>
+                      <% end %>
+                  </div>
 
-                <div class="card-product-infos">
-                  <div class="card-item-information">
-                  <p class="dark bold"><%= product.name %></p>
+                  <div class="card-product-infos">
+                    <div class="card-item-information">
+                    <p class="dark bold"><%= product.name %></p>
 
-                  <%= link_to products_path(product.id), class: "navbar-brand" do %>
-                    <p class="link">Details</p>
-                  <% end %>
+                    <%= link_to product_path(product), class: "navbar-brand" do %>
+                      <p class="link">Details</p>
+                    <% end %>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="cart-quantity">
-                <div><p class="dark bold">Quantity: </p></div>
-                <div><%= product.quantity %></div>
-              </div>
-
-                <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %>€</p>
-                  <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
-                    <%# <i class="fa fa-trash-o ml-3 text-black-50"></i> %>
-                </div>
-              </div>
-            <% end %>
-           <% end %>
-        </div>
-  </div>
-
-
-  <%# retailer 2 %>
-  <div class="card-business">
-      <% if @order.products.map {|product| product.business.name}.include?("Waitrose & Partners Bloomsbury")%>
-        <h5>Waitrose & Partners Bloomsbury</h5>
-      <% end %>
-        <div class="card-item">
-          <% @order.products.each do |product| %>
-            <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
-
-            <div class="card-product">
-              <div class="card-items-left">
-                <div class="card-item_image d-flex flex-row">
-                    <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                <div class="cart-quantity">
+                  <div><p class="dark bold">Quantity: </p></div>
+                  <div><%= product.quantity %></div>
                 </div>
 
-                <div class="card-product-infos">
-                  <div class="card-item-information">
-                  <p class="dark bold"><%= product.name %></p>
-
-                  <%= link_to products_path(product.id), class: "navbar-brand" do %>
-                    <p class="link">Details</p>
-                  <% end %>
+                  <div class="card-item-actions">
+                    <p class="dark bold"><%= product.price %>€</p>
+                    <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
                   </div>
                 </div>
-              </div>
-
-              <div class="cart-quantity">
-                <div><p class="dark bold">Quantity: </p></div>
-                <div><%= product.quantity %></div>
-              </div>
-
-                <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %>€</p>
-                  <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
-                    <%# <i class="fa fa-trash-o ml-3 text-black-50"></i> %>
-                </div>
-              </div>
+              <% end %>
             <% end %>
-           <% end %>
-        </div>
-  </div>
+          </div>
+    </div>
 
-  <%# retailer 3 %>
-  <div class="card-business">
-      <% if @order.products.map {|product| product.business.name}.include?("Tesco Express")%>
-        <h5>Tesco Express</h5>
-      <% end %>
-        <div class="card-item">
-          <% @order.products.each do |product| %>
-            <% if product.business.name == "Tesco Express" %>
 
-            <div class="card-product">
-              <div class="card-items-left">
-                <div class="card-item_image d-flex flex-row">
-                    <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
-                </div>
+    <%# retailer 2 %>
+    <div class="card-business">
+        <% if @order.products.map {|product| product.business.name}.include?("Waitrose & Partners Bloomsbury")%>
+          <h5 class="mt-4">Waitrose & Partners Bloomsbury</h5>
+        <% end %>
+          <div class="card-item">
+            <% @order.products.each do |product| %>
+              <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
 
-                <div class="card-product-infos">
-                  <div class="card-item-information">
-                  <p class="dark bold"><%= product.name %></p>
+              <div class="card-product">
+                <div class="card-items-left">
+                  <div class="card-item_image d-flex flex-row">
+                      <%= link_to product_path(product) do %>
+                        <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                      <% end %>
+                  </div>
 
-                  <%= link_to products_path(product.id), class: "navbar-brand" do %>
-                    <p class="link">Details</p>
-                  <% end %>
+                  <div class="card-product-infos">
+                    <div class="card-item-information">
+                    <p class="dark bold"><%= product.name %></p>
+
+                    <%= link_to products_path(product.id), class: "navbar-brand" do %>
+                      <p class="link">Details</p>
+                    <% end %>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="cart-quantity">
-                <div><p class="dark bold">Quantity: </p></div>
-                <div><%= product.quantity %></div>
-              </div>
-
-                <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %>€</p>
-                  <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
-                    <%# <i class="fa fa-trash-o ml-3 text-black-50"></i> %>
-                </div>
-              </div>
-            <% end %>
-           <% end %>
-        </div>
-  </div>
-
-  <%# retailer 4 %>
-  <div class="card-business">
-      <% if @order.products.map {|product| product.business.name}.include?("Rupert Supermarket")%>
-        <h5>Rupert Supermarket</h5>
-      <% end %>
-        <div class="card-item">
-          <% @order.products.each do |product| %>
-            <% if product.business.name == "Rupert Supermarket" %>
-
-            <div class="card-product">
-              <div class="card-items-left">
-                <div class="card-item_image d-flex flex-row">
-                    <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                <div class="cart-quantity">
+                  <div><p class="dark bold">Quantity: </p></div>
+                  <div><%= product.quantity %></div>
                 </div>
 
-                <div class="card-product-infos">
-                  <div class="card-item-information">
-                  <p class="dark bold"><%= product.name %></p>
-
-                  <%= link_to products_path(product.id), class: "navbar-brand" do %>
-                    <p class="link">Details</p>
-                  <% end %>
+                  <div class="card-item-actions">
+                    <p class="dark bold"><%= product.price %>€</p>
+                    <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
                   </div>
                 </div>
-              </div>
-
-              <div class="cart-quantity">
-                <div><p class="dark bold">Quantity: </p></div>
-                <div><%= product.quantity %></div>
-              </div>
-
-                <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %>€</p>
-                  <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
-                    <%# <i class="fa fa-trash-o ml-3 text-black-50"></i> %>
-                </div>
-              </div>
+              <% end %>
             <% end %>
-           <% end %>
-        </div>
-  </div>
+          </div>
+    </div>
 
-  <%# retailer 5 %>
-  <div class="card-business">
-      <% if @order.products.map {|product| product.business.name}.include?("Superway Supermarket")%>
-        <h5>Superway Supermarket</h5>
-      <% end %>
-        <div class="card-item">
-          <% @order.products.each do |product| %>
-            <% if product.business.name == "Superway Supermarket" %>
+    <%# retailer 3 %>
+    <div class="card-business">
+        <% if @order.products.map {|product| product.business.name}.include?("Tesco Express")%>
+          <h5 class="mt-4">Tesco Express</h5>
+        <% end %>
+          <div class="card-item">
+            <% @order.products.each do |product| %>
+              <% if product.business.name == "Tesco Express" %>
 
-            <div class="card-product">
-              <div class="card-items-left">
-                <div class="card-item_image">
-                    <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
-                </div>
+              <div class="card-product">
+                <div class="card-items-left">
+                  <div class="card-item_image d-flex flex-row">
+                      <%= link_to product_path(product) do %>
+                        <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                      <% end %>
+                  </div>
 
-                <div class="card-product-infos">
-                  <div class="card-item-information">
-                  <p class="dark bold"><%= product.name %></p>
-                  <p class="cart-quantity">Quantity: <%= product.quantity %></p>
-                  <%= link_to products_path(product.id), class: "navbar-brand" do %>
-                    <p class="link">Details</p>
-                  <% end %>
+                  <div class="card-product-infos">
+                    <div class="card-item-information">
+                    <p class="dark bold"><%= product.name %></p>
+
+                    <%= link_to products_path(product.id), class: "navbar-brand" do %>
+                      <p class="link">Details</p>
+                    <% end %>
+                    </div>
                   </div>
                 </div>
-              </div>
-                <div class="card-item-actions">
-                  <p class="dark bold"><%= product.price %></p>
-                  <%= link_to "Remove", purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} %>
+
+                <div class="cart-quantity">
+                  <div><p class="dark bold">Quantity: </p></div>
+                  <div><%= product.quantity %></div>
                 </div>
-              </div>
+
+                  <div class="card-item-actions">
+                    <p class="dark bold"><%= product.price %>€</p>
+                    <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-           <% end %>
-        </div>
+          </div>
+    </div>
+
+    <%# retailer 4 %>
+    <div class="card-business">
+        <% if @order.products.map {|product| product.business.name}.include?("Rupert Supermarket")%>
+          <h5 class="mt-4">Rupert Supermarket</h5>
+        <% end %>
+          <div class="card-item">
+            <% @order.products.each do |product| %>
+              <% if product.business.name == "Rupert Supermarket" %>
+
+              <div class="card-product">
+                <div class="card-items-left">
+                  <div class="card-item_image d-flex flex-row">
+                      <%= link_to product_path(product) do %>
+                        <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                      <% end %>
+                  </div>
+
+                  <div class="card-product-infos">
+                    <div class="card-item-information">
+                    <p class="dark bold"><%= product.name %></p>
+
+                    <%= link_to products_path(product.id), class: "navbar-brand" do %>
+                      <p class="link">Details</p>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cart-quantity">
+                  <div><p class="dark bold">Quantity: </p></div>
+                  <div><%= product.quantity %></div>
+                </div>
+
+                  <div class="card-item-actions">
+                    <p class="dark bold"><%= product.price %>€</p>
+                    <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+    </div>
+
+    <%# retailer 5 %>
+    <div class="card-business">
+        <% if @order.products.map {|product| product.business.name}.include?("Superway Supermarket")%>
+          <h5 class="mt-4">Superway Supermarket</h5>
+        <% end %>
+          <div class="card-item">
+            <% @order.products.each do |product| %>
+              <% if product.business.name == "Superway Supermarket" %>
+
+              <div class="card-product">
+                <div class="card-items-left">
+                  <div class="card-item_image d-flex flex-row">
+                      <%= link_to product_path(product) do %>
+                        <%= cl_image_tag product.photo.key, height: 60, width: 70, crop: :fill, class: "product-image" %>
+                      <% end %>
+                  </div>
+
+                  <div class="card-product-infos">
+                    <div class="card-item-information">
+                    <p class="dark bold"><%= product.name %></p>
+                    <p class="cart-quantity">Quantity: <%= product.quantity %></p>
+                    <%= link_to products_path(product.id), class: "navbar-brand" do %>
+                      <p class="link">Details</p>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
+                  <div class="card-item-actions">
+                    <p class="dark bold"><%= product.price %>€</p>
+                    <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+    </div>
+    <div>
+      <%= link_to products_path, class: "previous mt-5" do %>
+        <p class="light">Continue shopping</p>
+      <% end %>
+    </div>
   </div>
 
-      <strong class="cart-amount">Total Amount: <%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Confirm Order</button>
+  <div class="order-summary">
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
+    <div class="Header2">
+      <h4>Order Summary</h4>
+    </div>
+
+    <div>
+      <p class="dark bold">Items: <%= @order.products.size %></p>
+    </div>
+
+    <div>
+      <p class="dark bold"><i class="fa-solid fa-leaf" style="margin-right: 5px"></i>Carbon Footprint saved: <%= @order.products.map {|product| product.CO2e}.sum %></p>
+      <p class="dark bold">For more information, visit: </p>
+      <%= link_to ("https://tinyurl.com/2kjcjw9y") do %>
+        <%= image_tag "Nature.png", height: 50, width: 150, class: "mb-2" %>
+      <% end %>
+    </div>
+
+
+        <strong class="cart-amount">Total Amount: <%= humanized_money_with_symbol @order.amount %></strong></p>
+        <button id="pay" class="btn btn-primary">Confirm Order</button>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @order.checkout_session_id %>'
+            });
           });
-        });
-    </script>
-  <% end %>
+      </script>
+    <% end %>
+  </div>
+</div>
 </div>
