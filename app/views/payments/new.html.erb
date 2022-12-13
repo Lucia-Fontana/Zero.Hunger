@@ -262,19 +262,9 @@
 <div class="col-lg-4">
   <div class="order-summary">
   
-
-      <!-- If the current user is an association, the goods are for free -->
-      <%if current_user.category == "Association"%>
-        <h5>Please confirm your order, the goods are for free</h5>
-        <%= link_to "Confirm", order_path(@order), class: "btn btn-primary" %>
-
-      <% else %>
-        <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-        <button id="pay" class="btn btn-primary">Pay</button>
-        
-      <div class="Header2">
-        <h4 class="mb-4">Order Summary</h4>
-      </div>
+     <div class="Header2">
+      <h4 class="mb-4">Order Summary</h4>
+    </div>
 
       <div>
         <p class="dark"><i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i><strong>Items: </strong><%= @order.products.size %></p>
@@ -288,6 +278,12 @@
         <% end %>
       </div>
 
+      <!-- If the current user is an association, the goods are for free -->
+    <%if current_user.category == "Association"%>
+      <h5 class="mt-4">Please confirm your order, the goods are for free</h5>
+    <%= link_to "Confirm Order", order_path(@order), class: "btn btn-primary" %>
+
+    <% else %>
 
         <strong class="cart-amount"><i class="fa-solid fa-file-invoice" style="margin-right: 5px"></i>Total Amount: <%= humanized_money_with_symbol @order.amount %></strong></p>
         <button id="pay" class="btn btn-primary">Confirm Order</button>
@@ -306,7 +302,8 @@
 
     <% end %>
 
-   <% end %>
+    <% end %>
+
   </div>
 </div>
 </div>
