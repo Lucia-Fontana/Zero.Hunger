@@ -193,18 +193,26 @@
         </div>
   </div>
 
-      <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
+      <!-- If the current user is an association, the goods are for free -->
+      <%if current_user.category == "Association"%>
+        <h5>Please confirm your order, the goods are for free</h5>
+        <%= link_to "Confirm", order_path(@order), class: "btn btn-primary" %>
+
+      <% else %>
+        <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+        <button id="pay" class="btn btn-primary">Pay</button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @order.checkout_session_id %>'
+            });
           });
-        });
-    </script>
+        </script>
+      <% end %>
+
   <% end %>
 </div>
