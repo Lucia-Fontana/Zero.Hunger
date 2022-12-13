@@ -1,11 +1,25 @@
 .navbar-lewagon {
   justify-content: space-between;
-  //background: $body-background;
+  background: $body-background;
   align-items: center;
-  border-bottom: rgb(229, 241, 234) 1px solid;
+  // border-bottom: rgb(229, 241, 234) 1px solid;
   position: sticky;
   top: 0;
-  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+  // box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+}
+
+.navbar-lewagon-home {
+  justify-content: space-between;
+  //background: $body-background;
+  align-items: center;
+  // border-bottom: rgb(229, 241, 234) 1px solid;
+  position: sticky;
+  top: 0;
+  // box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+}
+
+.navbar-collapse {
+  flex-grow: 0;
 }
 
 .nav-item {
@@ -31,6 +45,11 @@ li {
 
 #input-searchbar {
   margin-bottom: 0;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .navbar-lewagon .navbar-collapse {

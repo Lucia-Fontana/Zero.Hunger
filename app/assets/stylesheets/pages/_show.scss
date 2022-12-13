@@ -38,6 +38,11 @@ a {
   display: flex;
 }
 
+.row {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 // .address {
 //   padding: 20px;
 // }
@@ -57,9 +62,10 @@ a {
   padding: 20px;
 }
 
-.product-description {
+.row-product-description {
   background-color: white;
   padding: 10px;
+  position: relative;
   //border-radius: 10px;
 }
 
@@ -96,8 +102,19 @@ a {
   border-radius: 10px;
   color: #39D0C6;
   border-radius: 10px;
+  max-height: 200px;
+  overflow: scroll;
   //box-shadow: 10px 10px lightgray;
   //padding: 10px;
+}
+
+.row-product-description {
+  height: 100%;
+  position: sticky;
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .card-buttons {
@@ -186,7 +203,6 @@ a {
   margin: 0 auto;
 }
 
-
 .card-product {
   width: 100%;
   overflow: hidden;
@@ -228,54 +244,4 @@ a {
   padding: 20px;
   border-radius: 10px;
   font-size: 18px;
-}
-
-
-
-
-//////////// This is for the orders/show ///////////////
-
-.order-infos {
-  display: flex;
-  flex-direction: column;
-}
-
-.purchase {
-  display: flex;
-  flex-direction: column;
-  border-bottom: solid 1px rgb(230, 229, 215);
-  padding-bottom: 48px;
-  padding-top: 24px;
-}
-
-.purchase-summary {
-  display: flex;
-  align-items: center;
-  p {
-    margin: 0;
-  }
-}
-
-.purchase-location-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.purchase-img-container {
-  width: 100px;
-  margin-right: 12px;
-}
-
-.purchase-img {
-  width: 100%;
-}
-
-.confirmation-img-container {
-  width: 100px;
-  text-align: center;
-  margin-right: 12px;
-}
-
-.confirmation-img {
-  width: 76px;
 }

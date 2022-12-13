@@ -1,19 +1,27 @@
 <div class="container">
-  <h3>Thank you <%= @user.username %> !</h3>
-  <h3>Your purchases are waiting for you !</h3>
+  <div class="confirmation-top">
+    <div class="confirmation-top-titles">
+      <h3>Thank you <%= @user.username %> !</h3>
+      <h3>Your purchases are waiting for you ! &#127881;</h3>
+    </div>
+    <div class="confirmation-top-back">
+      <%= link_to products_path do %>
+        <h3><i class="fa-solid fa-check"></i></h3>
+      <% end %>
+    </div>
+  </div>
   <div class="order-infos">
     <p>Order confirmation n°<%= @order.id %></p>
     <p>Total price: <%= @order.amount.fractional / 100 %> <%= @order.amount.symbol %></p>
-    <% @user.orders.last.purchases.each do |purchase| %>
+    <% unless @locations[0].nil? %>
       <div class="purchase">
-        <h5><%= purchase.product.name %></h5>
         <div class="purchase-summary">
           <div class="purchase-img-container">
             <%= image_tag "map-icon.png", class: "purchase-img" %>
           </div>
           <div class="purchase-location-text">
-            <p>Pick-up location:</p>
-            <p><%= purchase.product.business.name %>, <%= purchase.product.business.address %></p>
+            <h4><%= Business.where(address: @address1).first.name %></h4>
+            <h5><%= @address1 %></h5>
           </div>
         </div>
         <div class="purchase-summary">
@@ -21,7 +29,124 @@
             <%= image_tag "success-icon.png", class: "purchase-img" %>
           </div>
           <div class="purchase-summary-text">
-            <p>Total amount <%= purchase.product.price.fractional/100 %> <%= purchase.product.price.currency.symbol %></p>
+            <% @address1_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless @locations[1].nil? %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-location-text">
+            <h4><%= Business.where(address: @address2).first.name %></h4>
+            <h5><%= @address2 %></h5>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <% @address2_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless @locations[2].nil? %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-location-text">
+            <h4><%= Business.where(address: @address3).first.name %></h4>
+            <h5><%= @address3 %></h5>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <% @address3_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless @locations[3].nil? %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-location-text">
+            <h4><%= Business.where(address: @address4).first.name %></h4>
+            <h5><%= @address4 %></h5>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <% @address4_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless @locations[4].nil? %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-location-text">
+            <h4><%= Business.where(address: @address5).first.name %></h4>
+            <h5><%= @address5 %></h5>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <% @address5_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless @locations[5].nil? %>
+      <div class="purchase">
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "map-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-location-text">
+            <h4><%= Business.where(address: @address6).first.name %></h4>
+            <h5><%= @address6 %></h5>
+          </div>
+        </div>
+        <div class="purchase-summary">
+          <div class="purchase-img-container">
+            <%= image_tag "success-icon.png", class: "purchase-img" %>
+          </div>
+          <div class="purchase-summary-text">
+            <% @address6_articles.each do |article| %>
+              <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+            <% end %>
           </div>
         </div>
       </div>
