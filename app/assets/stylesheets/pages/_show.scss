@@ -8,6 +8,10 @@
   color: $dark-green;
 }
 
+.fa-solid {
+  color: white;
+}
+
 .previous {
   background-color: $titles-green;
   color: white;
@@ -106,7 +110,6 @@ a {
   background-color: white;
   border-radius: 10px;
   color: grey;
-  border-radius: 10px;
   height: 100%;
   overflow: scroll;
   box-shadow: 5px 5px 5px 5px lightgray;
