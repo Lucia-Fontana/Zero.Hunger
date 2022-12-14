@@ -1,23 +1,25 @@
 <div class="container contform img-back-product-new">
   <div class="row justify-content-center" >
-    <div class="col-lg-3">
-      <div class="form">
+      <div class="form" style=" width: 50vw; margin: 0 auto;">
         <h1 class="transparent">Offer</h1>
         <%= simple_form_for [@product] do |f| %>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 16px;">
+        <div>
           <%= f.input :name %>
           <%= f.input :category, collection: [ "Fruit", "Vegetable", "Carbohydrate", "Dairy", "Meat", "Drink"] %>
           <%= f.input :description %>
           <%= f.input :deadline, as: :date, html5: true %>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="form">
-        <h1 class="transparent">Product</h1>
+        </div>
+        <div>
           <%= f.input :quantity %>
           <%= f.input :price %>
           <%= f.input :CO2e %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit "Insert", class: "btn btn-gradient show-button" %>
+          </div>
+          </div>
+          <div class="text-center">
+            <%= f.submit "Insert", class: "btn btn-gradient show-button w-50" %>
+          </div>
         <% end %>
       </div>
   </div>
