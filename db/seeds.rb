@@ -220,42 +220,42 @@ p54.save!
 
 u1 = User.new(email: "aurelie@gmail.com", password: "aurelie@gmail.com", username: "Aurélie", category: "Private person")
 u1.save!
-o1 = Order.new(user_id: u1.id)
+o1 = Order.new(user: u1)
 o1.save!
-pc1 = Purchase.new(product_id: p21.id, order_id: o1.id)
+pc1 = Purchase.new(product: p21, order: o1)
 pc1.save!
-pc2 = Purchase.new(product_id: p20.id, order_id: o1.id)
+pc2 = Purchase.new(product: p20, order: o1)
 pc2.save!
 o1.update!(amount_cents: p20.price + p21.price)
 
 u2 = User.new(email: "guillaume@gmail.com", password: "guillaume@gmail.com", username: "Guillaume", category: "Private person")
 u2.save!
-o2 = Order.new(user_id: u2.id)
+o2 = Order.new(user: u2)
 o2.save!
-pc3 = Purchase.new(product_id: p18.id, order_id: o2.id)
+pc3 = Purchase.new(product: p18, order: o2)
 pc3.save!
-pc4 = Purchase.new(product_id: p7.id, order_id: o2.id)
+pc4 = Purchase.new(product: p7, order: o2)
 pc4.save!
 o2.update!(amount_cents: p18.price + p7.price)
 
 u3 = User.new(email: "the_hunger_project@gmail.com", password: "the_hunger_project@gmail.com", username: "The Hunger Project", category: "Association")
 u3.save!
-o3 = Order.new(user_id: u3.id)
+o3 = Order.new(user: u3)
 o3.save!
-pc5 = Purchase.new(product_id: p6.id, order_id: o3.id)
+pc5 = Purchase.new(product: p6, order: o3)
 pc5.save!
-pc6 = Purchase.new(product_id: p9.id, order_id: o3.id)
+pc6 = Purchase.new(product: p9, order: o3)
 pc6.save!
 o3.update!(amount_cents: p6.price + p9.price)
 
 u4 = User.new(email: "unicef@gmail.com", password: "unicef@gmail.com", username: "Unicef", category: "Association")
 u4.save!
-o4 = Order.new(user_id: u4.id)
+o4 = Order.new(user: u4)
 o4.save!
-pc7 = Purchase.new(product_id: p24.id, order_id: o4.id)
+pc7 = Purchase.new(product: p24, order: o4)
 pc7.save!
-pc8 = Purchase.new(product_id: p23.id, order_id: o4.id)
+pc8 = Purchase.new(product: p23, order: o4)
 pc8.save!
-pc9 = Purchase.new(product_id: p25.id, order_id: o4.id)
+pc9 = Purchase.new(product: p25, order: o4)
 pc9.save!
 o4.update!(amount_cents: p24.price + p23.price + p25.price)
