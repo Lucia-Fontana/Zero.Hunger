@@ -8,6 +8,7 @@
       <p>Total price</p>
     </div>
   <% @orders.each do |order| %>
+    <% if order.state == "done" %>
     <div class="order-card">
       <h6 class="view-details" ><%= link_to "View details", order_path(order) %></h6>
       <p>#<%= order.id %></p>
@@ -15,6 +16,7 @@
       <p><%= order.purchases.count %> </p>
       <p><%= order.amount_cents / 100 %> <%= order.amount.currency.symbol %></p>
     </div>
+    <% end %>
   <% end %>
   </div>
 </div>
