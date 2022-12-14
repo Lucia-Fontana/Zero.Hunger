@@ -22,8 +22,6 @@
         <%= image_tag "customer.png", height: 200, width: 220 %>
       <% end %>
       <% else %>
-
-
       <%# retailer 1 %>
       <div class="card-business">
           <% if @order.products.map {|product| product.business.name}.include?("Sainsbury's")%>
@@ -250,7 +248,6 @@
             </div>
       </div>
 
-
       <div>
         <%= link_to products_path, class: "previous py-2 my-3" do %>
           <strong class="light">Continue shopping</strong>
@@ -282,7 +279,6 @@
     <%if current_user.category == "Association"%>
       <h5 class="mt-4">Please confirm your order, the goods are for free</h5>
     <%= link_to "Confirm Order", order_path(@order), class: "btn btn-primary" %>
-
     <% else %>
 
         <strong class="cart-amount"><i class="fa-solid fa-file-invoice" style="margin-right: 5px"></i>Total Amount: <%= humanized_money_with_symbol @order.amount %></strong></p>
@@ -299,7 +295,6 @@
           });
         </script>
       <% end %>
-
     <% end %>
 
   </div>
