@@ -43,7 +43,8 @@ class OrdersController < ApplicationController
       @address5_articles << purchase if purchase.product.business.address == @address5
       @address6_articles << purchase if purchase.product.business.address == @address6
     end
-    @order.destroy
+    @order.state = "done"
+    @order.save
   end
 
   def new

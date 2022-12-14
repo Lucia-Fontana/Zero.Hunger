@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.business_id = current_user.id
+    @product.business = current_user.business
     if @product.save
       redirect_to dashboard_path
     else
