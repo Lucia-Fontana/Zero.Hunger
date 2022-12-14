@@ -1,6 +1,7 @@
-<div>
+<div class="container">
   <div>
-    <h2 class="dash-h1">My dashboard</h2>
+    <h2 class="dash-h1"><%= @products.last.business.name %></h2>
+    <h5>Total: <%= @products.count %> products</h5>
   </div>
   <div class="product-list-dash">
     <% @products.each do |product| %>
