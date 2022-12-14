@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :business
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
   validates :category, presence: true

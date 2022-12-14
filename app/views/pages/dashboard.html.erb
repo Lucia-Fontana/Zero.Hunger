@@ -1,5 +1,30 @@
-<div class="product-list">
-  <% @products.each do |product| %>
-    <%= render "new-card", product: product %>
+<div>
+  <div>
+    <h2 class="dash-h1">My dashboard</h2>
+  </div>
+  <div class="product-list-dash">
+    <% @products.each do |product| %>
+      <%# <%= render "products/new-card", product: product %>
+      <div class="product-card-dash <%= product.category %>" data-filter-target="card">
+        <div class="card-top-dash">
+          <%= link_to product_path(product, query: params[:query]) do %>
+            <div class="card-image-wrapper-dash">
+              <% if product.photo.attached?%>
+                <%= cl_image_tag(product.photo.key, class: "card-image-dash", width: 200, height: 144, crop: :fill) %>
+              <% end %>
+            </div>
+            <div class="card-infos-dash">
+              <h5><%= product.name %></h5>
+            </div>
+          <% end %>
+          </div>
+            <div class="card-bottom-dash">
+              <h5><%= humanized_money_with_symbol(product.price) %></h5>
+              <%= link_to product_path(product), data: {turbo_method: :delete} do %>
+                <i class="fa-regular fa-trash-can delete-button"></i>
+              <% end %>
+            </div>
+          </div>
     <% end %>
+  </div>
 </div>

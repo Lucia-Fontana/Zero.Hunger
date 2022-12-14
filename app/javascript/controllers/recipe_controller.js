@@ -6,8 +6,9 @@ export default class extends Controller {
   static targets = ["description", "title"]
   connect() {
     console.log('controller connected')
+    this.#addRecipe()
   }
-  addRecipe() {
+  #addRecipe() {
     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${this.ingredientValue}`
     fetch(url)
       .then(response=> response.json())

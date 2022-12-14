@@ -23,24 +23,32 @@
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
+  text-align: center;
+  width: 94px;
+  height: 60px;
+  img {
+    height: 100%;
+  }
 }
 
 .navbar-nav {
+  display: flex;
   align-items: center;
+  a {
+    padding: 0;
+    height: 100%;
+  }
 }
 
 .nav-link {
   width: 100%;
   display: flex;
-  align-items: right;
 }
 
 li {
-  width: 60px;
-  height: 30px;
-  margin-left: 24px;
+  // width: 60px;
+  // height: 30px;
+  // margin-left: 24px;
 }
 
 #input-searchbar {
@@ -61,14 +69,37 @@ li {
   border-radius: 50%;
 }
 
-.navbar-brand {
-  padding: 15px;
+.navbar-lewagon-home .navbar-brand img {
   width: 60px;
-  height: 60px;
+  border-radius: 50%;
 }
+
+// .navbar-brand {
+//   // padding: 15px;
+//   width: 60px;
+//   height: 60px;
+//   img {
+//     width: 100%;
+//   }
+// }
 
 .avatar {
   width: 48px;
   height: 48px;
   margin: 6px;
+}
+
+.nav-item-links {
+  display: flex;
+  height: 60px;
+}
+
+#my-orders {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#log-out {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

@@ -45,6 +45,14 @@
                         placeholder: "Please select your category",
                         input_html: { autocomplete: "category" }%>
 
+            <%#= f.input :vat_number,
+                        required: false,
+                        autofocus: true,
+                        label: false,
+                        placeholder: "VAT number",
+                        input_html: { autocomplete: "vat_number"}
+            %>
+
             <div class="form-actions">
               <%= f.button :submit, "Register now", id: "buy-button", class: "btn btn-gradient show-button" %>
             </div>

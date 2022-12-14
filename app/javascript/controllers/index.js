@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AddToCartController from "./add_to_cart_controller"
+application.register("add-to-cart", AddToCartController)
+
 import FilterController from "./filter_controller"
 application.register("filter", FilterController)
 
@@ -15,3 +18,6 @@ application.register("map", MapController)
 
 import RecipeController from "./recipe_controller"
 application.register("recipe", RecipeController)
+
+import TooltipController from "./tooltip_controller"
+application.register("tooltip", TooltipController)
