@@ -5,7 +5,9 @@
 
       <div class="row product-description">
         <div class="col-12 col-lg-6">
-          <%= link_to "Back", products_path(query: params[:query]), class:"previous" %>
+          <%= link_to products_path(query: params[:query]), class:"previous" do %>
+            <i class="fa-solid fa-arrow-left"></i>
+          <% end %>
           <div>
               <h5><%= @product.name %></h5>
             <%= cl_image_tag @product.photo.key, crop: :fill, class: "product-image" %>
