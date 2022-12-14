@@ -5,11 +5,11 @@
 }
 
 .main-container h2 {
-  color: #39D0C6;
+  color: $dark-green;
 }
 
 .previous {
-  background-color: #39D0C6;
+  background-color: $dark-green;
   color: white;
   text-decoration: none;
   margin-bottom: 20px;
@@ -72,6 +72,7 @@ a {
 
 
 
+
 // .product-container {
 //   display: flex;
 //   justify-content: space-between;
@@ -80,7 +81,7 @@ a {
 .price {
   //font-size: 30px;
   //flex-grow: 1;
-  color: black;
+  color: $dark-green;
   //text-align: left;
 }
 
@@ -103,12 +104,12 @@ a {
 .recipe {
   background-color: white;
   border-radius: 10px;
-  color: black;
+  color: $dark-green;
   border-radius: 10px;
   height: 100%;
   overflow: scroll;
-  box-shadow: 5px 5px lightgray;
-  padding: 10px;
+  box-shadow: 5px 5px 5px 5px lightgray;
+  padding: 30px;
   max-height: 600px;
 }
 
@@ -127,6 +128,7 @@ a {
   padding: 10px;
   position: relative;
   margin-bottom: 20px;
+  color: $dark-green
 }
 
 .card-buttons {
@@ -177,6 +179,7 @@ a {
   transition: background 0.3s ease;
 }
 
+
 .button {
   color: white;
   padding: 8px 8px;
@@ -204,6 +207,8 @@ a {
   background-color: #39D0C6;
   display: inline-block;
 }
+
+
 
 .show-button-half {
   margin-bottom: 10px;
