@@ -32,7 +32,7 @@
             <% if current_user.category == "Retailer" %>
               <li class="nav-item active">
                 <%= link_to new_product_path do %>
-                  <%= image_tag "plus.png", class: "nav-link" %>
+                  <%= image_tag "green-plus.png", class: "nav-link" %>
                 <% end %>
               </li>
             <% end %>
@@ -40,13 +40,13 @@
           <% unless current_user.orders.last.nil?%>
             <li class="nav-item active">
               <%= link_to new_order_payment_path(current_user.orders.last) do %>
-                <%= image_tag "shopping-cart.png", class: "nav-link" %>
+                <%= image_tag "green-cart.png", class: "nav-link" %>
               <% end %>
             </li>
             <% else %>
             <li class="nav-item active">
               <%= link_to root_path do %>
-                <%= image_tag "shopping-cart.png", class: "nav-link" %>
+                <%= image_tag "green-cart.png", class: "nav-link" %>
               <% end %>
             </li>
           <% end %>
@@ -54,17 +54,17 @@
           <li class="nav-item active">
             <% if current_user.category == "Retailer" %>
               <%= link_to dashboard_path, class: "navbar-link", id: "my-orders" do %>
-                <%= image_tag "history.png" %>
+                <%= image_tag "green-orders.png" %>
               <% end %>
             <% else %>
               <%= link_to orders_path, class: "navbar-link", id: "my-orders" do %>
-                <%= image_tag "history.png" %>
+                <%= image_tag "green-orders.png" %>
               <% end %>
             <% end %>
           </li>
           <li class="nav-item active">
             <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-link", id: "log-out" do %>
-              <%= image_tag "log-out.png" %>
+              <%= image_tag "green-logout.png" %>
             <% end %>
           </li>
         </li>

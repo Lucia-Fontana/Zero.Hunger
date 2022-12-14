@@ -1,7 +1,8 @@
 .tooltip-inner {
-  background-color: $light-green;
+  background-color: $titles-green;
+  color: $body-background;
 }
 
 .tooltip-arrow::before {
-  border-top-color: $light-green !important;
+  border-top-color: $titles-green !important;
 }
