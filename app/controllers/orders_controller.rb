@@ -3,6 +3,14 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def index
+    @user = current_user
+    @orders = @user.orders
+    # Line above should be something like the one below :
+    # @orders = @user.orders.where(state: "done")
+    # For now the state of the order stays "pending after payment"
+  end
+
   def show
     @user = current_user
     @order = current_user.orders.find(params[:id])
