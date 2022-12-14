@@ -6,7 +6,7 @@
 
 .order-card {
   display: flex;
-  background-color: $dark-green;
+  background-color: $white;
   height: 84px;
   width: 100%;
   align-items: center;
@@ -16,10 +16,10 @@
     margin: 0;
     width: 23%;
     text-align: center;
-    color: $body-background;
+    color: $dark-green;
     padding-top: 12px;
     padding-bottom: 12px;
-    border-left: 1px dotted $body-background;
+    border-left: 1px dotted $dark-green;
   }
   h6 {
     margin: 0;
@@ -30,6 +30,12 @@
   }
 }
 
+.view-details {
+  a {
+    color: $titles-green;
+    font-weight: bold;
+  }
+}
 
 
 #orders-header {
@@ -37,4 +43,9 @@
   top: 9vh;
   border-radius: 0;
   font-weight: bold;
+  background-color: $white;
+  p {
+    color: $dark-green;
+    border-left: 1px dotted $dark-green;
+  }
 }
