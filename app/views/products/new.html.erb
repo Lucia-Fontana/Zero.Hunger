@@ -8,7 +8,7 @@
           <%= f.input :name %>
           <%= f.input :category, collection: [ "Fruit", "Vegetable", "Carbohydrate", "Dairy", "Meat", "Drink"] %>
           <%= f.input :description %>
-          <%= f.input :deadline, as: :date, html5: true %>
+          <%= f.input :deadline, as: :date, html5: true, class: "deadline" %>
         </div>
         <div>
           <%= f.input :quantity %>
