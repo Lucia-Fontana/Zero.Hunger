@@ -46,14 +46,20 @@
             <% else %>
             <li class="nav-item active">
               <%= link_to root_path do %>
-                <%= image_tag "icons8-shopping-cart-48 (1).png", class: "nav-link" %>
+                <%= image_tag "shopping-cart.png", class: "nav-link" %>
               <% end %>
             </li>
           <% end %>
 
           <li class="nav-item active">
-            <%= link_to orders_path, class: "navbar-link", id: "my-orders" do %>
-              <%= image_tag "history.png" %>
+            <% if current_user.category == "Retailer" %>
+              <%= link_to dashboard_path, class: "navbar-link", id: "my-orders" do %>
+                <%= image_tag "history.png" %>
+              <% end %>
+            <% else %>
+              <%= link_to orders_path, class: "navbar-link", id: "my-orders" do %>
+                <%= image_tag "history.png" %>
+              <% end %>
             <% end %>
           </li>
           <li class="nav-item active">
