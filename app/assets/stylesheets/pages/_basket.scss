@@ -15,20 +15,20 @@
   justify-content: center;
 }
 
-.col-lg-6, .col-lg-4 {
+#shopping, #order {
   background-color: rgba(250, 235, 215, 0.8);
   margin-top: 32px;
   display: flex;
 }
 
-.col-lg-4 {
+#order {
   border-left: solid 1px grey;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.col-lg-6 {
+#shopping {
   justify-content: center;
 }
 
