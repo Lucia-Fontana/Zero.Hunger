@@ -163,16 +163,16 @@ p43 = Product.new(name: "Watermelons", quantity: 1, CO2e: 0.80, price: 8, catego
 p43.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'watermelons.png')), filename: 'watermelons.png', content_type: 'watermelons.png')
 p43.save!
 p44 = Product.new(name: "Camembert", quantity: 1, CO2e: 7.9, price: 8, category: "Dairy", description: "10 Camemberts. Full fat soft cheese made from pasteurised cow's milk. Take the Camembert out of the fridge about 30min before eating to allow the cheese to come to room temperature and be at its best.", deadline: Date.tomorrow, business_id: business4.id)
-p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'camembert.png')), filename: 'camembert.png', content_type: 'camembert.png')
+p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'camembert.jpg')), filename: 'camembert.jpg', content_type: 'camembert.png')
 p44.save!
 p45 = Product.new(name: "Fruit Compote", quantity: 1, CO2e: 2.13, price: 8, category: "Dairy", description: "Suitable for Vegetarians. Free From Artificial Sweeteners. Free from Colours.", deadline: Date.tomorrow, business_id: business4.id)
-p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'compotes.png')), filename: 'compotes.png', content_type: 'compotes.png')
+p44.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'compotes.jpg')), filename: 'compotes.jpg', content_type: 'compotes.png')
 p45.save!
 p46 = Product.new(name: "Brioche", quantity: 1, CO2e: 2.63, price: 3, category: "Carbohydrate", description: "Five packets of Brioche. Great with your favourite sweet or savoury fillings. Made with our authentic 'levain' to give its unique taste.", deadline: Date.tomorrow, business_id: business1.id)
 p46.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'brioche.png')), filename: 'brioche.png', content_type: 'brioche.png')
 p46.save!
 p47 = Product.new(name: "Sandwich loaf bread", quantity: 1, CO2e: 1.2, price: 2, category: "Carbohydrate", description: "Four packets of sandwich loaf bread. Our love of baking runs through generations of our family bakery. Our dedication to taste is a labour of love where we have spent time baking the finest gluten free white loaf which is carefully crafted using a slow and unique bread making technique.", deadline: Date.tomorrow, business_id: business1.id)
-p47.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bread2.png')), filename: 'bread2.png', content_type: 'bread2.png')
+p47.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'bread2.jpg')), filename: 'bread2.jpg', content_type: 'bread2.png')
 p47.save!
 p48 = Product.new(name: "Pineapple Juice", quantity: 1, CO2e: 1.5, price: 5, category: "Drink", description: "Four liters of Pineapple Juice. Made with 100% fruit juice. The secret of our fruity taste… We only select the tastiest Fruit to make sure they are bursting with flavour. We squeeze them in the country they are grown and concentrate the juice by removing the water, keeping all the flavour.", deadline: Date.tomorrow, business_id: business1.id)
 p48.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'pineapple-juice.jpg')), filename: 'pineapple-juice.jpg', content_type: 'pineapple-juice.jpg')
@@ -207,10 +207,10 @@ p51 = Product.new(name: "Brioche", quantity: 1, CO2e: 2.63, price: 3, category: 
 p51.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'brioche.png')), filename: 'brioche.png', content_type: 'brioche.png')
 p51.save!
 p52 = Product.new(name: "Mangos", quantity: 1, CO2e: 1.37, price: 9, category: "Fruit", description: "10 mangos. An 80g of mango counts as 1 of your 5 a-day. Aim for at least 5 different portions of fruit or veg a day. Fresh, frozen, dried, canned and juice all count.", deadline: Date.tomorrow, business_id: business5.id)
-p52.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'mangos.png')), filename: 'mangos.png', content_type: 'mangos.png')
+p52.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'mangos.jpg')), filename: 'mangos.jpg', content_type: 'mangos.png')
 p52.save!
 p53 = Product.new(name: "Oranges", quantity: 1, CO2e: 0.67, price: 5, category: "Fruit", description: "Ten kilos of oranges. Juicy and refreshing. Grown in Peru, South Africa, Spain, Turkey.", deadline: Date.tomorrow, business_id: business5.id)
-p53.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'oranges.png')), filename: 'oranges.png', content_type: 'oranges.png')
+p53.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'oranges.jpg')), filename: 'oranges.jpg', content_type: 'oranges.png')
 p53.save!
 p54 = Product.new(name: "Roquefort", quantity: 1, CO2e: 8.89, price: 3, category: "Dairy", description: "3 packets of Roquefort cheese. Unpasteurised blue cheese made from raw sheep's milk AOP. We are passionate about great tasting food, which is why this Taste the Difference product has been taste tested by a panel of customers, to ensure that we continue to offer you the very best in quality and flavour.", deadline: Date.tomorrow, business_id: business5.id)
 p54.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'roquefort.jpg')), filename: 'roquefort.jpg', content_type: 'roquefort.png')
