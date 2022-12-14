@@ -6,12 +6,13 @@
 
 .order-card {
   display: flex;
-  background-color: $white;
+  background-color: $body-background;
   height: 84px;
   width: 100%;
   align-items: center;
   border-radius: 6px;
-  box-shadow: 0px 0px 3px 0px $dark-green;
+  // box-shadow: 0px 0px 3px 0px $dark-green;
+  border-bottom: 1px dotted $dark-green;
   p {
     margin: 0;
     width: 23%;
@@ -43,7 +44,7 @@
   top: 9vh;
   border-radius: 0;
   font-weight: bold;
-  background-color: $white;
+  background-color: $body-background;
   p {
     color: $dark-green;
     border-left: 1px dotted $dark-green;
