@@ -16,7 +16,9 @@
 
         <div class="col-12 col-lg-6">
 
-          <div class="d-flex card-show">
+        <div class="card-show">
+          <div class="details-cardd">
+          <div class="d-flex">
             <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
             <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
           </div>
@@ -25,15 +27,19 @@
             <p style="margin-right: 5px;"><%= @product.CO2e %></p>
             <p> CO2e / kg </p>
           </div>
-          <p><%= @product.description %></p>
+            <p><%= @product.description %></p>
           <div class="row">
             <div class="d-flex justify-content-between">
               <h5 class="price"><%= humanized_money_with_symbol(@product.price) %></h5>
+            </div>
+          </div>
+          </div>
+          <div class="basket-button">
             <%= button_to product_purchases_path(@product), method: :create, remote: true, id: "buy-button", class: "pay" do %>
               <i class="fa-solid fa-cart-shopping"></i>
             <% end %>
-            </div>
           </div>
+        </div>
         </div>
       </div>
 
@@ -49,7 +55,7 @@
 
     <div class="col-12 col-lg-4">
       <div class="recipe">
-        <h3 data-recipe-target="title" ></h3>
+        <h3 id="recipe-title" data-recipe-target="title"></h3>
         <p data-recipe-target="description"></p>
           <a href="">
       </div>
