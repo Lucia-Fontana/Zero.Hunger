@@ -1,4 +1,3 @@
-
 .back-image {
   background-image: asset_url("shopping-cart.jpg");
   background-position: center center;
@@ -39,28 +38,42 @@
   background-color: none;
   display: flex-grow;
   padding-top: 20px;
-  // flex-direction: column;
-  // justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Header{
-  width: 90%;
-  height: 15%;
+  width: 100%;
+  // height: 15%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    margin-right: 60px;
+  }
+ }
+
+ .empty-cart {
+  display: flex;
+  flex-direction: column;
   align-items: center;
  }
 
- .card-product {
+
+ .card-product-basket {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
+  align-items: center;
   background-color: rgba(255, 254, 247, 0);
   margin-left: 15px;
+  width: 100%;
+  height: 120px;
+  border-bottom: 1px dotted $dark-green;
+  border-radius: 6px;
  }
 
- .card-product img {
+ .card-product-basket img {
   display: flex;
   height: 70px;
   width: 80px;
@@ -68,8 +81,15 @@
   border-radius: 5px;
 }
 
+.card-product-infos {
+  span {
+    color: $dark-green;
+    font-weight: bold;
+  }
+}
+
 .product-title1 {
-  color: rgb(23, 150, 129);
+  color: $titles-green;
   font-size: 18px;
   font-weight: bold;
   text-align: left;
@@ -77,14 +97,22 @@
 
 
 .product-title {
-  color: rgb(23, 150, 129);
+  color: $titles-green;
   font-size: 16px;
   font-weight: bold;
   text-align: left;
 }
 
+.product-title-crossed-out {
+  color: $titles-green;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: line-through;
+}
+
 .fa-eye {
-  color: rgb(23, 150, 129);
+  color: $titles-green;
   display: flex;
   text-align: left;
 }
@@ -92,12 +120,23 @@
 .cart-quantity {
   display: block;
   text-align: left;
+  span {
+    color: $dark-green;
+    font-weight: 400;
+  }
 }
 
  // product price and trash icon
 .card-item-actions {
   padding-right: 20px;
   text-align: center;
+  span {
+    color: $dark-green;
+    font-weight: 400;
+  }
+  a {
+    color: $dark-green;
+  }
 }
 
 .link {
@@ -116,12 +155,13 @@
 .order-summary {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   width: 80%;
+  height: 100%;
   background-color: none;
   border-radius: 20px;
-  padding-top: 100px;
-  padding-bottom: 80px;
+  // padding-top: 24px;
+  padding-bottom: 16px;
 }
 
 .Header2{
@@ -137,10 +177,35 @@
   display: block;
   text-align: left;
   font-family: $body-font;
-  color: rgb(23, 150, 129);
-  margin-top: 50px;
+  color: $dark-green;
+  // margin-top: 50px;
 }
 
 .fa-solid {
   color: $dark-green;
+}
+
+#pay {
+  background-color: $titles-green;
+  color: $body-background;
+  border-radius: 6px;
+  border-color: $titles-green;
+  font-weight: bold;
+}
+
+.back-button {
+  border-radius: 6px;
+  color: $body-background;
+}
+
+.back-button:hover {
+  color: $body-background;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.confirm-order-title {
+  text-align: center;
 }

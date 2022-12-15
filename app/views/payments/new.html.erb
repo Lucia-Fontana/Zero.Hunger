@@ -7,20 +7,22 @@
 
 
       <div class="Header">
-        <%= link_to products_path, class: "previous px-3 my-3" do %>
-          <strong><</strong>
+        <%= link_to products_path(query: params[:query]), class:"previous" do %>
+          <i class="fa-solid fa-arrow-left" style="color: #FFFFFF;"></i>
         <% end %>
         <h3>Shopping Cart</h3>
       </div>
 
       <% if @order.products.size == 0 %>
+      <div class="empty-cart">
       <p class="dark bold text-center">
         There are no items in your shopping cart. <br>
-        Please <%= link_to "check available products", products_path %> and add some items to your cart.
+        Please check available products, and add some items to your cart.
       </p>
-        <%= link_to products_path, class: "navbar-brand" do %>
-        <%= image_tag "customer.png", height: 200, width: 220 %>
-      <% end %>
+        <%= link_to products_path do %>
+          <%= image_tag "continue-shopping.jpg", height: 200, width: 270 %>
+        <% end %>
+      </div>
       <% else %>
       <%# retailer 1 %>
       <div class="card-business">
@@ -31,7 +33,7 @@
               <% @order.products.each do |product| %>
                 <% if product.business.name == "Sainsbury's" %>
 
-                <div class="card-product">
+                <div class="card-product-basket">
                   <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
@@ -43,19 +45,24 @@
                       <span class="product-title1"><%= product.name %></span>
                     </div>
 
-                    <div class="details">
-                      <%= link_to product_path(product) do %>
-                        <i class="fa-solid fa-eye"></i>
-                      <% end %>
-                    </div>
+                    <%# <div class="details"> %>
+                      <%#= link_to product_path(product) do %>
+                        <%# <i class="fa-solid fa-eye"></i> %>
+                      <%# end %>
+                    <%# </div> %>
                   <%# </div> %>
 
                   <div class="cart-quantity">
-                    <span class="product-title">Quantity: <%= product.quantity %></span>
+                    <span class="product-title">Qty: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
-                      <span class="product-title"><%= product.price %>€</span>
+                      <% if current_user.category == "Association" %>
+                          <span class="product-title-crossed-out"><%= product.price %>€</span>
+                        <% else %>
+                          <span class="product-title"><%= product.price %>€</span>
+                      <% end %>
+
                       <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
@@ -77,7 +84,7 @@
               <% @order.products.each do |product| %>
                 <% if product.business.name == "Waitrose & Partners Bloomsbury" %>
 
-                <div class="card-product">
+                <div class="card-product-basket">
                   <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
@@ -89,19 +96,23 @@
                       <span class="product-title1"><%= product.name %></span>
                     </div>
 
-                    <div class="details">
-                      <%= link_to product_path(product) do %>
-                        <i class="fa-solid fa-eye"></i>
-                      <% end %>
-                    </div>
+                    <%# <div class="details"> %>
+                      <%#= link_to product_path(product) do %>
+                        <%# <i class="fa-solid fa-eye"></i> %>
+                      <%# end %>
+                    <%# </div> %>
                   <%# </div> %>
 
                   <div class="cart-quantity">
-                    <span class="product-title">Quantity: <%= product.quantity %></span>
+                    <span class="product-title">Qty: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
-                      <span class="product-title"><%= product.price %>€</span>
+                      <% if current_user.category == "Association" %>
+                          <span class="product-title-crossed-out"><%= product.price %>€</span>
+                        <% else %>
+                          <span class="product-title"><%= product.price %>€</span>
+                      <% end %>
                       <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
@@ -112,7 +123,6 @@
               <% end %>
             </div>
       </div>
-
       <%# retailer 3 %>
       <div class="card-business">
           <% if @order.products.map {|product| product.business.name}.include?("Tesco Express")%>
@@ -122,7 +132,7 @@
               <% @order.products.each do |product| %>
                 <% if product.business.name == "Tesco Express" %>
 
-                <div class="card-product">
+                <div class="card-product-basket">
                   <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
@@ -134,20 +144,23 @@
                       <span class="product-title1"><%= product.name %></span>
                     </div>
 
-                    <div class="details">
-                      <%= link_to product_path(product) do %>
-                        <i class="fa-solid fa-eye"></i>
-                      <% end %>
-                    </div>
+                    <%# <div class="details"> %>
+                      <%#= link_to product_path(product) do %>
+                        <%# <i class="fa-solid fa-eye"></i> %>
+                      <%# end %>
+                    <%# </div> %>
                   <%# </div> %>
 
                   <div class="cart-quantity">
-                    <span class="product-title">Quantity: <%= product.quantity %></span>
+                    <span class="product-title">Qty: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
-                      <span class="product-title"><%= product.price %>€</span>
-                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <% if current_user.category == "Association" %>
+                          <span class="product-title-crossed-out"><%= product.price %>€</span>
+                        <% else %>
+                          <span class="product-title"><%= product.price %>€</span>
+                      <% end %>                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
@@ -167,7 +180,7 @@
               <% @order.products.each do |product| %>
                 <% if product.business.name == "Rupert Supermarket" %>
 
-                <div class="card-product">
+                <div class="card-product-basket">
                   <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
@@ -179,20 +192,23 @@
                       <span class="product-title1"><%= product.name %></span>
                     </div>
 
-                    <div class="details">
-                      <%= link_to product_path(product) do %>
-                        <i class="fa-solid fa-eye"></i>
-                      <% end %>
-                    </div>
+                    <%# <div class="details"> %>
+                      <%#= link_to product_path(product) do %>
+                        <%# <i class="fa-solid fa-eye"></i> %>
+                      <%# end %>
+                    <%# </div> %>
                   <%# </div> %>
 
                   <div class="cart-quantity">
-                    <span class="product-title">Quantity: <%= product.quantity %></span>
+                    <span class="product-title">Qty: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
-                      <span class="product-title"><%= product.price %>€</span>
-                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <% if current_user.category == "Association" %>
+                          <span class="product-title-crossed-out"><%= product.price %>€</span>
+                        <% else %>
+                          <span class="product-title"><%= product.price %>€</span>
+                      <% end %>                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
@@ -212,7 +228,7 @@
               <% @order.products.each do |product| %>
                 <% if product.business.name == "Superway Supermarket" %>
 
-                <div class="card-product">
+                <div class="card-product-basket">
                   <%# <div class="card-items-left"> %>
                     <div class="cart-image">
                         <%= link_to product_path(product) do %>
@@ -224,20 +240,23 @@
                       <span class="product-title1"><%= product.name %></span>
                     </div>
 
-                    <div class="details">
-                      <%= link_to product_path(product) do %>
-                        <i class="fa-solid fa-eye"></i>
-                      <% end %>
-                    </div>
+                    <%# <div class="details"> %>
+                      <%#= link_to product_path(product) do %>
+                        <%# <i class="fa-solid fa-eye"></i> %>
+                      <%# end %>
+                    <%# </div> %>
                   <%# </div> %>
 
                   <div class="cart-quantity">
-                    <span class="product-title">Quantity: <%= product.quantity %></span>
+                    <span class="product-title">Qty: <%= product.quantity %></span>
                   </div>
 
                     <div class="card-item-actions">
-                      <span class="product-title"><%= product.price %>€</span>
-                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                      <% if current_user.category == "Association" %>
+                          <span class="product-title-crossed-out"><%= product.price %>€</span>
+                        <% else %>
+                          <span class="product-title"><%= product.price %>€</span>
+                      <% end %>                      <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
                         <i class="fa-regular fa-trash-can"></i>
                       <% end %>
                     </div>
@@ -249,7 +268,7 @@
       </div>
 
       <div>
-        <%= link_to products_path, class: "previous py-2 my-3" do %>
+        <%= link_to products_path, class: "previous py-2 my-3 back-button" do %>
           <strong class="light">Continue shopping</strong>
         <% end %>
       </div>
@@ -260,25 +279,26 @@
   <div class="order-summary">
 
      <div class="Header2">
-      <h4 class="mb-4">Order Summary</h4>
+      <h3 class="">Order Summary</h3>
     </div>
 
       <div>
-        <p class="dark"><i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i><strong>Items: </strong><%= @order.products.size %></p>
+        <p class="dark no-margin"><i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i><strong>Items: </strong><%= @order.products.size %></p>
       </div>
 
       <div>
-        <p class="dark mb-4"><i class="fa-solid fa-leaf" style="margin-right: 5px"></i><strong>Carbon Footprint saved: </strong><%= @order.products.map {|product| product.CO2e}.sum %> CO2e / kg</p>
-        <p class="dark"><i class="fa-solid fa-circle-info" style="margin-right: 5px"></i><strong>For more information, visit: </strong></p>
-        <%= link_to ("https://tinyurl.com/2kjcjw9y") do %>
+        <p class="dark no-margin"><i class="fa-solid fa-leaf" style="margin-right: 5px"></i><strong>Carbon Footprint saved: </strong><%= @order.products.map {|product| product.CO2e}.sum.round(2) %> CO2e / kg</p>
+        <br>
+        <p class="dark no-margin"><i class="fa-solid fa-circle-info" style="margin-right: 5px"></i><strong>For more information, visit: </strong></p>
+        <%= link_to ("https://tinyurl.com/2kjcjw9y"), target: "_blank" do %>
           <%= image_tag "Nature.png", height: 50, width: 150, class: "mb-2" %>
         <% end %>
       </div>
 
-      <!-- If the current user is an association, the goods are for free -->
+      <!-- If the current user is an Association, the goods are for free -->
     <%if current_user.category == "Association"%>
-      <h5 class="mt-4">Please confirm your order, the goods are for free</h5>
-    <%= link_to "Confirm Order", order_path(@order), class: "btn btn-primary" %>
+      <h5 class="mt-4 confirm-order-title">Please confirm your order,<br>the goods are for free</h5>
+    <%= link_to "Confirm Order", order_path(@order), class: "btn btn-primary", id:"pay" %>
     <% else %>
 
         <strong class="cart-amount"><i class="fa-solid fa-file-invoice" style="margin-right: 5px"></i>Total Amount: <%= humanized_money_with_symbol @order.amount %></strong></p>
