@@ -296,12 +296,35 @@ a {
 }
 
 #product_deadline {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px;
   height: 38px;
+  background-color: white;
 }
 
 #product_category {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px;
+}
+
+#product_name {
+  border-radius: 6px;
+}
+
+#product_description {
+  border-radius: 6px;
+}
+
+#product_quantity {
+  border-radius: 6px;
+}
+
+#product_price {
+  border-radius: 6px;
+}
+
+#product_CO2e {
+  border-radius: 6px;
+}
+
+#product_photo {
+  border-radius: 6px;
 }
