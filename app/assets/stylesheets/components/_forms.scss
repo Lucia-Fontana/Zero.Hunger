@@ -38,3 +38,14 @@ input.btn {
 .div-login {
   display: flex;
 }
+
+.full-screen {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .form-screen {
+    max-width: 840px !important;
+    padding-bottom: 60px;
+  }
+}
