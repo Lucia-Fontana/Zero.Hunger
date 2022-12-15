@@ -52,6 +52,15 @@ a {
 
 .card-show {
   margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.basket-button {
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+  padding: 32px;
 }
 
 // .address {
@@ -110,12 +119,17 @@ a {
   background-color: white;
   border-radius: 10px;
   color: grey;
-  font-family: italic;
+  font-style: italic;
+  text-align: justify;
   height: 100%;
   overflow: scroll;
   box-shadow: 5px 5px 5px 5px lightgray;
   padding: 30px;
   max-height: 600px;
+}
+
+#recipe-title {
+  font-style: italic;
 }
 
 .pay {
