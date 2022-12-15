@@ -13,7 +13,11 @@
     </div>
     <div class="order-infos">
       <p>Order confirmation n°<%= @order.id %></p>
-      <p>Total price: <%= @order.amount.fractional / 100 %> <%= @order.amount.symbol %></p>
+      <% if current_user.category == "Association" %>
+        <p>Total price: 0 <%= @order.amount.symbol %></p>
+      <% else %>
+        <p>Total price: <%= @order.amount.fractional / 100 %> <%= @order.amount.symbol %></p>
+      <% end %>
       <% unless @locations[0].nil? %>
         <div class="purchase">
           <div class="purchase-summary">
@@ -31,7 +35,11 @@
             </div>
             <div class="purchase-summary-text">
               <% @address1_articles.each do |article| %>
-                <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+                <% if current_user.category == "Association" %>
+                  <p><%= article.product.name %> : <span class="crossed-out"><%= article.product.price %> €</span></p>
+                <% else %>
+                  <p><%= article.product.name %> : <span><%= article.product.price %> €</span></p>
+                <% end %>
               <% end %>
             </div>
           </div>
