@@ -14,13 +14,15 @@
       </div>
 
       <% if @order.products.size == 0 %>
+      <div class="empty-cart">
       <p class="dark bold text-center">
         There are no items in your shopping cart. <br>
-        Please <%= link_to "check available products", products_path %> and add some items to your cart.
+        Please check available products, and add some items to your cart.
       </p>
-        <%= link_to products_path, class: "navbar-brand" do %>
-        <%= image_tag "customer.png", height: 200, width: 220 %>
-      <% end %>
+        <%= link_to products_path do %>
+          <%= image_tag "continue-shopping.jpg", height: 200, width: 270 %>
+        <% end %>
+      </div>
       <% else %>
       <%# retailer 1 %>
       <div class="card-business">
@@ -121,7 +123,6 @@
               <% end %>
             </div>
       </div>
-
       <%# retailer 3 %>
       <div class="card-business">
           <% if @order.products.map {|product| product.business.name}.include?("Tesco Express")%>
