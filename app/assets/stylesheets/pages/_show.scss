@@ -84,8 +84,30 @@ a {
   padding: 20px;
 }
 
+.image-box-container {
+  width: 360px;
+}
 
+.image-box-title {
+  margin: 0;
+}
 
+.image-box-image {
+  max-height: 240px;
+  border-radius: 6px;
+}
+
+.mapbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-left: 24px;
+}
+
+.show-left-container {
+  height: 600px;
+}
 
 // .product-container {
 //   display: flex;
@@ -138,15 +160,15 @@ a {
 }
 
 .product-description {
-  max-height: 400px;
+  height: 400px;
   display: flex;
   position: relative;
   width: 100%;
   align-items: flex-start;
   background-color: white;
-  padding: 10px;
+  padding: 12px;
   position: relative;
-  margin-bottom: 20px;
+  margin: 0;
   color: $dark-green
 }
 
