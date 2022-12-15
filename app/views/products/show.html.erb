@@ -1,16 +1,16 @@
 <div class="show-container" data-controller="recipe" data-recipe-ingredient-value="<%= @product.name %>">
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-8">
+    <div class="col-12 col-lg-8 show-left-container">
 
       <div class="row product-description">
         <div class="col-12 col-lg-6">
           <%= link_to products_path(query: params[:query]), class:"previous" do %>
             <i class="fa-solid fa-arrow-left" style="color: #FFFFFF;"></i>
           <% end %>
-          <div>
-              <h5><%= @product.name %></h5>
-            <%= cl_image_tag @product.photo.key, crop: :fill, class: "product-image" %>
+          <div class="image-box-container">
+              <h5 class="image-box-title"><%= @product.name %></h5>
+            <%= cl_image_tag @product.photo.key, crop: :fill, class: "image-box-image" %>
           </div>
         </div>
 
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div class="">
+      <div class="mapbox-container">
         <div style="width: 750px; height: 200px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
