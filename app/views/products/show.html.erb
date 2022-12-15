@@ -16,9 +16,7 @@
 
         <div class="col-12 col-lg-6">
 
-        <div class="card-show">
-          <div class="details-cardd">
-          <div class="d-flex">
+          <div class="d-flex card-show">
             <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
             <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
           </div>
@@ -29,17 +27,13 @@
           </div>
             <p><%= @product.description %></p>
           <div class="row">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-center">
               <h5 class="price"><%= humanized_money_with_symbol(@product.price) %></h5>
-            </div>
-          </div>
-          </div>
-          <div class="basket-button">
             <%= button_to product_purchases_path(@product), method: :create, remote: true, id: "buy-button", class: "pay" do %>
               <i class="fa-solid fa-cart-shopping"></i>
             <% end %>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
