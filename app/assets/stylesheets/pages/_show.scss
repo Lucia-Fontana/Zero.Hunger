@@ -52,6 +52,15 @@ a {
 
 .card-show {
   margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.basket-button {
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+  padding: 32px;
 }
 
 // .address {
@@ -110,11 +119,17 @@ a {
   background-color: white;
   border-radius: 10px;
   color: grey;
+  font-style: italic;
+  text-align: justify;
   height: 100%;
   overflow: scroll;
   box-shadow: 5px 5px 5px 5px lightgray;
   padding: 30px;
   max-height: 600px;
+}
+
+#recipe-title {
+  font-style: italic;
 }
 
 .pay {
@@ -273,6 +288,7 @@ a {
   border-radius: 10px;
   width: 50%;
   border: none;
+  padding: 10px;
 }
 
 .deadline {
@@ -281,12 +297,35 @@ a {
 }
 
 #product_deadline {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px;
   height: 38px;
+  background-color: white;
 }
 
 #product_category {
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px;
+}
+
+#product_name {
+  border-radius: 6px;
+}
+
+#product_description {
+  border-radius: 6px;
+}
+
+#product_quantity {
+  border-radius: 6px;
+}
+
+#product_price {
+  border-radius: 6px;
+}
+
+#product_CO2e {
+  border-radius: 6px;
+}
+
+#product_photo {
+  border-radius: 6px;
 }

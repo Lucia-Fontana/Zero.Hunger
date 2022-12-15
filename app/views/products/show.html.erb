@@ -25,9 +25,9 @@
             <p style="margin-right: 5px;"><%= @product.CO2e %></p>
             <p> CO2e / kg </p>
           </div>
-          <p><%= @product.description %></p>
+            <p><%= @product.description %></p>
           <div class="row">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-center">
               <h5 class="price"><%= humanized_money_with_symbol(@product.price) %></h5>
             <%= button_to product_purchases_path(@product), method: :create, remote: true, id: "buy-button", class: "pay" do %>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -49,7 +49,7 @@
 
     <div class="col-12 col-lg-4">
       <div class="recipe">
-        <h3 data-recipe-target="title" ></h3>
+        <h3 id="recipe-title" data-recipe-target="title"></h3>
         <p data-recipe-target="description"></p>
           <a href="">
       </div>
