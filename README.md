@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Le Wagon bootcamp final project. 
+Web app to help reduce food waste, coded in 2 weeks in a team of 4.
